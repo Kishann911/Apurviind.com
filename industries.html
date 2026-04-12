@@ -572,111 +572,6 @@
             position: relative;
         }
 
-        @media (max-width: 991px) {
-            .container {
-                padding: 0 25px !important;
-                width: 100% !important;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 80%;
-                height: 100vh;
-                background-color: var(--bg-primary);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 40px;
-                transition: var(--transition-slow);
-                z-index: 2000;
-                box-shadow: -20px 0 50px rgba(0, 0, 0, 0.2);
-                padding: 60px 40px;
-                visibility: hidden;
-                opacity: 0;
-            }
-
-            .nav-links.active {
-                right: 0;
-                visibility: visible;
-                opacity: 1;
-            }
-
-            .nav-links a {
-                font-size: 24px;
-                color: var(--text-primary) !important;
-                font-weight: 800;
-            }
-
-            .hamburger {
-                display: flex !important;
-                z-index: 2001;
-                position: relative;
-                width: 30px;
-                height: 20px;
-                flex-direction: column;
-                justify-content: space-between;
-                cursor: pointer;
-            }
-
-            .hamburger span {
-                width: 100%;
-                height: 3px;
-                background-color: var(--bg-dark);
-                transition: all 0.3s ease;
-            }
-
-            .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); background-color: var(--accent-red); }
-            .hamburger.active span:nth-child(2) { opacity: 0; }
-            .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background-color: var(--accent-red); }
-
-            .nav-curved-container {
-                padding: 15px 25px !important;
-                border-bottom-left-radius: 0 !important;
-                background-color: transparent !important;
-                backdrop-filter: none !important;
-                margin-top: 0 !important;
-                box-shadow: none !important;
-            }
-
-            .logo {
-                font-size: 20px !important;
-                padding: 20px 0 !important;
-                color: var(--text-white) !important;
-            }
-
-            .hamburger span {
-                background-color: var(--text-white) !important;
-            }
-
-            .sticky-contact-footer {
-                display: flex !important;
-            }
-
-            .utility-nav { display: none; }
-            
-            .industries-main-grid {
-                grid-template-columns: 1fr !important;
-                margin-top: 0;
-            }
-
-            .industry-block {
-                height: 350px;
-                padding: 30px;
-            }
-
-            .hero-internal h1 {
-                font-size: 36px !important;
-            }
-
-            .footer-grid { grid-template-columns: 1fr; }
-        }
-
-        @media (max-width: 480px) {
-            .logo span { display: none; }
-        }
-
         .industries-main-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -742,21 +637,112 @@
             transform: translateY(0);
         }
 
-        @media (max-width: 767px) {
+        @media (max-width: 991px) {
+            .container {
+                padding: 0 25px;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background-color: var(--bg-primary);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 40px;
+                transition: var(--transition-slow);
+                z-index: 2000;
+                box-shadow: -20px 0 50px rgba(0, 0, 0, 0.2);
+                padding: 60px 40px;
+                visibility: hidden;
+                opacity: 0;
+            }
+
+            .nav-links.active {
+                right: 0;
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .nav-links a {
+                font-size: 24px;
+                color: var(--text-primary);
+                font-weight: 800;
+            }
+
+            .hamburger {
+                display: flex;
+                z-index: 2001;
+                position: relative;
+                width: 30px;
+                height: 20px;
+                flex-direction: column;
+                justify-content: space-between;
+                cursor: pointer;
+            }
+
+            .hamburger span {
+                width: 100%;
+                height: 3px;
+                background-color: var(--text-white);
+                transition: all 0.3s ease;
+            }
+
+            .nav-curved-container {
+                padding: 15px 25px;
+                border-bottom-left-radius: 0;
+                background-color: transparent;
+                backdrop-filter: none;
+                margin-top: 0;
+                box-shadow: none;
+            }
+
+            .logo {
+                font-size: 20px;
+                padding: 20px 0;
+                color: var(--text-white);
+            }
+
+            .sticky-contact-footer {
+                display: flex;
+            }
+
+            .utility-nav { display: none; }
+            
             .industries-main-grid {
                 grid-template-columns: 1fr;
                 margin-top: 0;
             }
 
             .industry-block {
-                height: 300px;
+                height: 350px;
                 padding: 30px;
+            }
+
+            .industry-block h2 {
+                font-size: 24px;
             }
 
             .industry-block p {
                 opacity: 1;
                 transform: none;
+                font-size: 13px;
             }
+
+            .hero-internal h1 {
+                font-size: 32px;
+            }
+
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .logo span { display: none; }
         }
     </style>
 </head>

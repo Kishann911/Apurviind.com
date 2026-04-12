@@ -572,10 +572,39 @@
             position: relative;
         }
 
+        .content-section {
+            margin-bottom: 60px;
+        }
+
+        .content-section p {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: var(--text-secondary);
+        }
+
+        .infra-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .infra-card {
+            background: var(--bg-secondary);
+            padding: 30px;
+            border-bottom: 4px solid var(--accent-red);
+        }
+
+        .infra-card h3 {
+            margin-bottom: 15px;
+            color: var(--accent-red);
+        }
+
         @media (max-width: 991px) {
             .container {
-                padding: 0 25px !important;
-                width: 100% !important;
+                padding: 0 25px;
+                width: 100%;
+                max-width: 100%;
             }
 
             .nav-links {
@@ -605,12 +634,12 @@
 
             .nav-links a {
                 font-size: 24px;
-                color: var(--text-primary) !important;
+                color: var(--text-primary);
                 font-weight: 800;
             }
 
             .hamburger {
-                display: flex !important;
+                display: flex;
                 z-index: 2001;
                 position: relative;
                 width: 30px;
@@ -623,46 +652,50 @@
             .hamburger span {
                 width: 100%;
                 height: 3px;
-                background-color: var(--bg-dark);
+                background-color: var(--text-white);
                 transition: all 0.3s ease;
             }
 
-            .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); background-color: var(--accent-red); }
-            .hamburger.active span:nth-child(2) { opacity: 0; }
-            .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background-color: var(--accent-red); }
-
             .nav-curved-container {
-                padding: 15px 25px !important;
-                border-bottom-left-radius: 0 !important;
-                background-color: transparent !important;
-                backdrop-filter: none !important;
-                margin-top: 0 !important;
-                box-shadow: none !important;
+                padding: 15px 25px;
+                border-bottom-left-radius: 0;
+                background-color: transparent;
+                backdrop-filter: none;
+                margin-top: 0;
+                box-shadow: none;
             }
 
             .logo {
-                font-size: 20px !important;
-                padding: 20px 0 !important;
-                color: var(--text-white) !important;
-            }
-
-            .hamburger span {
-                background-color: var(--text-white) !important;
+                font-size: 20px;
+                padding: 20px 0;
+                color: var(--text-white);
             }
 
             .sticky-contact-footer {
-                display: flex !important;
+                display: flex;
             }
 
             .utility-nav { display: none; }
             
+            .page-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 40px 0;
+            }
+
+            .sidebar { display: none; }
+
             .infra-grid {
-                grid-template-columns: 1fr !important;
+                grid-template-columns: 1fr;
                 gap: 20px;
             }
 
+            .hero-internal {
+                height: 300px;
+            }
+
             .hero-internal h1 {
-                font-size: 36px !important;
+                font-size: 32px;
             }
 
             .footer-grid { grid-template-columns: 1fr; }
@@ -670,34 +703,6 @@
 
         @media (max-width: 480px) {
             .logo span { display: none; }
-        }
-
-        .content-section {
-            margin-bottom: 60px;
-        }
-
-        .content-section p {
-            margin-bottom: 20px;
-            font-size: 18px;
-            color: var(--text-secondary);
-        }
-
-        .infra-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .infra-card {
-            background: var(--bg-secondary);
-            padding: 30px;
-            border-bottom: 4px solid var(--accent-red);
-        }
-
-        .infra-card h3 {
-            margin-bottom: 15px;
-            color: var(--accent-red);
         }
     </style>
 </head>
