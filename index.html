@@ -959,11 +959,67 @@
 
         @media (max-width: 991px) {
             .nav-links {
-                display: none;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background-color: var(--bg-primary);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                transition: var(--transition-slow);
+                z-index: 2000;
+                box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
+                padding: 40px;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                font-size: 20px;
+                color: var(--text-primary);
             }
 
             .hamburger {
                 display: flex;
+                z-index: 2001;
+                position: relative;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+                background-color: var(--accent-red);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+                background-color: var(--accent-red);
+            }
+
+            .nav-curved-container {
+                padding: 15px 25px !important;
+                border-bottom-left-radius: 40px !important;
+            }
+
+            .header-container {
+                padding: 0 20px;
+            }
+
+            .logo {
+                font-size: 20px;
+                padding: 20px 0;
+            }
+
+            .utility-nav {
+                display: none;
             }
 
             .about-grid,
@@ -1017,10 +1073,13 @@
 
             .hero-btns {
                 flex-direction: column;
+                align-items: center;
+                width: 100%;
             }
 
-            .utility-bar {
-                display: none;
+            .btn-hero {
+                width: 100%;
+                text-align: center;
             }
 
             .footer-grid {
@@ -1038,6 +1097,10 @@
             .founder-img {
                 width: 250px;
                 height: 250px;
+            }
+            
+            .industries-grid, .exhibition-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -1519,6 +1582,23 @@
             }
         });
 
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
         // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1527,9 +1607,10 @@
                 if (target) {
                     const headerOffset = 90;
                     const elementPosition = target.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-                    if (window.innerWidth <= 991) navLinks.style.display = 'none';
+                    if (elementPosition) {
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+                    }
                 }
             });
         });
