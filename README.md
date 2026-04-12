@@ -9,6 +9,12 @@ A premium, professional multi-page website for **Apurvi Industries**, a leading 
 - **Comprehensive Structure**: Includes Home, Company Profile, Products, Industries, Leadership, News, Careers, and Downloads.
 - **Interactive Elements**: Sticky navigation, smooth scroll behavior, and professional inquiry forms.
 
+## CMS & WordPress Ready
+The architecture of this project is specially designed for seamless integration into CMS platforms like **WordPress**. 
+- **Modular Components**: The self-contained HTML/CSS structure makes it easy to convert pages into custom WordPress templates.
+- **Clean Logic**: No complex external dependencies mean straightforward migration to PHP-based themes.
+- **Flexible Styling**: All design tokens (colors, typography) are easily accessible for global theme customization.
+
 ## Technology Stack
 - **HTML5**: Semantic structure for SEO.
 - **CSS3**: Inlined shared design system with variables and responsive media queries.
