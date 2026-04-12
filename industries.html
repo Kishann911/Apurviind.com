@@ -8,7 +8,7 @@
     <meta name="description" content="Discover the various industries served by Apurvi Industries with high-quality stainless steel solutions.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&amp;display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-primary: #FFFFFF;
@@ -540,104 +540,141 @@
             opacity: 0.5;
         }
 
-        /* --- Responsive --- */
+        .sticky-contact-footer {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--accent-red);
+            z-index: 2002;
+            padding: 15px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 14px;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+            text-decoration: none;
+        }
+
+        .sticky-contact-footer svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* --- Perfect Mobile Fixes --- */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+
         @media (max-width: 991px) {
+            .container {
+                padding: 0 25px !important;
+                width: 100% !important;
+            }
+
             .nav-links {
                 position: fixed;
                 top: 0;
                 right: -100%;
-                width: 70%;
+                width: 80%;
                 height: 100vh;
                 background-color: var(--bg-primary);
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                gap: 30px;
+                gap: 40px;
                 transition: var(--transition-slow);
                 z-index: 2000;
-                box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
-                padding: 40px;
+                box-shadow: -20px 0 50px rgba(0, 0, 0, 0.2);
+                padding: 60px 40px;
+                visibility: hidden;
+                opacity: 0;
             }
 
             .nav-links.active {
                 right: 0;
+                visibility: visible;
+                opacity: 1;
             }
 
             .nav-links a {
-                font-size: 20px;
+                font-size: 24px;
                 color: var(--text-primary) !important;
+                font-weight: 800;
             }
 
             .hamburger {
-                display: flex;
+                display: flex !important;
                 z-index: 2001;
                 position: relative;
+                width: 30px;
+                height: 20px;
+                flex-direction: column;
+                justify-content: space-between;
+                cursor: pointer;
             }
 
-            .hamburger.active span:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-                background-color: var(--accent-red);
+            .hamburger span {
+                width: 100%;
+                height: 3px;
+                background-color: var(--bg-dark);
+                transition: all 0.3s ease;
             }
 
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .hamburger.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(5px, -5px);
-                background-color: var(--accent-red);
-            }
+            .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); background-color: var(--accent-red); }
+            .hamburger.active span:nth-child(2) { opacity: 0; }
+            .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background-color: var(--accent-red); }
 
             .nav-curved-container {
                 padding: 15px 25px !important;
-                border-bottom-left-radius: 40px !important;
-            }
-
-            .header-container {
-                padding: 0 20px;
+                border-bottom-left-radius: 0 !important;
+                background-color: transparent !important;
+                backdrop-filter: none !important;
+                margin-top: 0 !important;
+                box-shadow: none !important;
             }
 
             .logo {
-                font-size: 20px;
-                padding: 20px 0;
+                font-size: 20px !important;
+                padding: 20px 0 !important;
+                color: var(--text-white) !important;
             }
 
-            .utility-nav {
-                display: none;
+            .hamburger span {
+                background-color: var(--text-white) !important;
             }
 
-            .page-container {
-                grid-template-columns: 1fr;
+            .sticky-contact-footer {
+                display: flex !important;
             }
 
-            .sidebar {
-                display: none;
-            }
-        }
-
-        @media (max-width: 767px) {
-            .hero-internal h1 {
-                font-size: 32px;
-            }
-
+            .utility-nav { display: none; }
+            
             .industries-main-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr !important;
                 margin-top: 0;
             }
 
             .industry-block {
-                height: 300px;
+                height: 350px;
                 padding: 30px;
             }
 
-            .industry-block p {
-                opacity: 1;
-                transform: none;
+            .hero-internal h1 {
+                font-size: 36px !important;
             }
 
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .logo span { display: none; }
         }
 
         .industries-main-grid {
@@ -845,8 +882,16 @@
         </div>
     </div>
 
+    <!-- Sticky Mobile Footer -->
+    <a href="contact.html" class="sticky-contact-footer">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/>
+        </svg>
+        Contact
+    </a>
+
     <!-- Footer -->
-    <footer>
+    <footer style="padding-bottom: 80px;">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
@@ -894,29 +939,46 @@
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.querySelector('.nav-links');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
-        // Close menu on link click
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-
+        // Sticky Header
         window.addEventListener('scroll', () => {
             const header = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                header.classList.add('sticky');
-            } else {
-                header.classList.remove('sticky');
+            if (header) {
+                if (window.scrollY > 50) {
+                    header.classList.add('sticky');
+                } else {
+                    header.classList.remove('sticky');
+                }
+            }
+        });
+
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    hamburger.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && e.target !== hamburger) {
+                        hamburger.classList.remove('active');
+                        navLinks.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburger.classList.remove('active');
+                        navLinks.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    });
+                });
             }
         });
     </script>

@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&amp;display=swap"
         rel="stylesheet">
 
     <style>
@@ -300,6 +300,48 @@
             overflow: hidden;
             background: #000;
             text-align: right;
+        }
+
+        .sticky-contact-footer {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--accent-red);
+            z-index: 2002;
+            padding: 15px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 14px;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+            text-decoration: none;
+        }
+
+        .sticky-contact-footer svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .bottom-yellow-bar {
+            height: 8px;
+            background-color: var(--accent-red);
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: none;
+            z-index: 10;
+        }
+
+        @media (max-width: 991px) {
+            .bottom-yellow-bar {
+                display: block;
+            }
         }
 
         .hero .container {
@@ -774,9 +816,9 @@
             background-color: var(--bg-primary);
             padding: 80px 60px;
             box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.3);
-            margin-top: 40px;
             border-top-left-radius: 8px;
             border-top-right-radius: 8px;
+            height: 100%;
         }
 
         .form-grid {
@@ -957,151 +999,160 @@
             }
         }
 
+        /* --- Perfect Mobile Fixes --- */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+
         @media (max-width: 991px) {
+            .container {
+                padding: 0 25px;
+                width: 100%;
+                max-width: 100%;
+            }
+
             .nav-links {
                 position: fixed;
                 top: 0;
                 right: -100%;
-                width: 70%;
+                width: 80%;
                 height: 100vh;
                 background-color: var(--bg-primary);
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                gap: 30px;
+                gap: 40px;
                 transition: var(--transition-slow);
                 z-index: 2000;
-                box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
-                padding: 40px;
+                box-shadow: -20px 0 50px rgba(0, 0, 0, 0.2);
+                padding: 60px 40px;
+                visibility: hidden;
+                opacity: 0;
             }
 
             .nav-links.active {
                 right: 0;
+                visibility: visible;
+                opacity: 1;
             }
 
             .nav-links a {
-                font-size: 20px;
+                font-size: 24px;
                 color: var(--text-primary);
+                font-weight: 800;
+                text-decoration: none;
             }
 
             .hamburger {
                 display: flex;
                 z-index: 2001;
                 position: relative;
+                width: 30px;
+                height: 20px;
+                flex-direction: column;
+                justify-content: space-between;
+                cursor: pointer;
             }
 
-            .hamburger.active span:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-                background-color: var(--accent-red);
-            }
-
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .hamburger.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(5px, -5px);
-                background-color: var(--accent-red);
+            .hamburger span {
+                width: 100%;
+                height: 3px;
+                background-color: var(--text-white);
+                transition: all 0.3s ease;
             }
 
             .nav-curved-container {
-                padding: 15px 25px !important;
-                border-bottom-left-radius: 40px !important;
-            }
-
-            .header-container {
-                padding: 0 20px;
+                padding: 15px 25px;
+                border-bottom-left-radius: 0;
+                background-color: transparent;
+                backdrop-filter: none;
+                margin-top: 0;
+                box-shadow: none;
             }
 
             .logo {
-                font-size: 20px;
+                font-size: 22px;
                 padding: 20px 0;
+                color: var(--text-white);
             }
 
-            .utility-nav {
-                display: none;
+            .hero {
+                justify-content: center;
+                padding-top: 80px;
+                text-align: right;
             }
 
-            .about-grid,
-            .founder-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 50px;
+            .hero-content {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                width: 100%;
             }
 
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .industries-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .exhibition-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .contact-info {
-                padding-right: 0;
-            }
-
-            .contact-form-wrapper {
-                margin-top: 0;
-            }
-        }
-
-        @media (max-width: 767px) {
             .hero h1 {
-                font-size: 40px;
+                font-size: clamp(60px, 18vw, 90px);
+                line-height: 0.9;
+                font-weight: 900;
+                margin-bottom: 10px;
+                text-align: right;
+                width: 100%;
+                text-transform: uppercase;
             }
 
-            .h2 {
-                font-size: 32px;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
+            .hero-subline {
+                font-size: 16px;
+                letter-spacing: 1px;
+                margin-bottom: 40px;
+                text-align: right;
+                width: 100%;
+                color: var(--text-white);
+                font-weight: 700;
+                text-transform: uppercase;
             }
 
             .hero-btns {
                 flex-direction: column;
-                align-items: center;
-                width: 100%;
+                width: auto;
+                gap: 12px;
+                align-items: flex-end;
             }
 
             .btn-hero {
-                width: 100%;
-                text-align: center;
+                width: auto;
+                min-width: 180px;
+                padding: 12px 30px;
+                border-radius: 25px;
+                background-color: var(--accent-red);
+                color: #fff;
+                font-size: 14px;
+                font-weight: 700;
+                border: none;
             }
 
-            .footer-grid {
-                grid-template-columns: 1fr;
+            .btn-hero.outline {
+                background-color: transparent;
+                border: 2px solid var(--accent-red);
+                color: #fff;
             }
 
-            .form-grid {
-                grid-template-columns: 1fr;
+            .sticky-contact-footer {
+                display: flex;
             }
 
-            .form-group.full {
-                grid-column: auto;
-            }
-
-            .founder-img {
-                width: 250px;
-                height: 250px;
-            }
+            .stats-grid { grid-template-columns: 1fr; gap: 30px; }
+            .about-grid, .founder-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+            .products-grid, .industries-grid, .exhibition-grid { grid-template-columns: 1fr; }
             
-            .industries-grid, .exhibition-grid {
-                grid-template-columns: 1fr;
-            }
+            .section-padding { padding: 60px 0; }
+            .h2 { font-size: 28px; margin-bottom: 20px; }
+        }
+
+        @media (max-width: 480px) {
+            .logo span { display: none; }
+            .header-container { padding: 0 15px; }
+            .nav-curved-container { padding: 8px 15px !important; }
         }
     </style>
 </head>
@@ -1113,7 +1164,7 @@
     <!-- Main Navigation -->
     <header class="header-main" id="navbar">
         <div class="header-container">
-            <a href="#" class="logo">APURVI <span>INDUSTRIES</span></a>
+            <a href="index.html" class="logo">APURVI <span>INDUSTRIES</span></a>
             <div class="nav-curved-container">
                 <div class="utility-nav">
                     <a href="career.html">Career</a>
@@ -1162,7 +1213,16 @@
                 <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
             </svg>
         </div>
+        <div class="bottom-yellow-bar"></div>
     </section>
+
+    <!-- Sticky Mobile Footer -->
+    <a href="contact.html" class="sticky-contact-footer">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/>
+        </svg>
+        Contact
+    </a>
 
     <!-- About Section -->
     <section class="section-padding" id="about">
@@ -1198,7 +1258,7 @@
                             Our Goal: Trusted Supply Chain
                         </div>
                     </div>
-                    <a href="#contact" class="btn btn-primary">Know More</a>
+                    <a href="contact.html" class="btn btn-primary">Know More</a>
                 </div>
                 <div class="about-image">
                     <img src="https://apurviind.com/wp-content/uploads/2024/02/WhatsApp-Image-2024-02-02-at-14.11.47.jpeg" alt="Apurvi Industries Plant" style="width: 100%; height: 100%; object-fit: cover;">
@@ -1244,49 +1304,49 @@
             <div class="products-grid">
                 <!-- Product cards (1-10) -->
                 <div class="product-card">
-                    <div class="product-img-placeholder"></div>
+                    <img src="stainless_steel_tubes_collage_1776032804098.png" alt="Nech Ring Stage Pipe" style="height: 180px; width: 100%; object-fit: cover; object-position: top; margin-bottom: 30px;">
                     <h3 class="product-name">Nech Ring Stage Pipe</h3>
                 </div>
                 <div class="product-card">
-                    <div class="product-img-placeholder"></div>
+                    <img src="stainless_steel_tubes_collage_1776032804098.png" alt="6mm Tube for NRV" style="height: 180px; width: 100%; object-fit: cover; object-position: center; margin-bottom: 30px;">
                     <h3 class="product-name">6mm Tube for NRV</h3>
                 </div>
                 <div class="product-card">
-                    <div class="product-img-placeholder"></div>
+                    <img src="stainless_steel_tubes_collage_1776032804098.png" alt="Grooving Embossed Side" style="height: 180px; width: 100%; object-fit: cover; object-position: bottom; margin-bottom: 30px;">
                     <h3 class="product-name">Grooving Embossed Side</h3>
                 </div>
                 <div class="product-card">
-                    <div class="product-img-placeholder"></div>
+                    <img src="stainless_steel_tubes_collage_1776032804098.png" alt="Pressure Pump Sleeve" style="height: 180px; width: 100%; object-fit: cover; object-position: left; margin-bottom: 30px;">
                     <h3 class="product-name">Pressure Pump Sleeve</h3>
                 </div>
                 <div class="product-card">
-                    <div class="product-img-placeholder"></div>
+                    <img src="stainless_steel_tubes_collage_1776032804098.png" alt="Motor Tubes" style="height: 180px; width: 100%; object-fit: cover; object-position: right; margin-bottom: 30px;">
                     <h3 class="product-name">Motor Tubes</h3>
                 </div>
                 <div class="product-card">
-                    <div class="product-img-placeholder"></div>
+                    <img src="stainless_steel_tubes_collage_1776032804098.png" alt="OD & ID Spot Welding Ring" style="height: 180px; width: 100%; object-fit: cover; margin-bottom: 30px;">
                     <h3 class="product-name">OD & ID Spot Welding Ring</h3>
                 </div>
                 <div class="product-card">
-                    <div class="product-img-placeholder"></div>
+                    <img src="stainless_steel_tubes_collage_1776032804098.png" alt="Higher HP Pump Tube" style="height: 180px; width: 100%; object-fit: cover; margin-bottom: 30px;">
                     <h3 class="product-name">Higher HP Pump Tube</h3>
                 </div>
                 <div class="product-card">
-                    <div class="product-img-placeholder"></div>
+                    <img src="stainless_steel_tubes_collage_1776032804098.png" alt="Manufacturing Long Tube" style="height: 180px; width: 100%; object-fit: cover; margin-bottom: 30px;">
                     <h3 class="product-name">Manufacturing Long Tube</h3>
                 </div>
                 <div class="product-card">
-                    <div class="product-img-placeholder"></div>
+                    <img src="stainless_steel_tubes_collage_1776032804098.png" alt="Aluminium Tubing" style="height: 180px; width: 100%; object-fit: cover; margin-bottom: 30px;">
                     <h3 class="product-name">Aluminium Tubing</h3>
                 </div>
                 <div class="product-card">
-                    <div class="product-img-placeholder"></div>
+                    <img src="stainless_steel_tubes_collage_1776032804098.png" alt="Cardboard Packaging Case" style="height: 180px; width: 100%; object-fit: cover; margin-bottom: 30px;">
                     <h3 class="product-name">Cardboard Packaging Case</h3>
                 </div>
             </div>
 
             <div class="products-footer">
-                <a href="#contact" class="btn btn-primary">View All Products</a>
+                <a href="products.html" class="btn btn-primary">View All Products</a>
             </div>
         </div>
     </section>
@@ -1350,10 +1410,10 @@
                         Our focus remains on quality, integrity, and building long-term relationships with our clients.
                     </p>
                     <div class="founder-links">
-                        <a href="#" class="founder-link">Infrastructure</a>
-                        <a href="#" class="founder-link">Download Brochure</a>
-                        <a href="#" class="founder-link">Photo Gallery</a>
-                        <a href="#contact" class="founder-link">Inquiry Now</a>
+                        <a href="company.html" class="founder-link">Infrastructure</a>
+                        <a href="downloads.html" class="founder-link">Download Brochure</a>
+                        <a href="products.html" class="founder-link">Photo Gallery</a>
+                        <a href="contact.html" class="founder-link">Inquiry Now</a>
                     </div>
                 </div>
             </div>
@@ -1447,20 +1507,20 @@
                 <div class="footer-col">
                     <h4>Company</h4>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Company</a></li>
-                        <li><a href="#products">Products Range</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="company.html">About Company</a></li>
+                        <li><a href="products.html">Products Range</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h4>Products</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Nech Ring Stage Pipe</a></li>
-                        <li><a href="#">Motor Tubes</a></li>
-                        <li><a href="#">Pump Tube</a></li>
-                        <li><a href="#">Aluminium Tubing</a></li>
+                        <li><a href="products.html">Nech Ring Stage Pipe</a></li>
+                        <li><a href="products.html">Motor Tubes</a></li>
+                        <li><a href="products.html">Pump Tube</a></li>
+                        <li><a href="products.html">Aluminium Tubing</a></li>
                     </ul>
                 </div>
 
@@ -1484,44 +1544,61 @@
     </footer>
 
     <script>
-        // Sticky Navbar
-        document.addEventListener('scroll', () => {
-            const header = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                header.classList.add('sticky');
-            } else {
-                header.classList.remove('sticky');
+        // Sticky Navbar & Header
+        const header = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (header) {
+                if (window.scrollY > 50) {
+                    header.classList.add('sticky');
+                } else {
+                    header.classList.remove('sticky');
+                }
             }
         });
 
         // Mobile Menu Toggle
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.querySelector('.nav-links');
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.querySelector('.nav-links');
 
-        hamburger.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.backgroundColor = '#fff';
-                navLinks.style.padding = '20px';
-                navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    hamburger.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && e.target !== hamburger) {
+                        hamburger.classList.remove('active');
+                        navLinks.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburger.classList.remove('active');
+                        navLinks.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    });
+                });
             }
         });
 
         // Stats Counter Animation
         const stats = document.querySelectorAll('.stat-number');
-        const observerOptions = { threshold: 0.5 };
+        const observerOptions = { threshold: 0.1 };
 
         const counterObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const target = parseInt(entry.target.getAttribute('data-target'));
-                    animateValue(entry.target, 0, target, 2000);
-                    observer.unobserve(entry.target);
+                    if (!isNaN(target)) {
+                        animateValue(entry.target, 0, target, 2000);
+                        observer.unobserve(entry.target);
+                    }
                 }
             });
         }, observerOptions);
@@ -1541,76 +1618,65 @@
 
         // Form Validation
         const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            let isValid = true;
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                let isValid = true;
+                const requiredFields = ['name', 'email', 'phone', 'message'];
 
-            const requiredFields = ['name', 'email', 'phone', 'message'];
+                requiredFields.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (!el) return;
+                    const error = el.nextElementSibling;
 
-            requiredFields.forEach(id => {
-                const el = document.getElementById(id);
-                const error = el.nextElementSibling;
-
-                if (!el.value.trim()) {
-                    el.classList.add('input-error');
-                    error.style.display = 'block';
-                    isValid = false;
-                } else {
-                    el.classList.remove('input-error');
-                    error.style.display = 'none';
-                    if (id === 'email') {
-                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                        if (!emailRegex.test(el.value)) {
-                            el.classList.add('input-error');
-                            error.textContent = 'Please enter a valid email';
-                            error.style.display = 'block';
-                            isValid = false;
+                    if (!el.value.trim()) {
+                        el.classList.add('input-error');
+                        if (error) error.style.display = 'block';
+                        isValid = false;
+                    } else {
+                        el.classList.remove('input-error');
+                        if (error) error.style.display = 'none';
+                        if (id === 'email') {
+                            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                            if (!emailRegex.test(el.value)) {
+                                el.classList.add('input-error');
+                                if (error) {
+                                    error.textContent = 'Please enter a valid email';
+                                    error.style.display = 'block';
+                                }
+                                isValid = false;
+                            }
                         }
+                    }
+                });
+
+                if (isValid) {
+                    const btn = contactForm.querySelector('button');
+                    if (btn) {
+                        btn.textContent = 'Message Sent!';
+                        btn.style.backgroundColor = '#28a745';
+                        contactForm.reset();
+                        setTimeout(() => {
+                            btn.textContent = 'Send Message';
+                            btn.style.backgroundColor = 'var(--accent-red)';
+                        }, 3000);
                     }
                 }
             });
-
-            if (isValid) {
-                const btn = contactForm.querySelector('button');
-                btn.textContent = 'Message Sent!';
-                btn.style.backgroundColor = '#28a745';
-                contactForm.reset();
-                setTimeout(() => {
-                    btn.textContent = 'Send Message';
-                    btn.style.backgroundColor = 'var(--accent-red)';
-                }, 3000);
-            }
-        });
-
-        // Mobile Menu Toggle
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.querySelector('.nav-links');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
-        // Close menu on link click
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
+        }
 
         // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (!href || href === '#') return;
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const target = document.querySelector(href);
                 if (target) {
                     const headerOffset = 90;
                     const elementPosition = target.getBoundingClientRect().top;
-                    if (elementPosition) {
-                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-                    }
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
                 }
             });
         });
