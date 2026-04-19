@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Career | Apurvi Industries</title>
-    <meta name="description" content="Explore career opportunities at Apurvi Industries. Join our team of experts in the stainless steel industry.">
+    <title>Blog | Apurvi Industries</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="description" content="Insights, updates, and expert opinions on the stainless steel industry from Apurvi Industries.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&amp;display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="favicon.png">
     <style>
         :root {
             --bg-primary: #FFFFFF;
@@ -71,14 +71,6 @@
             display: inline-block;
         }
 
-        /* --- Typography --- */
-        h1,
-        h2,
-        h3,
-        h4 {
-            line-height: 1.2;
-        }
-
         .section-label {
             font-size: 11px;
             text-transform: uppercase;
@@ -95,15 +87,10 @@
             margin-bottom: 30px;
         }
 
-        /* --- Layout --- */
         .container {
             max-width: var(--container-max);
             margin: 0 auto;
             padding: 0 20px;
-        }
-
-        .section-padding {
-            padding: 80px 0;
         }
 
         /* --- Global Navbar --- */
@@ -216,22 +203,9 @@
             position: relative;
         }
 
-        .nav-links a:hover {
+        .nav-links a:hover,
+        .nav-links a.active {
             color: var(--accent-red);
-        }
-
-        .lang-toggle {
-            width: 32px;
-            height: 32px;
-            border: 2px solid #ddd;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            font-weight: 700;
-            margin-left: 20px;
-            color: var(--text-secondary);
         }
 
         /* --- Internal Hero --- */
@@ -278,87 +252,215 @@
             opacity: 0.7;
         }
 
-        /* --- Page Layout with Sidebar --- */
-        .page-container {
+        /* --- Blog Layout --- */
+        .blog-container {
             display: grid;
-            grid-template-columns: 300px 1fr;
+            grid-template-columns: 1fr 350px;
             gap: 60px;
             padding: 80px 0;
         }
 
-        .sidebar {
-            position: sticky;
-            top: 120px;
-            height: fit-content;
-        }
-
-        .sidebar-nav ul li a {
-            display: block;
-            padding: 15px 20px;
-            background-color: var(--bg-secondary);
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 13px;
-            letter-spacing: 1px;
-            border-left: 4px solid transparent;
-        }
-
-        .sidebar-nav ul li a:hover {
-            background-color: var(--bg-primary);
-            border-left-color: var(--accent-red);
-            color: var(--accent-red);
-        }
-
-        /* --- Career Specific --- */
-        .career-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-
-        .job-card {
-            padding: 40px;
-            background: #fff;
-            border: 1px solid #eee;
-            transition: var(--transition-fast);
+        .featured-post {
+            margin-bottom: 60px;
             position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
-        .job-card:hover {
-            border-color: var(--accent-red);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        .featured-img {
+            height: 500px;
+            background-color: #eee;
+            background-size: cover;
+            background-position: center;
+            transition: var(--transition-slow);
         }
 
-        .job-card h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
+        .featured-post:hover .featured-img {
+            transform: scale(1.05);
         }
 
-        .job-meta {
-            display: flex;
-            gap: 20px;
-            font-size: 13px;
+        .featured-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 60px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+            color: var(--text-white);
+            z-index: 2;
+        }
+
+        .post-tag {
+            background-color: var(--accent-red);
+            padding: 4px 12px;
+            font-size: 11px;
             text-transform: uppercase;
             font-weight: 700;
             letter-spacing: 1px;
-            color: var(--accent-red);
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .featured-content h2 {
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.1;
             margin-bottom: 20px;
         }
 
-        .job-desc {
-            font-size: 16px;
-            color: var(--text-secondary);
-            margin-bottom: 30px;
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
         }
 
-        .btn-primary {
-            background-color: var(--accent-red);
-            color: var(--text-white);
-            padding: 15px 30px;
+        .post-card {
+            background: #fff;
+            border: 1px solid #eee;
+            transition: var(--transition-fast);
+        }
+
+        .post-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-red);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        }
+
+        .post-img {
+            height: 240px;
+            background-color: #f8f8f8;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .post-body {
+            padding: 30px;
+        }
+
+        .post-date {
+            font-size: 12px;
+            color: var(--accent-red);
             font-weight: 700;
             text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .post-body h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .post-excerpt {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
             letter-spacing: 1px;
+            color: var(--accent-red);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .read-more::after {
+            content: '→';
+            transition: var(--transition-fast);
+        }
+
+        .read-more:hover::after {
+            transform: translateX(5px);
+        }
+
+        /* --- Sidebar --- */
+        .sidebar-widget {
+            margin-bottom: 60px;
+        }
+
+        .widget-title {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .widget-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent-red);
+        }
+
+        .category-list li {
+            margin-bottom: 12px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 12px;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
             font-size: 14px;
+            font-weight: 600;
+        }
+
+        .category-list a span {
+            opacity: 0.5;
+            font-weight: 400;
+        }
+
+        .category-list a:hover {
+            color: var(--accent-red);
+        }
+
+        .newsletter-box {
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .newsletter-box h4 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-box p {
+            font-size: 14px;
+            opacity: 0.7;
+            margin-bottom: 25px;
+        }
+
+        .newsletter-box input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: none;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            outline: none;
+        }
+
+        .newsletter-box button {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--accent-red);
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
         }
 
         /* --- Footer --- */
@@ -375,14 +477,9 @@
             margin-bottom: 80px;
         }
 
-        .footer-logo {
-            font-size: 28px;
-            font-weight: 800;
+        .footer-logo img {
+            height: 60px;
             margin-bottom: 25px;
-        }
-
-        .footer-logo span {
-            color: var(--accent-red);
         }
 
         .footer-col h4 {
@@ -397,6 +494,8 @@
             font-size: 13px;
             font-weight: 300;
             opacity: 0.6;
+            margin-bottom: 10px;
+            display: block;
         }
 
         .footer-links a:hover {
@@ -413,138 +512,15 @@
             opacity: 0.5;
         }
 
-        .sticky-contact-footer {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: var(--accent-red);
-            z-index: 2002;
-            padding: 15px;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-            color: #fff;
-            text-transform: uppercase;
-            font-size: 14px;
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
-            text-decoration: none;
-        }
-
-        .sticky-contact-footer svg {
-            width: 24px;
-            height: 24px;
-        }
-
-        /* --- Perfect Mobile Fixes --- */
-        html, body {
-            overflow-x: hidden;
-            width: 100%;
-            position: relative;
-        }
-
+        /* --- Mobile --- */
         @media (max-width: 991px) {
-            .container {
-                padding: 0 25px !important;
-                width: 100% !important;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 80%;
-                height: 100vh;
-                background-color: var(--bg-primary);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 40px;
-                transition: var(--transition-slow);
-                z-index: 2000;
-                box-shadow: -20px 0 50px rgba(0, 0, 0, 0.2);
-                padding: 60px 40px;
-                visibility: hidden;
-                opacity: 0;
-            }
-
-            .nav-links.active {
-                right: 0;
-                visibility: visible;
-                opacity: 1;
-            }
-
-            .nav-links a {
-                font-size: 24px;
-                color: var(--text-primary) !important;
-                font-weight: 800;
-            }
-
-            .hamburger {
-                display: flex !important;
-                z-index: 2001;
-                position: relative;
-                width: 30px;
-                height: 20px;
-                flex-direction: column;
-                justify-content: space-between;
-                cursor: pointer;
-            }
-
-            .hamburger span {
-                width: 100%;
-                height: 3px;
-                background-color: var(--bg-dark);
-                transition: all 0.3s ease;
-            }
-
-            .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); background-color: var(--accent-red); }
-            .hamburger.active span:nth-child(2) { opacity: 0; }
-            .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background-color: var(--accent-red); }
-
-            .nav-curved-container {
-                padding: 15px 25px !important;
-                border-bottom-left-radius: 0 !important;
-                background-color: transparent !important;
-                backdrop-filter: none !important;
-                margin-top: 0 !important;
-                box-shadow: none !important;
-            }
-
-            .logo {
-                font-size: 20px !important;
-                padding: 20px 0 !important;
-                color: var(--text-white) !important;
-                margin-left: 5px;
-            }
-
-            .hamburger span {
-                background-color: var(--text-white) !important;
-            }
-
-            .sticky-contact-footer {
-                display: flex !important;
-            }
-
-            .utility-nav { display: none; }
-            
-            .hero-internal h1 {
-                font-size: 32px !important;
-            }
-
-            .page-container {
-                grid-template-columns: 1fr !important;
-            }
-
-            .sidebar { display: none; }
-
-            .footer-grid { grid-template-columns: 1fr; }
-        }
-
-        @media (max-width: 480px) {
-            .logo span { display: none; }
+            .blog-container { grid-template-columns: 1fr; }
+            .blog-grid { grid-template-columns: 1fr; }
+            .featured-img { height: 350px; }
+            .featured-content { padding: 30px; }
+            .featured-content h2 { font-size: 28px; }
+            .header-container { padding: 0 25px; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
@@ -570,7 +546,7 @@
                         <li><a href="products.html">Products</a></li>
                         <li><a href="industries.html">Industries</a></li>
                         <li><a href="leadership.html">Leadership</a></li>
-                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="blog.html" class="active">Blog</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
@@ -579,66 +555,102 @@
     </header>
 
     <section class="hero-internal">
-        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=2000" alt="Career" class="hero-bg-img" style="opacity: 0.3;">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000" alt="Blog" class="hero-bg-img" style="opacity: 0.3;">
         <div class="container">
             <div class="breadcrumbs">
-                <a href="index.html">Home</a> <span>/</span> Career
+                <a href="index.html">Home</a> <span>/</span> Blog
             </div>
-            <h1>Join Our Team</h1>
+            <h1>Insights & Updates</h1>
         </div>
     </section>
 
     <div class="container">
-        <div class="page-container">
-            <aside class="sidebar">
-                <nav class="sidebar-nav">
-                    <ul>
-                        <li><a href="#" class="active">Current Openings</a></li>
-                        <li><a href="company.html">Our Culture</a></li>
-                        <li><a href="contact.html">Send CV</a></li>
-                    </ul>
-                </nav>
-            </aside>
+        <div class="blog-container">
+            <main class="blog-main">
+                <article class="featured-post">
+                    <div class="featured-img" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200');"></div>
+                    <div class="featured-content">
+                        <span class="post-tag">Technical</span>
+                        <h2>Advancements in Stainless Steel Tube Manufacturing</h2>
+                        <p style="opacity: 0.8; margin-bottom: 25px;">Exploring the latest technologies in laser welding and precision extrusion that are setting new benchmarks for durability and performance in the piping industry.</p>
+                        <a href="#" class="btn" style="background-color: var(--accent-red); color: #fff; padding: 12px 30px; font-weight: 700;">Continue Reading</a>
+                    </div>
+                </article>
 
-            <main class="main-content">
-                <section class="career-grid">
-                    <div class="job-card">
-                        <span class="job-meta">Rajpur Plant | Full-time</span>
-                        <h3>Production Supervisor</h3>
-                        <p class="job-desc">We are looking for an experienced Production Supervisor to oversee our stainless steel tube manufacturing operations at our Rajpur facility. Knowledge of ISO standards and safety protocols is essential.</p>
-                        <a href="contact.html" class="btn btn-primary">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <span class="job-meta">Rajpur Plant | Full-time</span>
-                        <h3>Quality Control Engineer</h3>
-                        <p class="job-desc">Ensure our products meet international standards. Experience in metallurgical testing and precision measurement is required. Candidates with experience in SS piping preferred.</p>
-                        <a href="contact.html" class="btn btn-primary">Apply Now</a>
-                    </div>
-                    <div class="job-card">
-                        <span class="job-meta">Ahmedabad Office | Part-time / Remote</span>
-                        <h3>Sales Coordinator</h3>
-                        <p class="job-desc">Help us expand our market reach. Managing client inquiries, preparing quotations, and coordinating with the production team.</p>
-                        <a href="contact.html" class="btn btn-primary">Apply Now</a>
-                    </div>
-                </section>
+                <div class="blog-grid">
+                    <article class="post-card">
+                        <div class="post-img" style="background-image: url('https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&q=80&w=600');"></div>
+                        <div class="post-body">
+                            <span class="post-date">April 15, 2024</span>
+                            <h3>Optimizing Your Supply Chain</h3>
+                            <p class="post-excerpt">Learn how streamlined logistics and inventory management can reduce lead times for critical industrial components.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
 
-                <section style="margin-top: 80px;">
-                    <span class="section-label">General Application</span>
-                    <h2 class="h2">Don't see a fit?</h2>
-                    <p style="font-size: 18px; color: var(--text-secondary); margin-bottom: 30px;">We are always looking for talented individuals to join our growing team. If you think you'd be a good fit for Apurvi Industries, please send your CV to our HR department.</p>
-                    <a href="mailto:hr@apurviind.com" class="btn btn-primary" style="background: transparent; color: var(--accent-red); border: 2px solid var(--accent-red);">Email your CV</a>
-                </section>
+                    <article class="post-card">
+                        <div class="post-img" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35682fd9322d?auto=format&fit=crop&q=80&w=600');"></div>
+                        <div class="post-body">
+                            <span class="post-date">March 28, 2024</span>
+                            <h3>Sustainability in Metallurgy</h3>
+                            <p class="post-excerpt">How Apurvi Industries is implementing green energy solutions in our Rajpur manufacturing facility.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-img" style="background-image: url('https://images.unsplash.com/photo-1534415652243-7063fef0406d?auto=format&fit=crop&q=80&w=600');"></div>
+                        <div class="post-body">
+                            <span class="post-date">March 10, 2024</span>
+                            <h3>Submersible Pump Innovation</h3>
+                            <p class="post-excerpt">New components designed to withstand extreme pressure and corrosive environments in sub-surface operations.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-img" style="background-image: url('https://images.unsplash.com/photo-1454165833762-0100d2846ad6?auto=format&fit=crop&q=80&w=600');"></div>
+                        <div class="post-body">
+                            <span class="post-date">February 22, 2024</span>
+                            <h3>Global Export Outlook</h3>
+                            <p class="post-excerpt">An analysis of the growing demand for Indian-manufactured stainless steel products in international markets.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                </div>
             </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Categories</h3>
+                    <ul class="category-list">
+                        <li><a href="#">Industry Insights <span>(12)</span></a></li>
+                        <li><a href="#">Technical Guides <span>(8)</span></a></li>
+                        <li><a href="#">Company News <span>(5)</span></a></li>
+                        <li><a href="#">Product Updates <span>(7)</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <div class="newsletter-box">
+                        <h4>Stay Informed</h4>
+                        <p>Subscribe to our newsletter for the latest industry insights and company updates.</p>
+                        <input type="email" placeholder="Your Email Address">
+                        <button class="btn">Subscribe Now</button>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Popular Posts</h3>
+                    <ul class="category-list" style="border: none;">
+                        <li style="border: none;"><a href="#" style="font-weight: 500;">Role of SS in Solar Energy Systems</a></li>
+                        <li style="border: none;"><a href="#" style="font-weight: 500;">Maintenance Tips for Industrial Tubes</a></li>
+                        <li style="border: none;"><a href="#" style="font-weight: 500;">Understanding Metallurgy Grades</a></li>
+                    </ul>
+                </div>
+            </aside>
         </div>
     </div>
-
-    <!-- Sticky Mobile Footer -->
-    <a href="contact.html" class="sticky-contact-footer">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/>
-        </svg>
-        Contact
-    </a>
 
     <footer style="padding-bottom: 80px;">
         <div class="container">
@@ -691,7 +703,6 @@
     </footer>
 
     <script>
-        // Sticky Header
         window.addEventListener('scroll', () => {
             const header = document.getElementById('navbar');
             if (header) {
@@ -700,37 +711,6 @@
                 } else {
                     header.classList.remove('sticky');
                 }
-            }
-        });
-
-        // Mobile Menu Toggle
-        document.addEventListener('DOMContentLoaded', () => {
-            const hamburger = document.getElementById('hamburger');
-            const navLinks = document.querySelector('.nav-links');
-
-            if (hamburger && navLinks) {
-                hamburger.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    hamburger.classList.toggle('active');
-                    navLinks.classList.toggle('active');
-                    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
-                });
-
-                document.addEventListener('click', (e) => {
-                    if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && e.target !== hamburger) {
-                        hamburger.classList.remove('active');
-                        navLinks.classList.remove('active');
-                        document.body.style.overflow = 'auto';
-                    }
-                });
-
-                document.querySelectorAll('.nav-links a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        hamburger.classList.remove('active');
-                        navLinks.classList.remove('active');
-                        document.body.style.overflow = 'auto';
-                    });
-                });
             }
         });
     </script>

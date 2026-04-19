@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leadership | Apurvi Industries</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <meta name="description" content="Meet the visionary leadership behind Apurvi Industries.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -174,27 +175,30 @@
             padding: 0 40px;
         }
 
-        .logo {
-            font-size: 28px;
-            font-weight: 900;
-            letter-spacing: -1px;
-            color: var(--text-white);
+                .logo {
             display: flex;
             align-items: center;
-            padding: 30px 0;
-            transition: color 0.4s ease;
+            padding: 15px 0 !important;
+            transition: all 0.4s ease;
         }
 
-        .header-main:hover .logo,
-        .header-main.sticky .logo {
-            color: var(--text-primary);
+        .logo img {
+            height: 70px;
+            width: auto;
+            object-fit: contain;
         }
 
-        .logo span {
-            color: inherit;
-            opacity: 0.8;
-            margin-left: 10px;
-            font-weight: 300;
+        .logo .logo-dark { display: none; }
+        .logo .logo-light { display: block; }
+
+        .header-main:hover .logo .logo-light,
+        .header-main.sticky .logo .logo-light { 
+            display: none; 
+        }
+
+        .header-main:hover .logo .logo-dark,
+        .header-main.sticky .logo .logo-dark { 
+            display: block; 
         }
 
         .nav-curved-container {
@@ -749,7 +753,10 @@
     <!-- Main Navigation -->
     <header class="header-main" id="navbar">
         <div class="header-container">
-            <a href="index.html" class="logo">APURVI <span>INDUSTRIES</span></a>
+                        <a href="index.html" class="logo">
+                <img src="assets/images/logo-white.png" alt="Apurvi Industries Logo" class="logo-light">
+                <img src="assets/images/logo.png" alt="Apurvi Industries Logo" class="logo-dark">
+            </a>
             <div class="nav-curved-container">
                 <div class="utility-nav">
                     <a href="career.html">Career</a>
@@ -832,7 +839,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <div class="footer-logo">APURVI <span>INDUSTRIES</span></div>
+                                        <div class="footer-logo">
+                        <img src="assets/images/logo-white.png" alt="Apurvi Industries Logo">
+                    </div>
                     <p style="opacity: 0.6; font-size: 14px; margin-bottom: 20px;">Precision engineering and manufacturing of stainless steel piping products for global industries.</p>
                 </div>
 
@@ -842,6 +851,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="company.html">About Company</a></li>
                         <li><a href="products.html">Products Range</a></li>
+                        <li><a href="blog.html">Industry Blog</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
