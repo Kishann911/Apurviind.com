@@ -13,13 +13,18 @@
     <style>
         :root {
             --bg-primary: #FFFFFF;
-            --bg-secondary: #f4f4f4;
-            --bg-dark: #1a1a1a;
-            --bg-deep: #111111;
-            --accent-red: #C8102E;
-            --text-primary: #1a1a1a;
-            --text-secondary: #555555;
+            --bg-secondary: #E6E6E6;
+            --bg-dark: #3F3A8A;
+            --bg-deep: #2A2665;
+            --brand-primary: #3F3A8A;
+            --brand-red: #E21F26;
+            --brand-grey-dark: #6D6E71;
+            --brand-grey-light: #E6E6E6;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6D6E71;
             --text-white: #FFFFFF;
+            --accent-red: var(--brand-red);
+            --primary-blue: var(--brand-primary);
             --container-max: 1200px;
             --transition-fast: 0.3s ease;
             --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -71,11 +76,11 @@
             display: inline-block;
         }
 
-        .section-label {
+        .section-label { color: var(--brand-red);
             font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 3px;
-            color: var(--accent-red);
+            color: var(--primary-blue);
             font-weight: 600;
             margin-bottom: 20px;
             display: block;
@@ -180,7 +185,7 @@
         }
 
         .utility-nav a:hover {
-            color: var(--accent-red);
+            color: var(--primary-blue);
         }
 
         .navbar {
@@ -205,7 +210,7 @@
 
         .nav-links a:hover,
         .nav-links a.active {
-            color: var(--accent-red);
+            color: var(--primary-blue);
         }
 
         /* --- Internal Hero --- */
@@ -292,7 +297,7 @@
         }
 
         .post-tag {
-            background-color: var(--accent-red);
+            background-color: var(--primary-blue);
             padding: 4px 12px;
             font-size: 11px;
             text-transform: uppercase;
@@ -323,7 +328,7 @@
 
         .post-card:hover {
             transform: translateY(-10px);
-            border-color: var(--accent-red);
+            border-color: var(--primary-blue);
             box-shadow: 0 15px 35px rgba(0,0,0,0.05);
         }
 
@@ -340,7 +345,7 @@
 
         .post-date {
             font-size: 12px;
-            color: var(--accent-red);
+            color: var(--primary-blue);
             font-weight: 700;
             text-transform: uppercase;
             margin-bottom: 10px;
@@ -364,7 +369,7 @@
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--accent-red);
+            color: var(--primary-blue);
             display: flex;
             align-items: center;
             gap: 10px;
@@ -401,7 +406,7 @@
             left: 0;
             width: 40px;
             height: 3px;
-            background-color: var(--accent-red);
+            background-color: var(--primary-blue);
         }
 
         .category-list li {
@@ -423,7 +428,7 @@
         }
 
         .category-list a:hover {
-            color: var(--accent-red);
+            color: var(--primary-blue);
         }
 
         .newsletter-box {
@@ -457,7 +462,7 @@
         .newsletter-box button {
             width: 100%;
             padding: 15px;
-            background-color: var(--accent-red);
+            background-color: var(--primary-blue);
             color: #fff;
             font-weight: 700;
             text-transform: uppercase;
@@ -487,7 +492,7 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 30px;
-            color: var(--accent-red);
+            color: var(--primary-blue);
         }
 
         .footer-links a {
@@ -500,7 +505,7 @@
 
         .footer-links a:hover {
             opacity: 1;
-            color: var(--accent-red);
+            color: var(--primary-blue);
         }
 
         .footer-bottom {
@@ -573,7 +578,7 @@
                         <span class="post-tag">Technical</span>
                         <h2>Advancements in Stainless Steel Tube Manufacturing</h2>
                         <p style="opacity: 0.8; margin-bottom: 25px;">Exploring the latest technologies in laser welding and precision extrusion that are setting new benchmarks for durability and performance in the piping industry.</p>
-                        <a href="#" class="btn" style="background-color: var(--accent-red); color: #fff; padding: 12px 30px; font-weight: 700;">Continue Reading</a>
+                        <a href="#" class="btn" style="background-color: var(--primary-blue); color: #fff; padding: 12px 30px; font-weight: 700;">Continue Reading</a>
                     </div>
                 </article>
 

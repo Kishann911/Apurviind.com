@@ -13,13 +13,18 @@
     <style>
         :root {
             --bg-primary: #FFFFFF;
-            --bg-secondary: #f4f4f4;
-            --bg-dark: #1a1a1a;
-            --bg-deep: #111111;
-            --accent-red: #C8102E;
-            --text-primary: #1a1a1a;
-            --text-secondary: #555555;
+            --bg-secondary: #E6E6E6;
+            --bg-dark: #3F3A8A;
+            --bg-deep: #2A2665;
+            --brand-primary: #3F3A8A;
+            --brand-red: #E21F26;
+            --brand-grey-dark: #6D6E71;
+            --brand-grey-light: #E6E6E6;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6D6E71;
             --text-white: #FFFFFF;
+            --accent-red: var(--brand-red);
+            --primary-blue: var(--brand-primary);
             --container-max: 1200px;
             --transition-fast: 0.3s ease;
             --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -79,11 +84,11 @@
             line-height: 1.2;
         }
 
-        .section-label {
+        .section-label { color: var(--brand-red);
             font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 3px;
-            color: var(--accent-red);
+            color: var(--primary-blue);
             font-weight: 600;
             margin-bottom: 20px;
             display: block;
@@ -126,11 +131,11 @@
         }
 
         .utility-contact a:hover {
-            color: var(--accent-red);
+            color: var(--primary-blue);
         }
 
         .btn-enquiry-small {
-            background-color: var(--accent-red);
+            background-color: var(--primary-blue);
             color: var(--text-white);
             padding: 6px 15px;
             font-weight: 600;
@@ -231,7 +236,7 @@
         }
 
         .utility-nav a:hover {
-            color: var(--accent-red);
+            color: var(--primary-blue);
         }
 
         .navbar {
@@ -255,7 +260,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--accent-red);
+            color: var(--primary-blue);
         }
 
         .lang-toggle {
@@ -355,7 +360,7 @@
             text-transform: uppercase;
             letter-spacing: 4px;
             margin-bottom: 50px;
-            color: var(--accent-red);
+            color: var(--primary-blue);
         }
 
         .hero-btns {
@@ -371,7 +376,7 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            background-color: var(--accent-red);
+            background-color: var(--primary-blue);
             color: var(--text-white);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
@@ -427,7 +432,7 @@
         }
 
         .breadcrumbs a:hover {
-            color: var(--accent-red);
+            color: var(--primary-blue);
         }
 
         .breadcrumbs span {
@@ -466,13 +471,13 @@
         .sidebar-nav ul li a.active,
         .sidebar-nav ul li a:hover {
             background-color: var(--bg-primary);
-            border-left-color: var(--accent-red);
-            color: var(--accent-red);
+            border-left-color: var(--primary-blue);
+            color: var(--primary-blue);
         }
 
         /* --- Buttons --- */
         .btn-primary {
-            background-color: var(--accent-red);
+            background-color: var(--primary-blue);
             color: var(--text-white);
             padding: 15px 30px;
             font-weight: 700;
@@ -507,7 +512,7 @@
         }
 
         .footer-logo span {
-            color: var(--accent-red);
+            color: var(--primary-blue);
         }
 
         .footer-col h4 {
@@ -515,7 +520,7 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 30px;
-            color: var(--accent-red);
+            color: var(--primary-blue);
         }
 
         .footer-links li {
@@ -531,7 +536,7 @@
         .footer-links a:hover {
             opacity: 1;
             padding-left: 5px;
-            color: var(--accent-red);
+            color: var(--primary-blue);
             font-weight: 400;
         }
 
@@ -550,7 +555,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            background-color: var(--accent-red);
+            background-color: var(--primary-blue);
             z-index: 2002;
             padding: 15px;
             justify-content: center;
@@ -631,9 +636,9 @@
                 transition: all 0.3s ease;
             }
 
-            .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); background-color: var(--accent-red); }
+            .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); background-color: var(--primary-blue); }
             .hamburger.active span:nth-child(2) { opacity: 0; }
-            .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background-color: var(--accent-red); }
+            .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background-color: var(--primary-blue); }
 
             .nav-curved-container {
                 padding: 15px 25px !important;
@@ -732,7 +737,7 @@
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: var(--accent-red);
+            color: var(--primary-blue);
             margin-bottom: 20px;
         }
 
@@ -786,7 +791,7 @@
         .form-field input:focus,
         .form-field textarea:focus {
             outline: none;
-            border-color: var(--accent-red);
+            border-color: var(--primary-blue);
             background: #fff;
         }
 
@@ -832,7 +837,7 @@
                         <li><a href="industries.html">Industries</a></li>
                         <li><a href="leadership.html">Leadership</a></li>
                         <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html" class="active" style="color: var(--accent-red);">Contact</a></li>
+                        <li><a href="contact.html" class="active" style="color: var(--primary-blue);">Contact</a></li>
                     </ul>
                     <div class="lang-toggle">IN</div>
                     <div class="hamburger" id="hamburger">

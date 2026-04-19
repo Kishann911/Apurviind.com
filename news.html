@@ -13,13 +13,18 @@
     <style>
         :root {
             --bg-primary: #FFFFFF;
-            --bg-secondary: #f4f4f4;
-            --bg-dark: #1a1a1a;
-            --bg-deep: #111111;
-            --accent-red: #C8102E;
-            --text-primary: #1a1a1a;
-            --text-secondary: #555555;
+            --bg-secondary: #E6E6E6;
+            --bg-dark: #3F3A8A;
+            --bg-deep: #2A2665;
+            --brand-primary: #3F3A8A;
+            --brand-red: #E21F26;
+            --brand-grey-dark: #6D6E71;
+            --brand-grey-light: #E6E6E6;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6D6E71;
             --text-white: #FFFFFF;
+            --accent-red: var(--brand-red);
+            --primary-blue: var(--brand-primary);
             --container-max: 1200px;
             --transition-fast: 0.3s ease;
             --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -79,11 +84,11 @@
             line-height: 1.2;
         }
 
-        .section-label {
+        .section-label { color: var(--brand-red);
             font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 3px;
-            color: var(--accent-red);
+            color: var(--primary-blue);
             font-weight: 600;
             margin-bottom: 20px;
             display: block;
@@ -193,7 +198,7 @@
         }
 
         .utility-nav a:hover {
-            color: var(--accent-red);
+            color: var(--primary-blue);
         }
 
         .navbar {
@@ -217,7 +222,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--accent-red);
+            color: var(--primary-blue);
         }
 
         /* --- Internal Hero --- */
@@ -291,8 +296,8 @@
 
         .sidebar-nav ul li a:hover {
             background-color: var(--bg-primary);
-            border-left-color: var(--accent-red);
-            color: var(--accent-red);
+            border-left-color: var(--primary-blue);
+            color: var(--primary-blue);
         }
 
         /* --- News Specific --- */
@@ -309,7 +314,7 @@
 
         .news-item:hover {
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-            border-color: var(--accent-red);
+            border-color: var(--primary-blue);
         }
 
         .news-img {
@@ -328,7 +333,7 @@
             font-size: 11px;
             text-transform: uppercase;
             font-weight: 700;
-            color: var(--accent-red);
+            color: var(--primary-blue);
             margin-bottom: 15px;
             display: block;
         }
@@ -345,7 +350,7 @@
         }
 
         .btn-primary {
-            background-color: var(--accent-red);
+            background-color: var(--primary-blue);
             color: var(--text-white);
             padding: 15px 30px;
             font-weight: 700;
@@ -375,7 +380,7 @@
         }
 
         .footer-logo span {
-            color: var(--accent-red);
+            color: var(--primary-blue);
         }
 
         .footer-col h4 {
@@ -383,7 +388,7 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 30px;
-            color: var(--accent-red);
+            color: var(--primary-blue);
         }
 
         .footer-links a {
@@ -394,7 +399,7 @@
 
         .footer-links a:hover {
             opacity: 1;
-            color: var(--accent-red);
+            color: var(--primary-blue);
         }
 
         .footer-bottom {
@@ -412,7 +417,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            background-color: var(--accent-red);
+            background-color: var(--primary-blue);
             z-index: 2002;
             padding: 15px;
             justify-content: center;
@@ -618,7 +623,7 @@
                         <span class="news-date">February 2024</span>
                         <h2>Annual Plant Visit & Quality Audit</h2>
                         <p>Our commitment to excellence was reaffirmed during the annual plant audit. We continue to invest in state-of-the-art machinery and rigorous testing protocols to ensure the highest quality standards.</p>
-                        <a href="contact.html" class="btn btn-primary" style="background: transparent; color: var(--accent-red); border: 1px solid var(--accent-red);">Inquiry</a>
+                        <a href="contact.html" class="btn btn-primary" style="background: transparent; color: var(--primary-blue); border: 1px solid var(--accent-red);">Inquiry</a>
                     </div>
                 </div>
             </main>
