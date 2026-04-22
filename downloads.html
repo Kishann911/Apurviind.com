@@ -303,8 +303,27 @@
         /* --- Downloads Specific --- */
         .download-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 30px;
+        }
+
+        .download-category {
+            margin-bottom: 60px;
+        }
+
+        .download-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .download-category-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--brand-red);
+            font-weight: 700;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
         }
 
         .download-card {
@@ -593,59 +612,61 @@
     </header>
 
     <section class="hero-internal">
-        <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=2000" alt="Downloads" class="hero-bg-img" style="opacity: 0.3;">
+        <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=2000" alt="Brochures" class="hero-bg-img" style="opacity: 0.3;">
         <div class="container">
             <div class="breadcrumbs">
-                <a href="index.html">Home</a> <span>/</span> Downloads
+                <a href="index.html">Home</a> <span>/</span> Brochures
             </div>
             <h1>Catalogues & Brochures</h1>
         </div>
     </section>
 
-    <div class="container">
-        <div class="page-container">
-            <aside class="sidebar">
-                <nav class="sidebar-nav">
-                    <ul>
-                        <li><a href="#" class="active">Product Catalogues</a></li>
-                        <li><a href="#">Technical Sheets</a></li>
-                        <li><a href="#">Certificates</a></li>
-                    </ul>
-                </nav>
-            </aside>
-
-            <main class="main-content">
-                <div class="download-grid">
-                    <div class="download-card">
-                        <div class="download-icon">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="9 15 12 18 15 15"></polyline></svg>
-                        </div>
-                        <h3>Company Profile</h3>
-                        <a href="#" class="btn btn-primary">Download PDF</a>
+    <div class="container" style="padding: 80px 0;">
+        <div class="download-category">
+            <h2 class="download-category-title">Aluminium Catalog</h2>
+            <div class="download-grid">
+                <div class="download-card">
+                    <div class="download-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="9 15 12 18 15 15"></polyline></svg>
                     </div>
-                    <div class="download-card">
-                        <div class="download-icon">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="9 15 12 18 15 15"></polyline></svg>
-                        </div>
-                        <h3>Full Product Catalogue</h3>
-                        <a href="#" class="btn btn-primary">Download PDF</a>
-                    </div>
-                    <div class="download-card">
-                        <div class="download-icon">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="9 15 12 18 15 15"></polyline></svg>
-                        </div>
-                        <h3>Technical Data Sheet</h3>
-                        <a href="#" class="btn btn-primary">Download PDF</a>
-                    </div>
-                    <div class="download-card">
-                        <div class="download-icon">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="9 15 12 18 15 15"></polyline></svg>
-                        </div>
-                        <h3>ISO Certification</h3>
-                        <a href="#" class="btn btn-primary">Download PDF</a>
-                    </div>
+                    <h3>Aluminium Catalog — Part 1</h3>
+                    <a href="Apurvi%20Aluminium%20catalog%20page%2001.pdf" download class="btn btn-primary">Download PDF</a>
                 </div>
-            </main>
+                <div class="download-card">
+                    <div class="download-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="9 15 12 18 15 15"></polyline></svg>
+                    </div>
+                    <h3>Aluminium Catalog — Part 2</h3>
+                    <a href="Apurvi%20Aluminium%20catalog%20Page%2002.pdf" download class="btn btn-primary">Download PDF</a>
+                </div>
+                <div class="download-card">
+                    <div class="download-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="9 15 12 18 15 15"></polyline></svg>
+                    </div>
+                    <h3>Aluminium Catalog — Part 3</h3>
+                    <a href="Apurvi%20Aluminium%20catalogPage%2003.pdf" download class="btn btn-primary">Download PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="download-category">
+            <h2 class="download-category-title">Steel Catalog</h2>
+            <div class="download-grid">
+                <div class="download-card">
+                    <div class="download-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="9 15 12 18 15 15"></polyline></svg>
+                    </div>
+                    <h3>Steel Catalog — Part 1</h3>
+                    <a href="Apurvi%20steel%20Catalog%20page%2001.pdf" download class="btn btn-primary">Download PDF</a>
+                </div>
+                <div class="download-card">
+                    <div class="download-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="9 15 12 18 15 15"></polyline></svg>
+                    </div>
+                    <h3>Steel Catalog — Part 2</h3>
+                    <a href="Apurvi%20steel%20catalog%20page%2002.pdf" download class="btn btn-primary">Download PDF</a>
+                </div>
+            </div>
         </div>
     </div>
 
