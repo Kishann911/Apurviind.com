@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News & Events | Apurvi Industries</title>
+    <title>Sitemap | Apurvi Industries</title>
     <link rel="icon" type="image/png" href="favicon.png">
-    <meta name="description" content="Stay updated with the latest news, exhibitions, and events from Apurvi Industries.">
+    <meta name="description" content="Browse all pages of the Apurvi Industries website — company, products, industries, leadership, news, and more.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&amp;display=swap" rel="stylesheet">
@@ -300,63 +300,60 @@
             color: var(--primary-blue);
         }
 
-        /* --- News Specific --- */
-        .news-item {
+        /* --- Sitemap Specific --- */
+        .sitemap-grid {
             display: grid;
-            grid-template-columns: 350px 1fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: 40px;
-            margin-bottom: 60px;
-            background: #fff;
-            border: 1px solid #eee;
-            overflow: hidden;
+        }
+
+        .sitemap-section {
+            background: var(--bg-secondary);
+            padding: 40px 35px;
+            border-top: 4px solid var(--primary-blue);
             transition: var(--transition-fast);
         }
 
-        .news-item:hover {
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-            border-color: var(--primary-blue);
+        .sitemap-section:hover {
+            background: #fff;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
         }
 
-        .news-img {
-            height: 100%;
-            min-height: 250px;
-            background-color: var(--bg-secondary);
-            background-size: cover;
-            background-position: center;
-        }
-
-        .news-content {
-            padding: 40px;
-        }
-
-        .news-date {
-            font-size: 11px;
-            text-transform: uppercase;
-            font-weight: 700;
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .news-content h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-        .news-content p {
-            font-size: 16px;
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-blue);
-            color: var(--text-white);
-            padding: 15px 30px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .sitemap-section h3 {
             font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .sitemap-section ul {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .sitemap-section a {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sitemap-section a::before {
+            content: "›";
+            color: var(--brand-red);
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        .sitemap-section a:hover {
+            color: var(--primary-blue);
+            padding-left: 5px;
         }
 
         /* --- Footer --- */
@@ -459,7 +456,6 @@
             height: 24px;
         }
 
-        /* --- Responsive --- */
         /* --- Perfect Mobile Fixes --- */
         html, body {
             overflow-x: hidden;
@@ -469,9 +465,8 @@
 
         @media (max-width: 991px) {
             .container {
-                padding: 0 25px;
-                width: 100%;
-                max-width: 100%;
+                padding: 0 25px !important;
+                width: 100% !important;
             }
 
             .nav-links {
@@ -501,12 +496,12 @@
 
             .nav-links a {
                 font-size: 24px;
-                color: var(--text-primary);
+                color: var(--text-primary) !important;
                 font-weight: 800;
             }
 
             .hamburger {
-                display: flex;
+                display: flex !important;
                 z-index: 2001;
                 position: relative;
                 width: 30px;
@@ -519,50 +514,54 @@
             .hamburger span {
                 width: 100%;
                 height: 3px;
-                background-color: var(--text-white);
+                background-color: var(--bg-dark);
                 transition: all 0.3s ease;
             }
 
+            .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); background-color: var(--primary-blue); }
+            .hamburger.active span:nth-child(2) { opacity: 0; }
+            .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background-color: var(--primary-blue); }
+
             .nav-curved-container {
-                padding: 15px 25px;
-                border-bottom-left-radius: 0;
-                background-color: transparent;
-                backdrop-filter: none;
-                margin-top: 0;
-                box-shadow: none;
+                padding: 15px 25px !important;
+                border-bottom-left-radius: 0 !important;
+                background-color: transparent !important;
+                backdrop-filter: none !important;
+                margin-top: 0 !important;
+                box-shadow: none !important;
             }
 
             .logo {
-                font-size: 20px;
-                padding: 20px 0;
-                color: var(--text-white);
+                font-size: 20px !important;
+                padding: 20px 0 !important;
+                color: var(--text-white) !important;
+                margin-left: 5px;
+            }
+
+            .hamburger span {
+                background-color: var(--text-white) !important;
             }
 
             .sticky-contact-footer {
-                display: flex;
+                display: flex !important;
             }
 
             .utility-nav { display: none; }
             
-            .page-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                padding: 30px 0;
-            }
-
-            .sidebar { display: none; }
-
-            .news-item {
-                grid-template-columns: 1fr;
-            }
-
-            .news-img {
-                height: 250px;
+            .sitemap-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px;
             }
 
             .hero-internal h1 {
-                font-size: 32px;
+                font-size: 32px !important;
             }
+
+            .page-container {
+                grid-template-columns: 1fr !important;
+            }
+
+            .sidebar { display: none; }
 
             .footer-grid { grid-template-columns: 1fr; }
         }
@@ -597,58 +596,52 @@
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
-                    <div class="hamburger" id="hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
                 </nav>
             </div>
         </div>
     </header>
 
     <section class="hero-internal">
-        <img src="https://apurviind.com/wp-content/uploads/2023/04/uk-metail-exhibition.jpg" alt="Exhibition" class="hero-bg-img" style="opacity: 0.3;">
+        <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=2000" alt="Sitemap" class="hero-bg-img" style="opacity: 0.3;">
         <div class="container">
             <div class="breadcrumbs">
-                <a href="index.html">Home</a> <span>/</span> News
+                <a href="index.html">Home</a> <span>/</span> Sitemap
             </div>
-            <h1>Industry News & Events</h1>
+            <h1>Sitemap</h1>
         </div>
     </section>
 
     <div class="container">
-        <div class="page-container">
-            <aside class="sidebar">
-                <nav class="sidebar-nav">
+        <div style="padding: 80px 0;">
+            <div class="sitemap-grid">
+                <div class="sitemap-section">
+                    <h3>Main</h3>
                     <ul>
-                        <li><a href="#" class="active">News Archive</a></li>
-                        <li><a href="#">Exhibitions</a></li>
-                        <li><a href="#">Press Releases</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="company.html">Company</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="industries.html">Industries</a></li>
+                        <li><a href="leadership.html">Leadership</a></li>
                     </ul>
-                </nav>
-            </aside>
+                </div>
 
-            <main class="main-content">
-                <div class="news-item">
-                    <div class="news-img" style="background-image: url('https://apurviind.com/wp-content/uploads/2023/04/uk-metail-exhibition.jpg');"></div>
-                    <div class="news-content">
-                        <span class="news-date">April 2023</span>
-                        <h2>Participation in UK Metal Exhibition</h2>
-                        <p>Apurvi Industries showcased its advanced stainless steel components at the UK Metal Exhibition, connecting with industry leaders and exploring new frontiers in metallurgy and piping technology.</p>
-                        <a href="contact.html" class="btn btn-primary">Read More</a>
-                    </div>
+                <div class="sitemap-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="downloads.html">Brochures</a></li>
+                    </ul>
                 </div>
-                <div class="news-item">
-                    <div class="news-img" style="background-image: url('https://apurviind.com/wp-content/uploads/2024/02/WhatsApp-Image-2024-02-02-at-14.11.47.jpeg');"></div>
-                    <div class="news-content">
-                        <span class="news-date">February 2024</span>
-                        <h2>Annual Plant Visit & Quality Audit</h2>
-                        <p>Our commitment to excellence was reaffirmed during the annual plant audit. We continue to invest in state-of-the-art machinery and rigorous testing protocols to ensure the highest quality standards.</p>
-                        <a href="contact.html" class="btn btn-primary" style="background: transparent; color: var(--primary-blue); border: 1px solid var(--accent-red);">Inquiry</a>
-                    </div>
+
+                <div class="sitemap-section">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="career.html">Career</a></li>
+                    </ul>
                 </div>
-            </main>
+            </div>
         </div>
     </div>
 
