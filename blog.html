@@ -125,7 +125,7 @@
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: center;
             padding: 0 40px;
         }
 
@@ -137,7 +137,7 @@
         }
 
         .logo img {
-            height: 70px;
+            height: 95px;
             width: auto;
             object-fit: contain;
         }
@@ -451,12 +451,24 @@
 
         .newsletter-box input {
             width: 100%;
-            padding: 15px;
+            padding: 14px 16px;
             margin-bottom: 15px;
-            border: none;
-            background: rgba(255,255,255,0.1);
-            color: #fff;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: #fff;
+            color: var(--text-primary);
+            font-size: 14px;
+            font-family: inherit;
             outline: none;
+        }
+
+        .newsletter-box input::placeholder {
+            color: var(--text-secondary);
+            opacity: 0.7;
+        }
+
+        .newsletter-box input:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(63, 58, 138, 0.25);
         }
 
         .newsletter-box button {
@@ -548,13 +560,13 @@
 </head>
 
 <body>
-    <header class="header-main sticky" id="navbar">
+    <header class="header-main" id="navbar">
         <div class="header-container">
             <a href="index.html" class="logo">
                 <img src="assets/images/logo-white.png" alt="Apurvi Industries Logo" class="logo-light">
                 <img src="assets/images/logo.png" alt="Apurvi Industries Logo" class="logo-dark">
             </a>
-            <div class="nav-curved-container" style="border-bottom-left-radius: 0; padding: 30px;">
+            <div class="nav-curved-container">
                 <div class="utility-nav">
                     <a href="career.html">Career</a>
                     <a href="news.html">News</a>
@@ -571,6 +583,11 @@
                         <li><a href="blog.html" class="active" style="color: var(--primary-blue);">Blog</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
+                    <div class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </nav>
             </div>
         </div>
