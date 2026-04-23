@@ -1006,6 +1006,154 @@
                 font-weight: 700;
                 color: var(--primary-blue);
                 line-height: 1; }
+
+        /* === Basic White Header (override) === */
+        .header-main {
+            background-color: #fff !important;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            z-index: 1000 !important;
+            padding: 0 !important;
+            display: block !important;
+        }
+        .header-main:hover,
+        .header-main.sticky {
+            background-color: #fff !important;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+        }
+        .header-container {
+            max-width: 1200px !important;
+            margin: 0 auto !important;
+            padding: 0 40px !important;
+            height: 70px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+        }
+        .header-main .logo {
+            padding: 0 !important;
+            display: flex !important;
+            align-items: center !important;
+        }
+        .header-main .logo img {
+            height: 45px !important;
+            width: auto !important;
+        }
+        .header-main .logo .logo-light { display: none !important; }
+        .header-main .logo .logo-dark { display: block !important; }
+        .header-main .navbar {
+            display: flex !important;
+            align-items: center !important;
+        }
+        .header-main .nav-links {
+            display: flex !important;
+            flex-direction: row !important;
+            gap: 28px !important;
+            list-style: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            position: static !important;
+            background: transparent !important;
+            width: auto !important;
+            height: auto !important;
+            box-shadow: none !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+        .header-main .nav-links a {
+            font-size: 14px !important;
+            text-transform: uppercase !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.5px !important;
+            color: #1a1a1a !important;
+            position: static !important;
+        }
+        .header-main .nav-links a:hover,
+        .header-main .nav-links a.active {
+            color: var(--primary-blue, #3F3A8A) !important;
+        }
+        .header-main .hamburger {
+            display: none;
+            width: 30px !important;
+            height: 22px !important;
+            background: transparent !important;
+            padding: 0 !important;
+            border: none !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            cursor: pointer !important;
+            margin-left: 20px !important;
+            position: relative !important;
+        }
+        .header-main .hamburger span {
+            display: block !important;
+            width: 100% !important;
+            height: 2.5px !important;
+            background-color: #1a1a1a !important;
+            border-radius: 2px !important;
+            transition: transform 0.3s ease, opacity 0.3s ease !important;
+        }
+        .header-main .hamburger.active {
+            background: transparent !important;
+            box-shadow: none !important;
+        }
+        .header-main .hamburger.active span {
+            display: block !important;
+            background-color: #1a1a1a !important;
+        }
+        .header-main .hamburger.active span:nth-child(1) { transform: translateY(9.5px) rotate(45deg) !important; }
+        .header-main .hamburger.active span:nth-child(2) { opacity: 0 !important; }
+        .header-main .hamburger.active span:nth-child(3) { transform: translateY(-9.5px) rotate(-45deg) !important; }
+        .header-main .hamburger.active::before { content: none !important; display: none !important; }
+        .header-main.sticky .hamburger,
+        .header-main:hover .hamburger {
+            background-color: transparent !important;
+        }
+        .header-main.sticky .hamburger span,
+        .header-main:hover .hamburger span {
+            background-color: #1a1a1a !important;
+        }
+
+        body { padding-top: 70px; }
+        .hero { margin-top: -70px; }
+
+        @media (max-width: 991px) {
+            .header-container { padding: 0 20px !important; height: 60px !important; }
+            .header-main .logo img { height: 38px !important; }
+            .header-main .hamburger { display: flex !important; }
+            .header-main .nav-links {
+                position: fixed !important;
+                top: 60px !important;
+                right: -100% !important;
+                width: 85% !important;
+                max-width: 320px !important;
+                height: calc(100vh - 60px) !important;
+                background-color: #fff !important;
+                flex-direction: column !important;
+                padding: 30px 25px !important;
+                gap: 18px !important;
+                align-items: flex-start !important;
+                justify-content: flex-start !important;
+                transition: right 0.3s ease !important;
+                box-shadow: -10px 0 20px rgba(0, 0, 0, 0.08) !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                z-index: 999 !important;
+            }
+            .header-main .nav-links.active { right: 0 !important; }
+            .header-main .nav-links a {
+                font-size: 16px !important;
+                color: #1a1a1a !important;
+                font-weight: 700 !important;
+            }
+            body { padding-top: 60px; }
+            .hero { margin-top: -60px; }
+        }
     </style>
 </head>
 
@@ -1015,32 +1163,24 @@
     <header class="header-main" id="navbar">
         <div class="header-container">
             <a href="index.html" class="logo">
-                <img src="assets/images/logo-white.png" alt="Apurvi Industries Logo" class="logo-light">
                 <img src="assets/images/logo.png" alt="Apurvi Industries Logo" class="logo-dark">
             </a>
-            <div class="nav-curved-container">
-                <div class="utility-nav">
-                    <a href="career.html">Career</a>
-                    <a href="news.html">News</a>
-                    <a href="downloads.html">Brochures</a>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="company.html">Company</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="industries.html" class="active">Industries</a></li>
+                    <li><a href="leadership.html">Leadership</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
-                <nav class="navbar">
-                    <ul class="nav-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="company.html">Company</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="industries.html" class="active" style="color: var(--primary-blue);">Industries</a></li>
-                        <li><a href="leadership.html">Leadership</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                    <div class="hamburger" id="hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </nav>
-            </div>
+            </nav>
         </div>
     </header>
 
