@@ -94,7 +94,6 @@
 
         .btn-primary:hover {
             background-color: var(--accent-red);
-            transform: translateY(-2px);
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
         }
 
@@ -168,7 +167,6 @@
 
         .btn-enquiry-small:hover {
             background-color: var(--brand-red);
-            transform: translateY(-1px);
         }
 
         /* --- Global Navbar --- */
@@ -441,9 +439,6 @@
             letter-spacing: -3px;
             line-height: 0.85;
             margin-bottom: 25px;
-            opacity: 0;
-            transform: translateX(60px);
-            animation: fadeInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.4s;
         }
 
         .hero-subline {
@@ -452,19 +447,13 @@
             text-transform: uppercase;
             letter-spacing: 4px;
             margin-bottom: 50px;
-            opacity: 0;
-            transform: translateX(60px);
             color: var(--text-white);
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-            animation: fadeInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.6s;
         }
 
         .hero-btns {
             display: flex;
             gap: 20px;
-            opacity: 0;
-            transform: translateX(60px);
-            animation: fadeInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.8s;
         }
 
         .btn-hero {
@@ -492,7 +481,6 @@
         }
 
         .btn-hero:hover {
-            transform: scale(1.05);
             background-color: var(--brand-red);
         }
 
@@ -507,24 +495,13 @@
             color: var(--bg-dark);
         }
 
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
+        
 
         .hero-scroll {
             position: absolute;
             bottom: 40px;
             left: 50%;
             transform: translateX(-50%);
-            animation: bounce 2s infinite;
             cursor: pointer;
             z-index: 10;
         }
@@ -660,7 +637,6 @@
         }
 
         .product-card:hover {
-            transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             z-index: 5;
         }
@@ -708,7 +684,6 @@
         }
 
         .post-card:hover {
-            transform: translateY(-10px);
             border-color: var(--primary-blue);
             box-shadow: 0 15px 35px rgba(0,0,0,0.05);
         }
@@ -820,7 +795,6 @@
         }
 
         .industry-card:hover img {
-            transform: scale(1.1);
         }
 
         /* --- Founder Section --- */
@@ -1122,7 +1096,6 @@
         .social-icon:hover {
             background-color: var(--primary-blue);
             border-color: var(--primary-blue);
-            transform: translateY(-3px);
         }
 
         .footer-bottom {
@@ -1135,36 +1108,9 @@
         }
 
         /* --- Animations --- */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
+        
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes bounce {
-
-            0%,
-            20%,
-            50%,
-            80%,
-            100% {
-                transform: translateY(0) translateX(-50%);
-            }
-
-            40% {
-                transform: translateY(-10px) translateX(-50%);
-            }
-
-            60% {
-                transform: translateY(-5px) translateX(-50%);
-            }
-        }
+        
 
         /* --- Responsive --- */
         @media (max-width: 1200px) {
@@ -1333,6 +1279,92 @@
             .header-container { padding: 0 15px; }
             .nav-curved-container { padding: 8px 15px !important; }
         }
+    
+        @media (max-width: 991px) {
+            /* Sticky-on-scroll: white nav bar with solid bg + shadow */
+            .header-main.sticky .nav-curved-container {
+                background-color: var(--bg-primary) !important;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            }
+            .header-main.sticky .hamburger span {
+                background-color: var(--bg-dark) !important;
+            }
+            /* Close affordance visible on active menu */
+        }
+    
+        @media (max-width: 991px) {
+            .hamburger {
+                background-color: var(--primary-blue) !important;
+                padding: 10px !important;
+                border-radius: 8px !important;
+                width: 44px !important;
+                height: 38px !important;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+            }
+            .hamburger span {
+                background-color: var(--text-white) !important;
+                height: 2.5px !important;
+            }
+            .header-main.sticky .hamburger {
+                background-color: var(--primary-blue) !important;
+            }
+            .header-main.sticky .hamburger span {
+                background-color: var(--text-white) !important;
+            }
+            .hamburger.active {
+                background-color: transparent !important;
+                box-shadow: none;
+            }
+            .hamburger.active span {
+                background-color: var(--primary-blue) !important;
+            }
+        }
+    
+        /* mobile-footer-catalog-tidy */
+        @media (max-width: 991px) {
+            .footer-grid {
+                grid-template-columns: 1fr !important;
+                gap: 40px !important;
+                text-align: left;
+                margin-bottom: 40px !important;
+            }
+            .footer-col { padding: 0; }
+            .footer-col .footer-logo { margin: 0 0 20px; }
+            .footer-bottom {
+                flex-direction: column !important;
+                gap: 15px;
+                text-align: center;
+                font-size: 12px !important;
+                padding: 20px 0 !important;
+            }
+            .footer-bottom > div { justify-content: center !important; }
+            footer { padding: 50px 0 20px !important; }
+            .download-category-title {
+                padding: 0 20px !important;
+                text-align: left;
+            }
+            .download-grid { padding: 0 10px; }
+        }
+    
+        /* hamburger lines ↔ X close */
+        @media (max-width: 991px) {
+            .hamburger.active span { display: none !important; }
+            .hamburger.active {
+                background-color: transparent !important;
+                box-shadow: none !important;
+            }
+            .hamburger.active::before {
+                content: '\2715';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 24px;
+                font-weight: 700;
+                color: var(--primary-blue);
+                line-height: 1;
+            }
+        }
     </style>
 </head>
 
@@ -1354,7 +1386,7 @@
                     <a href="downloads.html">Brochures</a>
                 </div>
                 <nav class="navbar">
-                                        <ul class="nav-links">
+                    <ul class="nav-links">
                         <li><a href="index.html" class="active" style="color: var(--primary-blue);">Home</a></li>
                         <li><a href="company.html">Company</a></li>
                         <li><a href="products.html">Products</a></li>
@@ -1494,35 +1526,35 @@
             <div class="products-grid">
                 <!-- Product cards (1-10) -->
                 <div class="product-card">
-                    <img src="https://apurviind.com/wp-content/uploads/photo-gallery/thumb/IMG-20230828-WA0008.jpg" alt="Nech Ring Stage Pipe" style="height: 180px; width: 100%; object-fit: cover; margin-bottom: 30px;">
+                    <img src="assets/images/products/range-motor-pump.jpg" alt="Nech Ring Stage Pipe" style="height: 180px; width: 100%; object-fit: cover; margin-bottom: 30px;">
                     <h3 class="product-name">Nech Ring Stage Pipe</h3>
                 </div>
                 <div class="product-card">
-                    <img src="https://apurviind.com/wp-content/uploads/photo-gallery/thumb/coils.jpg" alt="6mm Tube for NRV" style="height: 180px; width: 100%; object-fit: cover; margin-bottom: 30px;">
+                    <img src="assets/images/products/pipe-finishing.jpg" alt="6mm Tube for NRV" style="height: 180px; width: 100%; object-fit: cover; margin-bottom: 30px;">
                     <h3 class="product-name">6mm Tube for NRV</h3>
                 </div>
                 <div class="product-card">
-                    <img src="https://apurviind.com/wp-content/uploads/photo-gallery/thumb/motor-tubes.jpg" alt="Pressure Pump Sleeve" style="height: 180px; width: 100%; object-fit: cover; margin-bottom: 30px;">
+                    <img src="assets/images/products/pressure-pump-sleeve.png" alt="Pressure Pump Sleeve" style="height: 180px; width: 100%; object-fit: cover; margin-bottom: 30px;">
                     <h3 class="product-name">Pressure Pump Sleeve</h3>
                 </div>
                 <div class="product-card">
-                    <img src="https://apurviind.com/wp-content/uploads/photo-gallery/thumb/pipe.jpg" alt="Motor Tubes" style="height: 180px; width: 100%; object-fit: cover; margin-bottom: 30px;">
+                    <img src="assets/images/products/motor-tubes.png" alt="Motor Tubes" style="height: 180px; width: 100%; object-fit: cover; margin-bottom: 30px;">
                     <h3 class="product-name">Motor Tubes</h3>
                 </div>
                 <div class="product-card">
-                    <img src="https://apurviind.com/wp-content/uploads/photo-gallery/thumb/pipes.jpg" alt="OD & ID Spot Welding Ring" style="height: 180px; width: 100%; object-fit: cover; margin-bottom: 30px;">
+                    <img src="assets/images/products/pump-tube-OD-ID.png" alt="OD & ID Spot Welding Ring" style="height: 180px; width: 100%; object-fit: cover; margin-bottom: 30px;">
                     <h3 class="product-name">OD & ID Spot Welding Ring</h3>
                 </div>
                 <div class="product-card">
-                    <img src="https://apurviind.com/wp-content/uploads/photo-gallery/thumb/pump-parts.jpg" alt="Higher HP Pump Tube" style="height: 180px; width: 100%; object-fit: cover; margin-bottom: 30px;">
+                    <img src="assets/images/products/higher-hp-pmp-tube.jpg" alt="Higher HP Pump Tube" style="height: 180px; width: 100%; object-fit: cover; margin-bottom: 30px;">
                     <h3 class="product-name">Higher HP Pump Tube</h3>
                 </div>
                 <div class="product-card">
-                    <img src="https://apurviind.com/wp-content/uploads/photo-gallery/thumb/pump-sleeve.jpg" alt="Manufacturing Long Tube" style="height: 180px; width: 100%; object-fit: cover; margin-bottom: 30px;">
+                    <img src="assets/images/products/manufacturing-long-tube.jpg" alt="Manufacturing Long Tube" style="height: 180px; width: 100%; object-fit: cover; margin-bottom: 30px;">
                     <h3 class="product-name">Manufacturing Long Tube</h3>
                 </div>
                 <div class="product-card">
-                    <img src="https://apurviind.com/wp-content/uploads/photo-gallery/thumb/sheet.jpg" alt="Aluminium Tubing" style="height: 180px; width: 100%; object-fit: cover; margin-bottom: 30px;">
+                    <img src="assets/images/products/aluminium-tubing-for-fuelling-industries.jpg" alt="Aluminium Tubing" style="height: 180px; width: 100%; object-fit: cover; margin-bottom: 30px;">
                     <h3 class="product-name">Aluminium Tubing</h3>
                 </div>
             </div>

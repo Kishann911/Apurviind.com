@@ -577,13 +577,241 @@
         @media (max-width: 480px) {
             .logo span { display: none; }
         }
+    
+        @media (max-width: 991px) {
+            /* Sticky-on-scroll: white nav bar with solid bg + shadow */
+            .header-main.sticky .nav-curved-container {
+                background-color: var(--bg-primary) !important;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            }
+            .header-main.sticky .hamburger span {
+                background-color: var(--bg-dark) !important;
+            }
+            /* Close affordance visible on active menu */
+        }
+    
+        @media (max-width: 991px) {
+            .hamburger {
+                background-color: var(--primary-blue) !important;
+                padding: 10px !important;
+                border-radius: 8px !important;
+                width: 44px !important;
+                height: 38px !important;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+            }
+            .hamburger span {
+                background-color: var(--text-white) !important;
+                height: 2.5px !important;
+            }
+            .header-main.sticky .hamburger {
+                background-color: var(--primary-blue) !important;
+            }
+            .header-main.sticky .hamburger span {
+                background-color: var(--text-white) !important;
+            }
+            .hamburger.active {
+                background-color: transparent !important;
+                box-shadow: none;
+            }
+            .hamburger.active span {
+                background-color: var(--primary-blue) !important;
+            }
+        }
+    
+        /* mobile-footer-catalog-tidy */
+        @media (max-width: 991px) {
+            .footer-grid {
+                grid-template-columns: 1fr !important;
+                gap: 40px !important;
+                text-align: left;
+                margin-bottom: 40px !important;
+            }
+            .footer-col { padding: 0; }
+            .footer-col .footer-logo { margin: 0 0 20px; }
+            .footer-bottom {
+                flex-direction: column !important;
+                gap: 15px;
+                text-align: center;
+                font-size: 12px !important;
+                padding: 20px 0 !important;
+            }
+            .footer-bottom > div { justify-content: center !important; }
+            footer { padding: 50px 0 20px !important; }
+            .download-category-title {
+                padding: 0 20px !important;
+                text-align: left;
+            }
+            .download-grid { padding: 0 10px; }
+        }
+    
+        /* hamburger lines ↔ X close */
+        @media (max-width: 991px) {
+            .hamburger.active span { display: none !important; }
+            .hamburger.active {
+                background-color: transparent !important;
+                box-shadow: none !important;
+            }
+            .hamburger.active::before {
+                content: '\2715';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 24px;
+                font-weight: 700;
+                color: var(--primary-blue);
+                line-height: 1;
+            }
+        }
+    
+        /* === canonical homepage header CSS === */
+        /* --- Global Navbar --- */
+        .header-main { position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 0;
+            transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: auto; }
+        .header-main:hover,
+        .header-main.sticky { background-color: var(--bg-primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); }
+        .header-container { width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px; }
+        .logo { display: flex;
+            align-items: center;
+            padding: 15px 0 !important;
+            transition: all 0.4s ease; }
+        .logo img { height: 95px;
+            width: auto;
+            object-fit: contain; }
+        .logo .logo-dark { display: none; }
+        .logo .logo-light { display: block; }
+        .header-main:hover .logo .logo-light,
+        .header-main.sticky .logo .logo-light { display: none; }
+        .header-main:hover .logo .logo-dark,
+        .header-main.sticky .logo .logo-dark { display: block; }
+        .nav-curved-container { background-color: var(--bg-primary);
+            padding: 20px 40px 40px 60px;
+            border-bottom-left-radius: 120px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative; }
+        .header-main:hover .nav-curved-container,
+        .header-main.sticky .nav-curved-container { border-bottom-left-radius: 0;
+            padding-bottom: 30px;
+            padding-top: 30px; }
+        .utility-nav { display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+            margin-bottom: 20px; }
+        .utility-nav a { font-size: 11px;
+            color: var(--text-secondary);
+            font-weight: 400;
+            text-transform: capitalize; }
+        .utility-nav a:hover { color: var(--primary-blue); }
+        .nav-links { display: flex;
+            gap: 30px; }
+        .nav-links a { font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--brand-grey-dark);
+            position: relative; }
+        .nav-links a:hover { color: var(--primary-blue); }
+        .hamburger { display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            margin-left: 20px; }
+        .hamburger span { width: 25px;
+            height: 2px;
+            background-color: var(--bg-dark);
+            transition: var(--transition-fast); }
+        .nav-links { position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background-color: var(--bg-primary);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 40px;
+                transition: var(--transition-slow);
+                z-index: 2000;
+                box-shadow: -20px 0 50px rgba(0, 0, 0, 0.2);
+                padding: 60px 40px;
+                visibility: hidden;
+                opacity: 0; }
+        .nav-links.active { right: 0;
+                visibility: visible;
+                opacity: 1; }
+        .nav-links a { font-size: 24px;
+                color: var(--text-primary);
+                font-weight: 800;
+                text-decoration: none; }
+        .hamburger { display: flex;
+                z-index: 2001;
+                position: relative;
+                width: 30px;
+                height: 20px;
+                flex-direction: column;
+                justify-content: space-between;
+                cursor: pointer; }
+        .hamburger span { width: 100%;
+                height: 3px;
+                background-color: var(--text-white);
+                transition: all 0.3s ease; }
+        .nav-curved-container { padding: 15px 25px;
+                border-bottom-left-radius: 0;
+                background-color: transparent;
+                backdrop-filter: none;
+                margin-top: 0;
+                box-shadow: none; }
+        .logo { font-size: 22px;
+                padding: 20px 0;
+                color: var(--text-white); }
+        .header-container { padding: 0 15px; }
+        .nav-curved-container { padding: 8px 15px !important; }
+        .header-main.sticky .hamburger span { background-color: var(--bg-dark) !important; }
+        .hamburger span { background-color: var(--text-white) !important;
+                height: 2.5px !important; }
+        .header-main.sticky .hamburger { background-color: var(--primary-blue) !important; }
+        .header-main.sticky .hamburger span { background-color: var(--text-white) !important; }
+        .hamburger.active { background-color: transparent !important;
+                box-shadow: none; }
+        .hamburger.active span { background-color: var(--primary-blue) !important; }
+        }
+    
+        /* hamburger lines ↔ X close */
+        @media (max-width: 991px) { .hamburger.active span { display: none !important; }
+        .hamburger.active { background-color: transparent !important;
+                box-shadow: none !important; }
+        .hamburger.active::before { content: '\2715';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 24px;
+                font-weight: 700;
+                color: var(--primary-blue);
+                line-height: 1; }
     </style>
 </head>
 
 <body>
     <header class="header-main" id="navbar">
         <div class="header-container">
-                        <a href="index.html" class="logo">
+            <a href="index.html" class="logo">
                 <img src="assets/images/logo-white.png" alt="Apurvi Industries Logo" class="logo-light">
                 <img src="assets/images/logo.png" alt="Apurvi Industries Logo" class="logo-dark">
             </a>
@@ -594,7 +822,7 @@
                     <a href="downloads.html">Brochures</a>
                 </div>
                 <nav class="navbar">
-                                        <ul class="nav-links">
+                    <ul class="nav-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="company.html">Company</a></li>
                         <li><a href="products.html">Products</a></li>
