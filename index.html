@@ -1366,166 +1366,183 @@
             }
         }
 
-        /* === Basic White Header (override) === */
-        .header-main {
-            background-color: #fff !important;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100% !important;
-            z-index: 1000 !important;
-            padding: 0 !important;
-            display: block !important;
+        /* === Final Header (apv-*) === */
+        .apv-utility {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 32px;
+            background-color: #f5f5f7;
+            border-bottom: 1px solid #e6e6e6;
+            z-index: 1001;
+            display: flex;
+            align-items: center;
         }
-        .header-main:hover,
-        .header-main.sticky {
-            background-color: #fff !important;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+        .apv-utility-inner {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 24px;
         }
-        .header-container {
-            max-width: 1200px !important;
-            margin: 0 auto !important;
-            padding: 0 40px !important;
-            height: 70px !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: space-between !important;
+        .apv-utility a {
+            color: #6D6E71;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            font-size: 11px;
+            line-height: 1;
         }
-        .header-main .logo {
-            padding: 0 !important;
-            display: flex !important;
-            align-items: center !important;
-        }
-        .header-main .logo img {
-            height: 45px !important;
-            width: auto !important;
-        }
-        .header-main .logo .logo-light { display: none !important; }
-        .header-main .logo .logo-dark { display: block !important; }
-        .header-main .navbar {
-            display: flex !important;
-            align-items: center !important;
-        }
-        .header-main .nav-links {
-            display: flex !important;
-            flex-direction: row !important;
-            gap: 28px !important;
-            list-style: none !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            position: static !important;
-            background: transparent !important;
-            width: auto !important;
-            height: auto !important;
-            box-shadow: none !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-        }
-        .header-main .nav-links a {
-            font-size: 14px !important;
-            text-transform: uppercase !important;
-            font-weight: 700 !important;
-            letter-spacing: 0.5px !important;
-            color: #1a1a1a !important;
-            position: static !important;
-        }
-        .header-main .nav-links a:hover,
-        .header-main .nav-links a.active {
-            color: var(--primary-blue, #3F3A8A) !important;
-        }
-        .header-main .hamburger {
-            display: none;
-            width: 30px !important;
-            height: 22px !important;
-            background: transparent !important;
-            padding: 0 !important;
-            border: none !important;
-            border-radius: 0 !important;
-            box-shadow: none !important;
-            flex-direction: column !important;
-            justify-content: space-between !important;
-            cursor: pointer !important;
-            margin-left: 20px !important;
-            position: relative !important;
-        }
-        .header-main .hamburger span {
-            display: block !important;
-            width: 100% !important;
-            height: 2.5px !important;
-            background-color: #1a1a1a !important;
-            border-radius: 2px !important;
-            transition: transform 0.3s ease, opacity 0.3s ease !important;
-        }
-        .header-main .hamburger.active {
-            background: transparent !important;
-            box-shadow: none !important;
-        }
-        .header-main .hamburger.active span {
-            display: block !important;
-            background-color: #1a1a1a !important;
-        }
-        .header-main .hamburger.active span:nth-child(1) { transform: translateY(9.5px) rotate(45deg) !important; }
-        .header-main .hamburger.active span:nth-child(2) { opacity: 0 !important; }
-        .header-main .hamburger.active span:nth-child(3) { transform: translateY(-9.5px) rotate(-45deg) !important; }
-        .header-main .hamburger.active::before { content: none !important; display: none !important; }
-        .header-main.sticky .hamburger,
-        .header-main:hover .hamburger {
-            background-color: transparent !important;
-        }
-        .header-main.sticky .hamburger span,
-        .header-main:hover .hamburger span {
-            background-color: #1a1a1a !important;
-        }
+        .apv-utility a:hover,
+        .apv-utility a.active { color: #3F3A8A; }
 
-        body { padding-top: 70px; }
-        .hero { margin-top: -70px; }
+        .apv-header {
+            position: fixed;
+            top: 32px;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+        }
+        .apv-header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .apv-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .apv-logo img {
+            height: 70px;
+            width: auto;
+            display: block;
+        }
+        .apv-nav {
+            display: flex;
+            align-items: center;
+        }
+        .apv-nav-links {
+            display: flex;
+            flex-direction: row;
+            gap: 26px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .apv-nav-links a {
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #1a1a1a;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .apv-nav-links a:hover,
+        .apv-nav-links a.active { color: #3F3A8A; }
+        .apv-nav-utility-mobile { display: none; }
+
+        .apv-hamburger {
+            display: none;
+            width: 30px;
+            height: 22px;
+            background: transparent;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-left: 20px;
+            position: relative;
+        }
+        .apv-hamburger span {
+            display: block;
+            width: 100%;
+            height: 2.5px;
+            background-color: #1a1a1a;
+            border-radius: 2px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .apv-hamburger.active span:nth-child(1) { transform: translateY(9.5px) rotate(45deg); }
+        .apv-hamburger.active span:nth-child(2) { opacity: 0; }
+        .apv-hamburger.active span:nth-child(3) { transform: translateY(-9.5px) rotate(-45deg); }
+
+        body { padding-top: 122px; }
+        .hero { margin-top: -122px; }
 
         @media (max-width: 991px) {
-            .header-container { padding: 0 20px !important; height: 60px !important; }
-            .header-main .logo img { height: 38px !important; }
-            .header-main .hamburger { display: flex !important; }
-            .header-main .nav-links {
-                position: fixed !important;
-                top: 60px !important;
-                right: -100% !important;
-                width: 85% !important;
-                max-width: 320px !important;
-                height: calc(100vh - 60px) !important;
-                background-color: #fff !important;
-                flex-direction: column !important;
-                padding: 30px 25px !important;
-                gap: 18px !important;
-                align-items: flex-start !important;
-                justify-content: flex-start !important;
-                transition: right 0.3s ease !important;
-                box-shadow: -10px 0 20px rgba(0, 0, 0, 0.08) !important;
-                visibility: visible !important;
-                opacity: 1 !important;
-                z-index: 999 !important;
+            .apv-utility { display: none; }
+            .apv-header { top: 0; }
+            .apv-header-inner { padding: 0 20px; height: 64px; }
+            .apv-logo img { height: 44px; }
+            .apv-hamburger { display: flex; }
+            .apv-nav-links {
+                position: fixed;
+                top: 64px;
+                right: -100%;
+                width: 85%;
+                max-width: 320px;
+                height: calc(100vh - 64px);
+                background-color: #fff;
+                flex-direction: column;
+                padding: 30px 25px;
+                gap: 14px;
+                align-items: flex-start;
+                transition: right 0.3s ease;
+                box-shadow: -10px 0 20px rgba(0, 0, 0, 0.08);
+                z-index: 999;
+                overflow-y: auto;
             }
-            .header-main .nav-links.active { right: 0 !important; }
-            .header-main .nav-links a {
-                font-size: 16px !important;
-                color: #1a1a1a !important;
-                font-weight: 700 !important;
+            .apv-nav-links.active { right: 0; }
+            .apv-nav-links a { font-size: 16px; }
+            .apv-nav-utility-mobile { display: list-item; }
+            .apv-nav-utility-mobile:first-of-type {
+                margin-top: 18px;
+                padding-top: 18px;
+                border-top: 1px solid #e6e6e6;
+                width: 100%;
             }
-            body { padding-top: 60px; }
-            .hero { margin-top: -60px; }
+            .apv-nav-utility-mobile a {
+                font-size: 13px;
+                color: #6D6E71;
+                font-weight: 600;
+            }
+            body { padding-top: 64px; }
+            .hero { margin-top: -64px; }
         }
     </style>
 </head>
 
 <body>
 
+    <!-- Top utility strip -->
+    <div class="apv-utility">
+        <div class="apv-utility-inner">
+            <a href="career.html">Career</a>
+            <a href="news.html">News</a>
+            <a href="downloads.html">Brochures</a>
+        </div>
+    </div>
+
     <!-- Main Navigation -->
-    <header class="header-main" id="navbar">
-        <div class="header-container">
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" alt="Apurvi Industries Logo" class="logo-dark">
+    <header class="apv-header" id="navbar">
+        <div class="apv-header-inner">
+            <a href="index.html" class="apv-logo">
+                <img src="assets/images/logo.png" alt="Apurvi Industries Logo">
             </a>
-            <nav class="navbar">
-                <ul class="nav-links">
+            <nav class="apv-nav">
+                <ul class="apv-nav-links">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="company.html">Company</a></li>
                     <li><a href="products.html">Products</a></li>
@@ -1533,12 +1550,15 @@
                     <li><a href="leadership.html">Leadership</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li class="apv-nav-utility-mobile"><a href="career.html">Career</a></li>
+                    <li class="apv-nav-utility-mobile"><a href="news.html">News</a></li>
+                    <li class="apv-nav-utility-mobile"><a href="downloads.html">Brochures</a></li>
                 </ul>
-                <div class="hamburger" id="hamburger">
+                <button class="apv-hamburger" id="apv-hamburger" type="button" aria-label="Menu">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
             </nav>
         </div>
     </header>
@@ -1938,6 +1958,7 @@
             <div class="footer-bottom">
                 <p>&copy; 2024 Apurvi Industries. All rights reserved.</p>
                 <div style="display: flex; gap: 20px;">
+                    <a href="privacy-policy.html">Privacy Policy</a>
                     <a href="sitemap.html">Sitemap</a>
                 </div>
             </div>
@@ -1959,8 +1980,8 @@
 
         // Mobile Menu Toggle
         document.addEventListener('DOMContentLoaded', () => {
-            const hamburger = document.getElementById('hamburger');
-            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.getElementById('apv-hamburger');
+            const navLinks = document.querySelector('.apv-nav-links');
 
             if (hamburger && navLinks) {
                 hamburger.addEventListener('click', (e) => {
@@ -1978,7 +1999,7 @@
                     }
                 });
 
-                document.querySelectorAll('.nav-links a').forEach(link => {
+                document.querySelectorAll('.apv-nav-links a').forEach(link => {
                     link.addEventListener('click', () => {
                         hamburger.classList.remove('active');
                         navLinks.classList.remove('active');
