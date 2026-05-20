@@ -17,7 +17,7 @@
             --bg-dark: #3F3A8A;
             --bg-deep: #2A2665;
             --brand-primary: #3F3A8A;
-            --brand-red: #2563EB;
+            --brand-red: #3F3A8A;
             --brand-grey-dark: #6D6E71;
             --brand-grey-light: #E6E6E6;
             --text-primary: #1A1A1A;
@@ -564,8 +564,8 @@
         .footer-links a:hover {
             opacity: 1;
             padding-left: 5px;
-            color: var(--primary-blue);
-            font-weight: 400;
+            color: #FFB74D;
+            font-weight: 600;
         }
 
         .footer-bottom {
@@ -610,26 +610,27 @@
         }
 
         .profile-section {
-            display: grid;
-            grid-template-columns: 400px 1fr;
-            gap: 80px;
+            display: block;
             padding: 80px 0;
-            align-items: start;
         }
 
+        .profile-info { max-width: 900px; }
+
         .profile-img-container {
-            position: sticky;
-            top: 120px;
+            margin: 60px auto 0;
+            max-width: 480px;
         }
 
         .profile-img-placeholder {
             width: 100%;
-            height: 500px;
+            height: auto;
+            aspect-ratio: 4 / 3;
             position: relative;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
         }
 
         .profile-img-placeholder img {
@@ -643,13 +644,14 @@
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: -2px;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
         }
 
         .profile-role {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
-            color: var(--primary-blue);
+            color: var(--text-primary);
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 40px;
@@ -920,7 +922,7 @@
             text-decoration: none;
         }
         .apv-logo img {
-            height: 70px;
+            height: 78px;
             width: auto;
             display: block;
         }
@@ -1017,10 +1019,147 @@
             body { padding-top: 76px; }
             .hero { margin-top: -64px; }
         }
+    
+        /* === Announcement Bar + Global Overrides === */
+        .apv-announcement {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 36px;
+            background-color: #3F3A8A;
+            color: #fff;
+            z-index: 1002;
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+        }
+        .apv-announcement-inner {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+        .apv-announcement-left {
+            font-weight: 500;
+            letter-spacing: 0.2px;
+        }
+        .apv-announcement-left strong { font-weight: 700; }
+        .apv-announcement-right {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+        .apv-announcement-right a.apv-ann-email {
+            color: #fff;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            opacity: 0.95;
+        }
+        .apv-announcement-right a.apv-ann-email:hover { opacity: 1; }
+        .apv-announcement-cta {
+            background-color: #E64A19;
+            color: #fff !important;
+            padding: 5px 14px;
+            border-radius: 3px;
+            font-weight: 700;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+        .apv-announcement-cta:hover { background-color: #BF360C; }
+
+        /* Shift header layout to make room for announcement bar */
+        .apv-utility { top: 36px !important; }
+        .apv-header { top: 68px !important; }
+        body { padding-top: 158px !important; }
+        .hero { margin-top: -158px !important; }
+
+        /* Hero internal: solid brand color background (no image) */
+        .hero-internal {
+            background-color: #3F3A8A !important;
+            background-image: none !important;
+        }
+        .hero-bg-img { display: none !important; }
+
+        /* Section labels on dark backgrounds turn white */
+        .founder-section .section-label,
+        .stats .section-label,
+        .hero-internal .section-label,
+        .hero-internal .breadcrumbs,
+        section[style*="--bg-dark"] .section-label,
+        section[style*="bg-dark"] .section-label {
+            color: #fff !important;
+        }
+
+        /* Numbers in stats on dark bg become white */
+        .stats .stat-number { color: #fff !important; }
+
+        /* Powered by Swytch */
+        .powered-by {
+            text-align: center;
+            font-size: 12px;
+            opacity: 0.65;
+            margin-top: 14px;
+        }
+        .powered-by a { color: #fff; text-decoration: underline; }
+
+        @media (max-width: 991px) {
+            .apv-announcement {
+                height: auto;
+                padding: 8px 0;
+                font-size: 11px;
+            }
+            .apv-announcement-inner {
+                flex-direction: column;
+                gap: 6px;
+                padding: 0 12px;
+                text-align: center;
+            }
+            .apv-announcement-left { font-size: 11px; }
+            .apv-utility { display: none; }
+            .apv-header { top: 64px !important; }
+            body { padding-top: 140px !important; }
+            .hero { margin-top: -140px !important; }
+        }
+        
+        /* Footer hover fix (must contrast on dark blue footer) */
+        footer .footer-links a:hover,
+        footer .footer-contact a:hover {
+            color: #FFB74D !important;
+            opacity: 1 !important;
+            font-weight: 600 !important;
+        }
+        /* === End Announcement Bar + Overrides === */
+
     </style>
 </head>
 
 <body>
+
+    <!-- Announcement Bar -->
+    <div class="apv-announcement">
+        <div class="apv-announcement-inner">
+            <div class="apv-announcement-left"><strong>Manufacturing and Supply</strong> of Stainless and other products</div>
+            <div class="apv-announcement-right">
+                <a href="mailto:info@apurviind.com" class="apv-ann-email">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    info@apurviind.com
+                </a>
+                <a href="contact.html" class="apv-announcement-cta">Enquiry Now</a>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Main Navigation -->
     <!-- Top utility strip -->
@@ -1072,19 +1211,13 @@
 
     <div class="container">
         <div class="profile-section">
-            <div class="profile-img-container">
-                <div class="profile-img-placeholder">
-                    <img src="assets/images/vc.jpeg" alt="Shri Viren Gathani - Managing Director">
-                </div>
-            </div>
             <div class="profile-info">
-                <span class="section-label">Founder</span>
                 <h2>Shri Viren Gathani</h2>
-                <span class="profile-role">Managing Director</span>
-                
+                <span class="profile-role">Founder &amp; Managing Director</span>
+
                 <div class="profile-bio">
                     <p>Under the visionary leadership of Shri Viren Gathani, Apurvi Industries has grown from a specialized manufacturing unit into a trusted national supplier of stainless steel pipe solutions. With over three decades of engineering expertise, Shri Gathani has been the driving force behind the company's commitment to quality and technical innovation.</p>
-                    
+
                     <p>His philosophy of "getting the right material from the right source at the right time" has become the foundation of our operational excellence. By focusing on vertically integrated production and a client-centric approach, he has navigated the company through decades of industrial shifts while maintaining a reputation for absolute integrity.</p>
                 </div>
 
@@ -1095,10 +1228,16 @@
                 <div class="profile-bio">
                     <p>Shri Gathani continues to oversee the strategic direction of the company, focusing on expanding our manufacturing capabilities and adopting sustainable production practices to serve the evolving needs of global industries.</p>
                 </div>
+            </div>
 
-                <div style="margin-top: 40px;">
-                    <a href="contact.html" class="btn btn-primary">Connect with us</a>
+            <div class="profile-img-container">
+                <div class="profile-img-placeholder">
+                    <img src="assets/images/vc.jpeg" alt="Shri Viren Gathani - Managing Director">
                 </div>
+            </div>
+
+            <div style="margin-top: 40px; text-align: center;">
+                <a href="contact.html" class="btn btn-primary">Connect with us</a>
             </div>
         </div>
     </div>
@@ -1159,7 +1298,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 Apurvi Industries. All rights reserved.</p>
+                <p>&copy; 2026 Apurvi Industries. All rights reserved. &nbsp;|&nbsp; Powered by <a href="#" style="color: inherit; text-decoration: underline; opacity: 0.9;">Swytch Studios</a></p>
                 <div style="display: flex; gap: 20px;">
                     <a href="privacy-policy.html">Privacy Policy</a>
                     <a href="sitemap.html">Sitemap</a>

@@ -22,7 +22,7 @@
             --bg-dark: #3F3A8A;
             --bg-deep: #2A2665;
             --brand-primary: #3F3A8A;
-            --brand-red: #2563EB;
+            --brand-red: #3F3A8A;
             --brand-grey-dark: #6D6E71;
             --brand-grey-light: #E6E6E6;
             --text-primary: #1A1A1A;
@@ -413,6 +413,16 @@
             pointer-events: none;
         }
 
+        /* Transparent overlay over hero video to block YouTube controls/overlays */
+        .hero-video-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background: transparent;
+            pointer-events: auto;
+        }
+
         .hero-gradient {
             position: absolute;
             top: 0;
@@ -756,14 +766,17 @@
         }
 
         .industry-card {
-            height: 220px;
+            min-height: 280px;
             position: relative;
             overflow: hidden;
             display: flex;
-            align-items: flex-end;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
             padding: 30px;
             color: var(--text-white);
             cursor: pointer;
+            background-color: #222;
         }
 
         .industry-card img {
@@ -774,6 +787,12 @@
             height: 100%;
             object-fit: cover;
             transition: var(--transition-slow);
+            opacity: 0.55;
+        }
+
+        .industry-card:hover img {
+            opacity: 0.75;
+            transform: scale(1.06);
         }
 
         .industry-overlay {
@@ -782,19 +801,76 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 60%);
+            background: linear-gradient(to top, rgba(20, 20, 50, 0.92) 0%, rgba(20, 20, 50, 0.55) 55%, rgba(20, 20, 50, 0.25) 100%);
             z-index: 1;
         }
 
         .industry-name {
             position: relative;
             z-index: 2;
-            font-weight: 700;
-            font-size: 18px;
+            font-weight: 800;
+            font-size: 20px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
         }
 
-        .industry-card:hover img {
+        .industry-desc {
+            position: relative;
+            z-index: 2;
+            font-size: 13px;
+            line-height: 1.5;
+            opacity: 0.95;
+            max-width: 100%;
+        }
+
+        /* Industries carousel container */
+        .industries-carousel {
+            position: relative;
+            margin-top: 40px;
+            padding: 0 50px;
+        }
+        .industries-track-wrapper {
+            overflow: hidden;
+        }
+        .industries-track {
+            display: flex;
+            gap: 16px;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .industries-track .industry-card {
+            flex: 0 0 calc((100% - 48px) / 4);
+            min-width: 0;
+        }
+        .industry-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            z-index: 5;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+            transition: background-color 0.2s ease;
+        }
+        .industry-nav:hover { background: var(--bg-deep); }
+        .industry-nav.prev { left: 0; }
+        .industry-nav.next { right: 0; }
+
+        @media (max-width: 991px) {
+            .industries-track .industry-card { flex: 0 0 calc((100% - 16px) / 2); }
+            .industries-carousel { padding: 0 36px; }
+        }
+        @media (max-width: 560px) {
+            .industries-track .industry-card { flex: 0 0 100%; }
         }
 
         /* --- Founder Section --- */
@@ -1072,8 +1148,8 @@
         .footer-links a:hover {
             opacity: 1;
             padding-left: 5px;
-            color: var(--primary-blue);
-            font-weight: 400;
+            color: #FFB74D;
+            font-weight: 600;
         }
 
         .social-links {
@@ -1438,7 +1514,7 @@
             text-decoration: none;
         }
         .apv-logo img {
-            height: 70px;
+            height: 78px;
             width: auto;
             display: block;
         }
@@ -1535,10 +1611,321 @@
             body { padding-top: 76px; }
             .hero { margin-top: -64px; }
         }
+    
+        /* === Announcement Bar + Global Overrides === */
+        .apv-announcement {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 36px;
+            background-color: #3F3A8A;
+            color: #fff;
+            z-index: 1002;
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+        }
+        .apv-announcement-inner {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+        .apv-announcement-left {
+            font-weight: 500;
+            letter-spacing: 0.2px;
+        }
+        .apv-announcement-left strong { font-weight: 700; }
+        .apv-announcement-right {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+        .apv-announcement-right a.apv-ann-email {
+            color: #fff;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            opacity: 0.95;
+        }
+        .apv-announcement-right a.apv-ann-email:hover { opacity: 1; }
+        .apv-announcement-cta {
+            background-color: #E64A19;
+            color: #fff !important;
+            padding: 5px 14px;
+            border-radius: 3px;
+            font-weight: 700;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+        .apv-announcement-cta:hover { background-color: #BF360C; }
+
+        /* Shift header layout to make room for announcement bar */
+        .apv-utility { top: 36px !important; }
+        .apv-header { top: 68px !important; }
+        body { padding-top: 158px !important; }
+        .hero { margin-top: -158px !important; }
+
+        /* Hero internal: solid brand color background (no image) */
+        .hero-internal {
+            background-color: #3F3A8A !important;
+            background-image: none !important;
+        }
+        .hero-bg-img { display: none !important; }
+
+        /* Section labels on dark backgrounds turn white */
+        .founder-section .section-label,
+        .stats .section-label,
+        .hero-internal .section-label,
+        .hero-internal .breadcrumbs,
+        section[style*="--bg-dark"] .section-label,
+        section[style*="bg-dark"] .section-label {
+            color: #fff !important;
+        }
+
+        /* Numbers in stats on dark bg become white */
+        .stats .stat-number { color: #fff !important; }
+
+        /* Powered by Swytch */
+        .powered-by {
+            text-align: center;
+            font-size: 12px;
+            opacity: 0.65;
+            margin-top: 14px;
+        }
+        .powered-by a { color: #fff; text-decoration: underline; }
+
+        @media (max-width: 991px) {
+            .apv-announcement {
+                height: auto;
+                padding: 8px 0;
+                font-size: 11px;
+            }
+            .apv-announcement-inner {
+                flex-direction: column;
+                gap: 6px;
+                padding: 0 12px;
+                text-align: center;
+            }
+            .apv-announcement-left { font-size: 11px; }
+            .apv-utility { display: none; }
+            .apv-header { top: 64px !important; }
+            body { padding-top: 140px !important; }
+            .hero { margin-top: -140px !important; }
+        }
+        
+        /* Footer hover fix (must contrast on dark blue footer) */
+        footer .footer-links a:hover,
+        footer .footer-contact a:hover {
+            color: #FFB74D !important;
+            opacity: 1 !important;
+            font-weight: 600 !important;
+        }
+
+        /* Compact homepage contact section */
+        .home-contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 48px;
+            align-items: start;
+        }
+        .home-contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .contact-card {
+            display: flex;
+            gap: 18px;
+            background: #fff;
+            padding: 24px 26px;
+            border-radius: 8px;
+            border: 1px solid #ECEEF5;
+            box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .contact-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+        }
+        .contact-card-icon {
+            flex: 0 0 48px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .contact-card h4 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--primary-blue);
+            margin-bottom: 6px;
+            font-weight: 800;
+        }
+        .contact-card p {
+            font-size: 16px;
+            color: var(--text-primary);
+            line-height: 1.5;
+            margin: 0;
+        }
+        .contact-card p a { color: var(--text-primary); }
+        .contact-card p a:hover { color: var(--primary-blue); }
+
+        .home-contact-form {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            border: 1px solid #ECEEF5;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+        }
+        .home-form-title {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 26px;
+            color: var(--text-primary);
+        }
+        .home-form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px 16px;
+        }
+        .home-form-field { display: flex; flex-direction: column; }
+        .home-form-field.full { grid-column: span 2; }
+        .home-form-field label {
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+        .home-form-field input,
+        .home-form-field textarea {
+            padding: 12px 14px;
+            border: 1px solid #DDE2EC;
+            background: #F8F9FC;
+            font-family: inherit;
+            font-size: 14px;
+            border-radius: 6px;
+            color: var(--text-primary);
+            transition: border-color 0.2s ease, background 0.2s ease;
+        }
+        .home-form-field input:focus,
+        .home-form-field textarea:focus {
+            outline: none;
+            background: #fff;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(63, 58, 138, 0.12);
+        }
+        .btn-submit {
+            margin-top: 24px;
+            width: 100%;
+            padding: 14px 28px;
+            background: var(--primary-blue);
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 13px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+        .btn-submit:hover { background: var(--bg-deep); transform: translateY(-1px); }
+
+        @media (max-width: 991px) {
+            .home-contact-grid { grid-template-columns: 1fr; gap: 32px; }
+            .home-contact-form { padding: 28px; }
+            .home-form-grid { grid-template-columns: 1fr; }
+            .home-form-field.full { grid-column: span 1; }
+        }
+
+        /* Legacy form (old-website style) */
+        .legacy-form .form-field { margin-bottom: 18px; }
+        .legacy-form label {
+            display: block;
+            font-size: 13px;
+            font-weight: 400;
+            text-transform: none;
+            letter-spacing: 0;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+        }
+        .legacy-form input,
+        .legacy-form select,
+        .legacy-form textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            background: #fff;
+            font-family: inherit;
+            font-size: 14px;
+            color: var(--text-primary);
+            border-radius: 2px;
+            transition: border-color 0.2s ease;
+        }
+        .legacy-form input:focus,
+        .legacy-form select:focus,
+        .legacy-form textarea:focus {
+            border-color: var(--primary-blue);
+            outline: none;
+        }
+        .legacy-form .form-group-flex {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .legacy-form .btn-primary {
+            background-color: var(--primary-blue);
+            color: #fff;
+            padding: 12px 38px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        @media (max-width: 767px) {
+            .legacy-form .form-group-flex { grid-template-columns: 1fr; }
+        }
+        /* === End Announcement Bar + Overrides === */
+
     </style>
 </head>
 
 <body>
+
+    <!-- Announcement Bar -->
+    <div class="apv-announcement">
+        <div class="apv-announcement-inner">
+            <div class="apv-announcement-left"><strong>Manufacturing and Supply</strong> of Stainless and other products</div>
+            <div class="apv-announcement-right">
+                <a href="mailto:info@apurviind.com" class="apv-ann-email">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    info@apurviind.com
+                </a>
+                <a href="contact.html" class="apv-announcement-cta">Enquiry Now</a>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Top utility strip -->
     <div class="apv-utility">
@@ -1580,10 +1967,11 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <!-- Background Video (YouTube) -->
-        <div class="hero-video-bg">
-            <iframe src="https://www.youtube.com/embed/ETz2WiX6tMI?autoplay=1&mute=1&loop=1&playlist=ETz2WiX6tMI&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1&fs=0"
+        <div class="hero-video-bg" aria-hidden="true">
+            <iframe src="https://www.youtube.com/embed/ETz2WiX6tMI?autoplay=1&mute=1&loop=1&playlist=ETz2WiX6tMI&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1&fs=0&cc_load_policy=0&autohide=1"
                 title="Apurvi Industries"
                 allow="autoplay; encrypted-media"
+                tabindex="-1"
                 allowfullscreen></iframe>
         </div>
         <div class="hero-gradient"></div>
@@ -1655,7 +2043,7 @@
                     <a href="contact.html" class="btn btn-primary">Know More</a>
                 </div>
                 <div class="about-image">
-                    <img src="https://apurviind.com/wp-content/uploads/2024/02/WhatsApp-Image-2024-02-02-at-14.11.47.jpeg" alt="Apurvi Industries Plant" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="https://apurviind.com/wp-content/uploads/2024/02/WhatsApp-Image-2024-02-02-at-14.11.47.jpeg" alt="Apurvi Industries Team" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
             </div>
         </div>
@@ -1744,39 +2132,65 @@
             <h2 class="h2">Solutions for Many Industries</h2>
             <p>We manufacture to the special requirements of your industry, in every technically possible form.</p>
 
-            <div class="industries-grid">
-                <div class="industry-card" style="background-color: #222">
-                    <div class="industry-overlay"></div>
-                    <span class="industry-name">Submersible Pump</span>
+            <div class="industries-carousel" id="industriesCarousel">
+                <button type="button" class="industry-nav prev" aria-label="Previous">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <div class="industries-track-wrapper">
+                    <div class="industries-track">
+                        <div class="industry-card">
+                            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=1000" alt="Submersible Pump">
+                            <div class="industry-overlay"></div>
+                            <span class="industry-name">Submersible Pump</span>
+                            <p class="industry-desc">SS tubes and components for reliable water extraction solutions.</p>
+                        </div>
+                        <div class="industry-card">
+                            <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=1000" alt="Motor Manufacturing">
+                            <div class="industry-overlay"></div>
+                            <span class="industry-name">Motor Manufacturing</span>
+                            <p class="industry-desc">Precision motor tubes for submersible and industrial motors.</p>
+                        </div>
+                        <div class="industry-card">
+                            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=1000" alt="Fuelling Industry">
+                            <div class="industry-overlay"></div>
+                            <span class="industry-name">Fuelling Industry</span>
+                            <p class="industry-desc">Specialized piping for safe transport of fuels and fluids.</p>
+                        </div>
+                        <div class="industry-card">
+                            <img src="https://images.unsplash.com/photo-1562333221-706ca4d1f50e?auto=format&fit=crop&q=80&w=1000" alt="Water Treatment">
+                            <div class="industry-overlay"></div>
+                            <span class="industry-name">Water Treatment</span>
+                            <p class="industry-desc">Corrosion-resistant solutions for purification plants.</p>
+                        </div>
+                        <div class="industry-card">
+                            <img src="https://images.unsplash.com/photo-1523348830708-15d4a09cfac2?auto=format&fit=crop&q=80&w=1000" alt="Agriculture">
+                            <div class="industry-overlay"></div>
+                            <span class="industry-name">Agriculture</span>
+                            <p class="industry-desc">Components for large-scale irrigation and farming machinery.</p>
+                        </div>
+                        <div class="industry-card">
+                            <img src="https://images.unsplash.com/photo-1516594709415-1231a4a2fa30?auto=format&fit=crop&q=80&w=1000" alt="Food Processing">
+                            <div class="industry-overlay"></div>
+                            <span class="industry-name">Food Processing</span>
+                            <p class="industry-desc">Hygienic stainless steel piping for food and beverage.</p>
+                        </div>
+                        <div class="industry-card">
+                            <img src="https://images.unsplash.com/photo-1532187863486-abf9d39d99f5?auto=format&fit=crop&q=80&w=1000" alt="Chemical">
+                            <div class="industry-overlay"></div>
+                            <span class="industry-name">Chemical</span>
+                            <p class="industry-desc">Corrosion-resistant piping for chemical processing.</p>
+                        </div>
+                        <div class="industry-card">
+                            <img src="https://images.unsplash.com/photo-1563213126-a4273aed2016?auto=format&fit=crop&q=80&w=1000" alt="Pharmaceutical">
+                            <div class="industry-overlay"></div>
+                            <span class="industry-name">Pharmaceutical</span>
+                            <p class="industry-desc">High-purity components for pharmaceutical manufacturing.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="industry-card" style="background-color: #333">
-                    <div class="industry-overlay"></div>
-                    <span class="industry-name">Motor Manufacturing</span>
-                </div>
-                <div class="industry-card" style="background-color: #444">
-                    <div class="industry-overlay"></div>
-                    <span class="industry-name">Fuelling Industry</span>
-                </div>
-                <div class="industry-card" style="background-color: #222">
-                    <div class="industry-overlay"></div>
-                    <span class="industry-name">Water Treatment</span>
-                </div>
-                <div class="industry-card" style="background-color: #333">
-                    <div class="industry-overlay"></div>
-                    <span class="industry-name">Agriculture</span>
-                </div>
-                <div class="industry-card" style="background-color: #444">
-                    <div class="industry-overlay"></div>
-                    <span class="industry-name">Food Processing</span>
-                </div>
-                <div class="industry-card" style="background-color: #222">
-                    <div class="industry-overlay"></div>
-                    <span class="industry-name">Chemical</span>
-                </div>
-                <div class="industry-card" style="background-color: #333">
-                    <div class="industry-overlay"></div>
-                    <span class="industry-name">Pharmaceutical</span>
-                </div>
+                <button type="button" class="industry-nav next" aria-label="Next">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
             </div>
         </div>
     </section>
@@ -1790,16 +2204,15 @@
                 </div>
                 <div class="founder-text">
                     <span class="section-label">Leadership</span>
-                    <h2 class="h2">Meet Our Founder</h2>
-                    <p>Under the visionary leadership of <strong>Shri Viren Gathani</strong>, Apurvi Industries has
+                    <h2 class="h2" style="color: #fff;">Meet Our Founder</h2>
+                    <p style="opacity: 0.9;">Under the visionary leadership of <strong>Shri Viren Gathani</strong>, Apurvi Industries has
                         grown from a manufacturing unit to a trusted name in stainless steel pipe supply across India.
                         Our focus remains on quality, integrity, and building long-term relationships with our clients.
                     </p>
                     <div class="founder-links">
-                        <a href="company.html" class="founder-link">Infrastructure</a>
-                        <a href="downloads.html" class="founder-link">Download Brochure</a>
-                        <a href="products.html" class="founder-link">Photo Gallery</a>
-                        <a href="contact.html" class="founder-link">Inquiry Now</a>
+                        <a href="leadership.html" class="founder-link" style="color: #fff;">Read More</a>
+                        <a href="downloads.html" class="founder-link" style="color: #fff;">Download Brochure</a>
+                        <a href="contact.html" class="founder-link" style="color: #fff;">Inquiry Now</a>
                     </div>
                 </div>
             </div>
@@ -1825,88 +2238,136 @@
                 </div>
             </div>
 
-            <div style="margin-top: 100px; text-align: center;">
-                <span class="section-label" style="margin-bottom: 40px;">Trusted by Industry Leaders</span>
-                <div class="client-logos">
-                    <!-- Generic Industrial Client Names for Visual Proof -->
-                    <div style="font-size: 24px; font-weight: 900; letter-spacing: -1px;">GLOBAL<span style="font-weight: 300;">WATER</span></div>
-                    <div style="font-size: 18px; font-weight: 800; text-transform: uppercase;">Apex Pumps</div>
-                    <div style="font-size: 22px; font-weight: 400; font-family: serif;">FluidSystems</div>
-                    <div style="font-size: 20px; font-weight: 700; border-bottom: 3px solid var(--accent-red);">HYDROMATIC</div>
-                    <div style="font-size: 26px; font-weight: 300;">Techno<span style="font-weight: 900;">GEAR</span></div>
-                </div>
-            </div>
         </div>
     </section>
 
     <!-- Global Presence Section -->
-    <section class="section-padding" style="background-color: var(--bg-dark); color: var(--text-white); text-align: center;">
+    <section class="section-padding" style="background-color: #F5F7FB; text-align: center;">
         <div class="container">
             <span class="section-label">Global Presence</span>
-            <h2 class="h2" style="color: var(--text-white);">Our Global Reach</h2>
-            <p style="max-width: 800px; margin: 0 auto 50px; opacity: 0.8;">Apurvi Industries exports high-quality stainless steel piping solutions to clients worldwide, ensuring reliability and precision across continents.</p>
-            <img src="https://apurviind.com/wp-content/uploads/2021/05/world-map-3.jpg" alt="Clientele World Map" style="width: 100%; max-width: 1000px; margin: 0 auto; opacity: 0.8; filter: grayscale(100%) invert(100%);">
+            <h2 class="h2">Our Global Reach</h2>
+            <p style="max-width: 800px; margin: 0 auto 50px; color: var(--text-secondary);">Apurvi Industries exports high-quality stainless steel piping solutions to clients worldwide, ensuring reliability and precision across continents.</p>
+            <div style="background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06); max-width: 1100px; margin: 0 auto;">
+                <img src="https://apurviind.com/wp-content/uploads/2021/05/world-map-3.jpg" alt="Apurvi Industries Global Presence Map" style="width: 100%; height: auto; display: block;">
+                <p style="margin-top: 24px; color: var(--text-secondary); font-size: 14px;">Serving clients across India, USA, Canada, Mexico, Germany, Italy, Turkey, Philippines, Australia and more.</p>
+            </div>
         </div>
     </section>
 
-    <section class="contact-section section-padding">
+    <!-- LinkedIn Blog Feed -->
+    <section class="section-padding" style="background-color: #fff;">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 50px;">
+                <span class="section-label">From Our LinkedIn</span>
+                <h2 class="h2">Latest Updates & Insights</h2>
+                <p style="color: var(--text-secondary);">Follow our journey, milestones, and engineering insights shared on LinkedIn.</p>
+            </div>
+            <div class="linkedin-feed">
+                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7460612173665488896?collapsed=1" height="395" frameborder="0" allowfullscreen title="LinkedIn Post"></iframe>
+                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7459526226462822400?collapsed=1" height="361" frameborder="0" allowfullscreen title="LinkedIn Post"></iframe>
+                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7457416661902524416?collapsed=1" height="361" frameborder="0" allowfullscreen title="LinkedIn Post"></iframe>
+                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7455550738920837120?collapsed=1" height="395" frameborder="0" allowfullscreen title="LinkedIn Post"></iframe>
+                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7455127505239314433?collapsed=1" height="361" frameborder="0" allowfullscreen title="LinkedIn Post"></iframe>
+                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7452984441561567232?collapsed=1" height="361" frameborder="0" allowfullscreen title="LinkedIn Post"></iframe>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="blog.html" class="btn btn-primary">View All Posts</a>
+            </div>
+        </div>
+        <style>
+            .linkedin-feed {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 24px;
+            }
+            .linkedin-feed iframe {
+                width: 100%;
+                border: 1px solid #e6e6e6;
+                border-radius: 8px;
+                background: #fff;
+            }
+            @media (max-width: 991px) {
+                .linkedin-feed { grid-template-columns: repeat(2, 1fr); }
+            }
+            @media (max-width: 600px) {
+                .linkedin-feed { grid-template-columns: 1fr; }
+            }
+        </style>
+    </section>
+
+    <section class="contact-section section-padding" id="contact">
         <div class="container">
             <div class="contact-section-header">
                 <span class="section-label">Get in Touch</span>
-                <h2 class="h2">Your Contact to Us!</h2>
+                <h2 class="h2">Contact Us</h2>
+                <p style="color: var(--text-secondary); margin-top: 10px;">For detailed enquiries, visit our <a href="contact.html" style="color: var(--primary-blue); font-weight: 700;">Contact Page</a>.</p>
             </div>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-detail">
-                        <h4>Phone</h4>
-                        <p>+91-8128664329</p>
+            <div class="home-contact-grid">
+                <div class="home-contact-info">
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:+918128664329">+91 8128664329</a></p>
+                        </div>
                     </div>
-
-                    <div class="contact-detail">
-                        <h4>Email</h4>
-                        <p>info@apurviind.com</p>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:info@apurviind.com">info@apurviind.com</a></p>
+                        </div>
                     </div>
-
-                    <div class="contact-detail">
-                        <h4>Corporate Office</h4>
-                        <p>G-1112 Titanium City Center, Prahladnagar Road, Ahmedabad-380015, Gujarat, India</p>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg>
+                        </div>
+                        <div>
+                            <h4>Corporate Office</h4>
+                            <p>G-1112 Titanium City Center, Prahladnagar Road, Ahmedabad-380015, Gujarat, India</p>
+                        </div>
                     </div>
-
-                    <div class="contact-detail">
-                        <h4>Manufacturing Plant</h4>
-                        <p>Survey No. 1383/D/Paiki 1, Village Rajpur, Taluka Kadi, Dist. Mehsana - 382715</p>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div>
+                            <h4>Manufacturing Plant</h4>
+                            <p>Survey No. 1383/D/Paiki 1, Village Rajpur, Taluka Kadi, Dist. Mehsana - 382715</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="contact-form-wrapper">
+                <div class="home-contact-form">
+                    <h3 class="home-form-title">Send us a Message</h3>
                     <form id="contactForm">
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="name">Name*</label>
-                                <input type="text" id="name" placeholder="Your Name">
-                                <div class="error-message">This field is required</div>
+                        <div class="home-form-grid">
+                            <div class="home-form-field">
+                                <label for="hc-name">Full Name*</label>
+                                <input type="text" id="hc-name" name="name" placeholder="Your Name" required>
                             </div>
-                            <div class="form-group">
-                                <label for="email">Email*</label>
-                                <input type="email" id="email" placeholder="Email Address">
-                                <div class="error-message">Please enter a valid email</div>
+                            <div class="home-form-field">
+                                <label for="hc-email">Email Address*</label>
+                                <input type="email" id="hc-email" name="email" placeholder="Email Address" required>
                             </div>
-                            <div class="form-group">
-                                <label for="phone">Phone*</label>
-                                <input type="text" id="phone" placeholder="Phone Number">
-                                <div class="error-message">This field is required</div>
+                            <div class="home-form-field">
+                                <label for="hc-phone">Phone*</label>
+                                <input type="text" id="hc-phone" name="phone" placeholder="Phone Number" required>
                             </div>
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <input type="text" id="subject" placeholder="Inquiry Subject">
+                            <div class="home-form-field">
+                                <label for="hc-subject">Subject</label>
+                                <input type="text" id="hc-subject" name="subject" placeholder="Inquiry Subject">
                             </div>
-                            <div class="form-group full">
-                                <label for="message">Message*</label>
-                                <textarea id="message" rows="5" placeholder="Your Message"></textarea>
-                                <div class="error-message">This field is required</div>
+                            <div class="home-form-field full">
+                                <label for="hc-message">Message*</label>
+                                <textarea id="hc-message" rows="5" name="message" placeholder="How can we help you?" required></textarea>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                        <button type="submit" class="btn-submit">Send Enquiry</button>
                     </form>
                 </div>
             </div>
@@ -1962,7 +2423,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 Apurvi Industries. All rights reserved.</p>
+                <p>&copy; 2026 Apurvi Industries. All rights reserved. &nbsp;|&nbsp; Powered by <a href="#" style="color: inherit; text-decoration: underline; opacity: 0.9;">Swytch Studios</a></p>
                 <div style="display: flex; gap: 20px;">
                     <a href="privacy-policy.html">Privacy Policy</a>
                     <a href="sitemap.html">Sitemap</a>
@@ -2044,54 +2505,69 @@
             window.requestAnimationFrame(step);
         }
 
-        // Form Validation
+        // Form Validation (legacy form)
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
             contactForm.addEventListener('submit', (e) => {
                 e.preventDefault();
                 let isValid = true;
-                const requiredFields = ['name', 'email', 'phone', 'message'];
-
-                requiredFields.forEach(id => {
-                    const el = document.getElementById(id);
-                    if (!el) return;
-                    const error = el.nextElementSibling;
-
+                contactForm.querySelectorAll('[required]').forEach(el => {
                     if (!el.value.trim()) {
-                        el.classList.add('input-error');
-                        if (error) error.style.display = 'block';
+                        el.style.borderColor = '#d32f2f';
                         isValid = false;
                     } else {
-                        el.classList.remove('input-error');
-                        if (error) error.style.display = 'none';
-                        if (id === 'email') {
-                            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                            if (!emailRegex.test(el.value)) {
-                                el.classList.add('input-error');
-                                if (error) {
-                                    error.textContent = 'Please enter a valid email';
-                                    error.style.display = 'block';
-                                }
-                                isValid = false;
-                            }
-                        }
+                        el.style.borderColor = '';
                     }
                 });
-
                 if (isValid) {
-                    const btn = contactForm.querySelector('button');
+                    const btn = contactForm.querySelector('button[type="submit"]');
                     if (btn) {
-                        btn.textContent = 'Message Sent!';
+                        const original = btn.textContent;
+                        btn.textContent = 'SUBMITTED';
                         btn.style.backgroundColor = '#28a745';
                         contactForm.reset();
                         setTimeout(() => {
-                            btn.textContent = 'Send Message';
-                            btn.style.backgroundColor = 'var(--accent-red)';
+                            btn.textContent = original;
+                            btn.style.backgroundColor = '';
                         }, 3000);
                     }
                 }
             });
         }
+
+        // Industries Carousel
+        (function () {
+            const carousel = document.getElementById('industriesCarousel');
+            if (!carousel) return;
+            const track = carousel.querySelector('.industries-track');
+            const prev = carousel.querySelector('.industry-nav.prev');
+            const next = carousel.querySelector('.industry-nav.next');
+            let index = 0;
+            const getPerView = () => {
+                if (window.innerWidth <= 560) return 1;
+                if (window.innerWidth <= 991) return 2;
+                return 4;
+            };
+            const update = () => {
+                const cards = track.children;
+                if (!cards.length) return;
+                const perView = getPerView();
+                const maxIndex = Math.max(0, cards.length - perView);
+                if (index > maxIndex) index = maxIndex;
+                const cardWidth = cards[0].getBoundingClientRect().width + 16;
+                track.style.transform = `translateX(-${index * cardWidth}px)`;
+            };
+            prev.addEventListener('click', () => { index = Math.max(0, index - 1); update(); });
+            next.addEventListener('click', () => {
+                const cards = track.children;
+                const perView = getPerView();
+                const maxIndex = Math.max(0, cards.length - perView);
+                index = Math.min(maxIndex, index + 1);
+                update();
+            });
+            window.addEventListener('resize', update);
+            setTimeout(update, 100);
+        })();
 
         // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
