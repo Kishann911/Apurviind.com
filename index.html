@@ -614,44 +614,135 @@
             margin-bottom: 60px;
         }
 
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1px;
-            background-color: #ddd;
-            border: 1px solid #ddd;
+        /* === Product Stack Carousel === */
+        .product-stack {
+            max-width: 760px;
+            margin: 0 auto;
         }
-
-        .product-card {
-            background-color: var(--bg-primary);
-            padding: 40px 30px;
-            display: flex;
-            flex-direction: column;
-            transition: var(--transition-slow);
+        .product-stack-viewport {
             position: relative;
-            overflow: hidden;
+            height: 460px;
+            perspective: 1400px;
         }
-
-        .product-card::before {
-            content: '';
+        .product-stack-card {
             position: absolute;
-            left: 0;
             top: 0;
+            left: 50%;
+            width: 360px;
             height: 100%;
-            width: 4px;
-            background-color: var(--primary-blue);
-            transform: scaleY(0);
-            transition: var(--transition-fast);
-            transform-origin: bottom;
+            margin-left: -180px;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+            overflow: hidden;
+            transform-origin: center center;
+            transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1),
+                        opacity 0.4s ease,
+                        z-index 0s;
+            opacity: 0;
+            pointer-events: none;
         }
-
-        .product-card:hover {
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        .product-stack-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 24px;
+            display: block;
+            background: #fff;
+        }
+        .product-stack-card.pos-center {
+            transform: translateX(0) scale(1) rotate(0deg);
             z-index: 5;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .product-stack-card.pos-prev-1 {
+            transform: translateX(-180px) scale(0.85) rotate(-8deg);
+            z-index: 4;
+            opacity: 0.85;
+        }
+        .product-stack-card.pos-prev-2 {
+            transform: translateX(-300px) scale(0.7) rotate(-14deg);
+            z-index: 3;
+            opacity: 0.55;
+        }
+        .product-stack-card.pos-next-1 {
+            transform: translateX(180px) scale(0.85) rotate(8deg);
+            z-index: 4;
+            opacity: 0.85;
+        }
+        .product-stack-card.pos-next-2 {
+            transform: translateX(300px) scale(0.7) rotate(14deg);
+            z-index: 3;
+            opacity: 0.55;
+        }
+        .product-stack-card.pos-hidden-left {
+            transform: translateX(-460px) scale(0.55) rotate(-18deg);
+            z-index: 2;
+            opacity: 0;
+        }
+        .product-stack-card.pos-hidden-right {
+            transform: translateX(460px) scale(0.55) rotate(18deg);
+            z-index: 2;
+            opacity: 0;
         }
 
-        .product-card:hover::before {
-            transform: scaleY(1);
+        .product-stack-footer {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .product-stack-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-align: center;
+            min-height: 60px;
+            line-height: 1.4;
+            transition: opacity 0.25s ease;
+        }
+        .product-stack-title.is-changing { opacity: 0; }
+        .stack-nav {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: transparent;
+            border: 1.5px solid #bcbcd1;
+            color: #3F3A8A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+            flex-shrink: 0;
+        }
+        .stack-nav:hover {
+            background: var(--primary-blue);
+            border-color: var(--primary-blue);
+            color: #fff;
+        }
+        .stack-nav svg { width: 20px; height: 20px; }
+
+        @media (max-width: 768px) {
+            .product-stack-viewport { height: 380px; }
+            .product-stack-card { width: 280px; margin-left: -140px; }
+            .product-stack-card.pos-prev-1 { transform: translateX(-130px) scale(0.82) rotate(-7deg); }
+            .product-stack-card.pos-prev-2 { transform: translateX(-220px) scale(0.65) rotate(-12deg); opacity: 0.4; }
+            .product-stack-card.pos-next-1 { transform: translateX(130px) scale(0.82) rotate(7deg); }
+            .product-stack-card.pos-next-2 { transform: translateX(220px) scale(0.65) rotate(12deg); opacity: 0.4; }
+            .product-stack-footer { gap: 14px; margin-top: 28px; }
+            .stack-nav { width: 44px; height: 44px; }
+            .product-stack-title { font-size: 17px; min-height: 50px; }
+        }
+        @media (max-width: 480px) {
+            .product-stack-viewport { height: 340px; }
+            .product-stack-card { width: 240px; margin-left: -120px; border-radius: 12px; }
+            .product-stack-card.pos-prev-1 { transform: translateX(-90px) scale(0.8) rotate(-6deg); }
+            .product-stack-card.pos-prev-2 { transform: translateX(-150px) scale(0.62) rotate(-10deg); opacity: 0.3; }
+            .product-stack-card.pos-next-1 { transform: translateX(90px) scale(0.8) rotate(6deg); }
+            .product-stack-card.pos-next-2 { transform: translateX(150px) scale(0.62) rotate(10deg); opacity: 0.3; }
         }
 
         .product-img-placeholder {
@@ -2081,39 +2172,41 @@
                 </p>
             </div>
 
-            <div class="products-grid">
-                <!-- Product cards (1-10) -->
-                <div class="product-card">
-                    <img src="assets/images/Nech Ring Stage Pipe.png" alt="Nech Ring Stage Pipe" style="height: 180px; width: 100%; object-fit: contain; margin-bottom: 30px;">
-                    <h3 class="product-name">Nech Ring Stage Pipe</h3>
+            <div class="product-stack" id="productStack">
+                <div class="product-stack-viewport">
+                    <div class="product-stack-card" data-name="Nech Ring Stage Pipe">
+                        <img src="assets/images/Nech Ring Stage Pipe.png" alt="Nech Ring Stage Pipe">
+                    </div>
+                    <div class="product-stack-card" data-name="6mm Tube for NRV">
+                        <img src="assets/images/6mm Tube for NRV.png" alt="6mm Tube for NRV">
+                    </div>
+                    <div class="product-stack-card" data-name="Pressure Pump Sleeve">
+                        <img src="assets/images/Pressure Pump Sleeve.png" alt="Pressure Pump Sleeve">
+                    </div>
+                    <div class="product-stack-card" data-name="Motor Tubes">
+                        <img src="assets/images/Motor Tubes.png" alt="Motor Tubes">
+                    </div>
+                    <div class="product-stack-card" data-name="OD & ID Spot Welding Ring">
+                        <img src="assets/images/spot_weldingring.png" alt="OD & ID Spot Welding Ring">
+                    </div>
+                    <div class="product-stack-card" data-name="Higher HP Pump Tube">
+                        <img src="assets/images/Higher HP Pump Tube.png" alt="Higher HP Pump Tube">
+                    </div>
+                    <div class="product-stack-card" data-name="Manufacturing Long Tube">
+                        <img src="assets/Manufacturing Long Tube.png" alt="Manufacturing Long Tube">
+                    </div>
+                    <div class="product-stack-card" data-name="Aluminium Tubing">
+                        <img src="assets/Aluminum tubing image.jpg" alt="Aluminium Tubing">
+                    </div>
                 </div>
-                <div class="product-card">
-                    <img src="assets/images/6mm Tube for NRV.png" alt="6mm Tube for NRV" style="height: 180px; width: 100%; object-fit: contain; margin-bottom: 30px;">
-                    <h3 class="product-name">6mm Tube for NRV</h3>
-                </div>
-                <div class="product-card">
-                    <img src="assets/images/Pressure Pump Sleeve.png" alt="Pressure Pump Sleeve" style="height: 180px; width: 100%; object-fit: contain; margin-bottom: 30px;">
-                    <h3 class="product-name">Pressure Pump Sleeve</h3>
-                </div>
-                <div class="product-card">
-                    <img src="assets/images/Motor Tubes.png" alt="Motor Tubes" style="height: 180px; width: 100%; object-fit: contain; margin-bottom: 30px;">
-                    <h3 class="product-name">Motor Tubes</h3>
-                </div>
-                <div class="product-card">
-                    <img src="assets/images/spot_weldingring.png" alt="OD & ID Spot Welding Ring" style="height: 180px; width: 100%; object-fit: contain; margin-bottom: 30px;">
-                    <h3 class="product-name">OD & ID Spot Welding Ring</h3>
-                </div>
-                <div class="product-card">
-                    <img src="assets/images/Higher HP Pump Tube.png" alt="Higher HP Pump Tube" style="height: 180px; width: 100%; object-fit: contain; margin-bottom: 30px;">
-                    <h3 class="product-name">Higher HP Pump Tube</h3>
-                </div>
-                <div class="product-card">
-                    <img src="assets/Manufacturing Long Tube.png" alt="Manufacturing Long Tube" style="height: 180px; width: 100%; object-fit: contain; margin-bottom: 30px;">
-                    <h3 class="product-name">Manufacturing Long Tube</h3>
-                </div>
-                <div class="product-card">
-                    <img src="assets/Aluminum tubing image.jpg" alt="Aluminium Tubing" style="height: 180px; width: 100%; object-fit: contain; margin-bottom: 30px;">
-                    <h3 class="product-name">Aluminium Tubing</h3>
+                <div class="product-stack-footer">
+                    <button type="button" class="stack-nav prev" aria-label="Previous product">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+                    <h3 class="product-stack-title">Nech Ring Stage Pipe</h3>
+                    <button type="button" class="stack-nav next" aria-label="Next product">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
                 </div>
             </div>
 
@@ -2561,6 +2654,67 @@
                 }
             });
         }
+
+        // Product Stack Carousel
+        (function () {
+            const stack = document.getElementById('productStack');
+            if (!stack) return;
+            const cards = Array.from(stack.querySelectorAll('.product-stack-card'));
+            const title = stack.querySelector('.product-stack-title');
+            const prev = stack.querySelector('.stack-nav.prev');
+            const next = stack.querySelector('.stack-nav.next');
+            const n = cards.length;
+            if (!n) return;
+            let active = 0;
+
+            const positionClasses = [
+                'pos-center', 'pos-prev-1', 'pos-prev-2',
+                'pos-next-1', 'pos-next-2',
+                'pos-hidden-left', 'pos-hidden-right'
+            ];
+
+            const render = () => {
+                cards.forEach((card, i) => {
+                    positionClasses.forEach(c => card.classList.remove(c));
+                    const offset = ((i - active) % n + n) % n;
+                    let cls;
+                    if (offset === 0) cls = 'pos-center';
+                    else if (offset === 1) cls = 'pos-next-1';
+                    else if (offset === 2) cls = 'pos-next-2';
+                    else if (offset === n - 1) cls = 'pos-prev-1';
+                    else if (offset === n - 2) cls = 'pos-prev-2';
+                    else cls = offset < n / 2 ? 'pos-hidden-right' : 'pos-hidden-left';
+                    card.classList.add(cls);
+                });
+                const newName = cards[active].dataset.name || '';
+                if (title.textContent !== newName) {
+                    title.classList.add('is-changing');
+                    setTimeout(() => {
+                        title.textContent = newName;
+                        title.classList.remove('is-changing');
+                    }, 220);
+                }
+            };
+
+            prev.addEventListener('click', () => { active = (active - 1 + n) % n; render(); });
+            next.addEventListener('click', () => { active = (active + 1) % n; render(); });
+
+            // Swipe support for touch devices
+            let startX = null;
+            stack.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+            stack.addEventListener('touchend', (e) => {
+                if (startX === null) return;
+                const dx = e.changedTouches[0].clientX - startX;
+                if (Math.abs(dx) > 40) {
+                    if (dx < 0) { active = (active + 1) % n; }
+                    else { active = (active - 1 + n) % n; }
+                    render();
+                }
+                startX = null;
+            });
+
+            render();
+        })();
 
         // Industries Carousel
         (function () {
