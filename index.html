@@ -614,10 +614,48 @@
             margin-bottom: 60px;
         }
 
+        /* === Products Layout (split row) === */
+        .products-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .products-intro .section-label { color: var(--primary-blue); }
+        .products-headline {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.05;
+            margin: 18px 0 32px;
+            color: var(--primary-blue);
+            letter-spacing: -1.5px;
+        }
+        .products-intro p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            max-width: 520px;
+        }
+        .products-cta-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--primary-blue);
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+            transition: border-color 0.2s ease, gap 0.2s ease;
+        }
+        .products-cta-link:hover { border-bottom-color: var(--primary-blue); gap: 18px; }
+        .products-cta-link svg { width: 18px; height: 18px; }
+
         /* === Product Stack Carousel === */
         .product-stack {
-            max-width: 760px;
-            margin: 0 auto;
+            width: 100%;
         }
         .product-stack-viewport {
             position: relative;
@@ -723,8 +761,19 @@
             border-color: var(--primary-blue);
             color: #fff;
         }
+        .stack-nav.is-disabled,
+        .stack-nav[disabled] {
+            opacity: 0.35;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
         .stack-nav svg { width: 20px; height: 20px; }
 
+        @media (max-width: 991px) {
+            .products-layout { grid-template-columns: 1fr; gap: 50px; }
+            .products-headline { font-size: 42px; }
+            .products-intro p { max-width: 100%; }
+        }
         @media (max-width: 768px) {
             .product-stack-viewport { height: 380px; }
             .product-stack-card { width: 280px; margin-left: -140px; }
@@ -735,6 +784,7 @@
             .product-stack-footer { gap: 14px; margin-top: 28px; }
             .stack-nav { width: 44px; height: 44px; }
             .product-stack-title { font-size: 17px; min-height: 50px; }
+            .products-headline { font-size: 36px; }
         }
         @media (max-width: 480px) {
             .product-stack-viewport { height: 340px; }
@@ -743,6 +793,7 @@
             .product-stack-card.pos-prev-2 { transform: translateX(-150px) scale(0.62) rotate(-10deg); opacity: 0.3; }
             .product-stack-card.pos-next-1 { transform: translateX(90px) scale(0.8) rotate(6deg); }
             .product-stack-card.pos-next-2 { transform: translateX(150px) scale(0.62) rotate(10deg); opacity: 0.3; }
+            .products-headline { font-size: 30px; }
         }
 
         .product-img-placeholder {
@@ -2201,54 +2252,57 @@
     <!-- Products Section -->
     <section class="section-padding bg-gray" id="products">
         <div class="container">
-            <div class="products-header">
-                <span class="section-label">Our Products</span>
-                <h2 class="h2">Innovative Stainless Steel Solutions</h2>
-                <p>Apurvi Industries offers a broad portfolio of stainless steel products for submersible pumps, motors,
-                    and industrial applications. We manufacture to the highest standards of precision and durability.
-                </p>
-            </div>
+            <div class="products-layout">
+                <div class="products-intro">
+                    <span class="section-label">Our Products</span>
+                    <h2 class="products-headline">Precision Steel.<br>Built for Industry.</h2>
+                    <p>Apurvi Industries manufactures a wide range of stainless steel pipes, motor tubes,
+                        and precision-engineered components. From submersible pumps to specialised tubing,
+                        every product is built to deliver durability, exact tolerances, and global-grade
+                        finish for industries that cannot compromise on quality.</p>
+                    <a href="products.html" class="products-cta-link">
+                        View All Products
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
 
-            <div class="product-stack" id="productStack">
-                <div class="product-stack-viewport">
-                    <div class="product-stack-card" data-name="Nech Ring Stage Pipe">
-                        <img src="assets/images/Nech Ring Stage Pipe.png" alt="Nech Ring Stage Pipe">
+                <div class="product-stack" id="productStack">
+                    <div class="product-stack-viewport">
+                        <div class="product-stack-card" data-name="Nech Ring Stage Pipe">
+                            <img src="assets/images/Nech Ring Stage Pipe.png" alt="Nech Ring Stage Pipe">
+                        </div>
+                        <div class="product-stack-card" data-name="6mm Tube for NRV">
+                            <img src="assets/images/6mm Tube for NRV.png" alt="6mm Tube for NRV">
+                        </div>
+                        <div class="product-stack-card" data-name="Pressure Pump Sleeve">
+                            <img src="assets/images/Pressure Pump Sleeve.png" alt="Pressure Pump Sleeve">
+                        </div>
+                        <div class="product-stack-card" data-name="Motor Tubes">
+                            <img src="assets/images/Motor Tubes.png" alt="Motor Tubes">
+                        </div>
+                        <div class="product-stack-card" data-name="OD & ID Spot Welding Ring">
+                            <img src="assets/images/spot_weldingring.png" alt="OD & ID Spot Welding Ring">
+                        </div>
+                        <div class="product-stack-card" data-name="Higher HP Pump Tube">
+                            <img src="assets/images/Higher HP Pump Tube.png" alt="Higher HP Pump Tube">
+                        </div>
+                        <div class="product-stack-card" data-name="Manufacturing Long Tube">
+                            <img src="assets/Manufacturing Long Tube.png" alt="Manufacturing Long Tube">
+                        </div>
+                        <div class="product-stack-card" data-name="Aluminium Tubing">
+                            <img src="assets/Aluminum tubing image.jpg" alt="Aluminium Tubing">
+                        </div>
                     </div>
-                    <div class="product-stack-card" data-name="6mm Tube for NRV">
-                        <img src="assets/images/6mm Tube for NRV.png" alt="6mm Tube for NRV">
-                    </div>
-                    <div class="product-stack-card" data-name="Pressure Pump Sleeve">
-                        <img src="assets/images/Pressure Pump Sleeve.png" alt="Pressure Pump Sleeve">
-                    </div>
-                    <div class="product-stack-card" data-name="Motor Tubes">
-                        <img src="assets/images/Motor Tubes.png" alt="Motor Tubes">
-                    </div>
-                    <div class="product-stack-card" data-name="OD & ID Spot Welding Ring">
-                        <img src="assets/images/spot_weldingring.png" alt="OD & ID Spot Welding Ring">
-                    </div>
-                    <div class="product-stack-card" data-name="Higher HP Pump Tube">
-                        <img src="assets/images/Higher HP Pump Tube.png" alt="Higher HP Pump Tube">
-                    </div>
-                    <div class="product-stack-card" data-name="Manufacturing Long Tube">
-                        <img src="assets/Manufacturing Long Tube.png" alt="Manufacturing Long Tube">
-                    </div>
-                    <div class="product-stack-card" data-name="Aluminium Tubing">
-                        <img src="assets/Aluminum tubing image.jpg" alt="Aluminium Tubing">
+                    <div class="product-stack-footer">
+                        <button type="button" class="stack-nav prev" aria-label="Previous product">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                        </button>
+                        <h3 class="product-stack-title">Nech Ring Stage Pipe</h3>
+                        <button type="button" class="stack-nav next" aria-label="Next product">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                        </button>
                     </div>
                 </div>
-                <div class="product-stack-footer">
-                    <button type="button" class="stack-nav prev" aria-label="Previous product">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-                    </button>
-                    <h3 class="product-stack-title">Nech Ring Stage Pipe</h3>
-                    <button type="button" class="stack-nav next" aria-label="Next product">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                    </button>
-                </div>
-            </div>
-
-            <div class="products-footer">
-                <a href="products.html" class="btn btn-primary">View All Products</a>
             </div>
         </div>
     </section>
@@ -2700,7 +2754,7 @@
             });
         }
 
-        // Product Stack Carousel
+        // Product Stack Carousel (non-circular)
         (function () {
             const stack = document.getElementById('productStack');
             if (!stack) return;
@@ -2721,14 +2775,14 @@
             const render = () => {
                 cards.forEach((card, i) => {
                     positionClasses.forEach(c => card.classList.remove(c));
-                    const offset = ((i - active) % n + n) % n;
+                    const offset = i - active;
                     let cls;
                     if (offset === 0) cls = 'pos-center';
                     else if (offset === 1) cls = 'pos-next-1';
                     else if (offset === 2) cls = 'pos-next-2';
-                    else if (offset === n - 1) cls = 'pos-prev-1';
-                    else if (offset === n - 2) cls = 'pos-prev-2';
-                    else cls = offset < n / 2 ? 'pos-hidden-right' : 'pos-hidden-left';
+                    else if (offset === -1) cls = 'pos-prev-1';
+                    else if (offset === -2) cls = 'pos-prev-2';
+                    else cls = offset > 0 ? 'pos-hidden-right' : 'pos-hidden-left';
                     card.classList.add(cls);
                 });
                 const newName = cards[active].dataset.name || '';
@@ -2739,10 +2793,18 @@
                         title.classList.remove('is-changing');
                     }, 220);
                 }
+                prev.disabled = active === 0;
+                next.disabled = active === n - 1;
+                prev.classList.toggle('is-disabled', active === 0);
+                next.classList.toggle('is-disabled', active === n - 1);
             };
 
-            prev.addEventListener('click', () => { active = (active - 1 + n) % n; render(); });
-            next.addEventListener('click', () => { active = (active + 1) % n; render(); });
+            prev.addEventListener('click', () => {
+                if (active > 0) { active -= 1; render(); }
+            });
+            next.addEventListener('click', () => {
+                if (active < n - 1) { active += 1; render(); }
+            });
 
             // Swipe support for touch devices
             let startX = null;
@@ -2751,9 +2813,8 @@
                 if (startX === null) return;
                 const dx = e.changedTouches[0].clientX - startX;
                 if (Math.abs(dx) > 40) {
-                    if (dx < 0) { active = (active + 1) % n; }
-                    else { active = (active - 1 + n) % n; }
-                    render();
+                    if (dx < 0 && active < n - 1) { active += 1; render(); }
+                    else if (dx > 0 && active > 0) { active -= 1; render(); }
                 }
                 startX = null;
             });
