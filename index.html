@@ -617,8 +617,8 @@
         /* === Products Layout (split row) === */
         .products-layout {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 60px;
             align-items: center;
         }
         .products-intro .section-label { color: var(--primary-blue); }
@@ -656,27 +656,29 @@
         /* === Product Stack Carousel === */
         .product-stack {
             width: 100%;
+            max-width: 520px;
+            margin-left: auto;
         }
         .product-stack-viewport {
             position: relative;
-            height: 460px;
+            height: 380px;
             perspective: 1400px;
+            overflow: hidden;
         }
         .product-stack-card {
             position: absolute;
             top: 0;
             left: 50%;
-            width: 360px;
+            width: 260px;
             height: 100%;
-            margin-left: -180px;
+            margin-left: -130px;
             background: #fff;
             border-radius: 14px;
-            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
             overflow: hidden;
             transform-origin: center center;
-            transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1),
-                        opacity 0.4s ease,
-                        z-index 0s;
+            transition: transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1),
+                        opacity 0.4s ease;
             opacity: 0;
             pointer-events: none;
         }
@@ -684,7 +686,7 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            padding: 24px;
+            padding: 22px;
             display: block;
             background: #fff;
         }
@@ -695,32 +697,22 @@
             pointer-events: auto;
         }
         .product-stack-card.pos-prev-1 {
-            transform: translateX(-180px) scale(0.85) rotate(-8deg);
+            transform: translateX(-110px) scale(0.85) rotate(-4deg);
             z-index: 4;
-            opacity: 0.85;
-        }
-        .product-stack-card.pos-prev-2 {
-            transform: translateX(-300px) scale(0.7) rotate(-14deg);
-            z-index: 3;
             opacity: 0.55;
         }
         .product-stack-card.pos-next-1 {
-            transform: translateX(180px) scale(0.85) rotate(8deg);
+            transform: translateX(110px) scale(0.85) rotate(4deg);
             z-index: 4;
-            opacity: 0.85;
-        }
-        .product-stack-card.pos-next-2 {
-            transform: translateX(300px) scale(0.7) rotate(14deg);
-            z-index: 3;
             opacity: 0.55;
         }
         .product-stack-card.pos-hidden-left {
-            transform: translateX(-460px) scale(0.55) rotate(-18deg);
+            transform: translateX(-260px) scale(0.7) rotate(-8deg);
             z-index: 2;
             opacity: 0;
         }
         .product-stack-card.pos-hidden-right {
-            transform: translateX(460px) scale(0.55) rotate(18deg);
+            transform: translateX(260px) scale(0.7) rotate(8deg);
             z-index: 2;
             opacity: 0;
         }
@@ -773,26 +765,23 @@
             .products-layout { grid-template-columns: 1fr; gap: 50px; }
             .products-headline { font-size: 42px; }
             .products-intro p { max-width: 100%; }
+            .product-stack { margin: 0 auto; }
         }
         @media (max-width: 768px) {
-            .product-stack-viewport { height: 380px; }
-            .product-stack-card { width: 280px; margin-left: -140px; }
-            .product-stack-card.pos-prev-1 { transform: translateX(-130px) scale(0.82) rotate(-7deg); }
-            .product-stack-card.pos-prev-2 { transform: translateX(-220px) scale(0.65) rotate(-12deg); opacity: 0.4; }
-            .product-stack-card.pos-next-1 { transform: translateX(130px) scale(0.82) rotate(7deg); }
-            .product-stack-card.pos-next-2 { transform: translateX(220px) scale(0.65) rotate(12deg); opacity: 0.4; }
-            .product-stack-footer { gap: 14px; margin-top: 28px; }
+            .product-stack-viewport { height: 340px; }
+            .product-stack-card { width: 220px; margin-left: -110px; }
+            .product-stack-card.pos-prev-1 { transform: translateX(-90px) scale(0.82) rotate(-4deg); }
+            .product-stack-card.pos-next-1 { transform: translateX(90px) scale(0.82) rotate(4deg); }
+            .product-stack-footer { gap: 14px; margin-top: 24px; }
             .stack-nav { width: 44px; height: 44px; }
-            .product-stack-title { font-size: 17px; min-height: 50px; }
+            .product-stack-title { font-size: 17px; min-height: 46px; }
             .products-headline { font-size: 36px; }
         }
         @media (max-width: 480px) {
-            .product-stack-viewport { height: 340px; }
-            .product-stack-card { width: 240px; margin-left: -120px; border-radius: 12px; }
-            .product-stack-card.pos-prev-1 { transform: translateX(-90px) scale(0.8) rotate(-6deg); }
-            .product-stack-card.pos-prev-2 { transform: translateX(-150px) scale(0.62) rotate(-10deg); opacity: 0.3; }
-            .product-stack-card.pos-next-1 { transform: translateX(90px) scale(0.8) rotate(6deg); }
-            .product-stack-card.pos-next-2 { transform: translateX(150px) scale(0.62) rotate(10deg); opacity: 0.3; }
+            .product-stack-viewport { height: 300px; }
+            .product-stack-card { width: 200px; margin-left: -100px; border-radius: 12px; }
+            .product-stack-card.pos-prev-1 { transform: translateX(-75px) scale(0.8) rotate(-4deg); }
+            .product-stack-card.pos-next-1 { transform: translateX(75px) scale(0.8) rotate(4deg); }
             .products-headline { font-size: 30px; }
         }
 
@@ -2754,7 +2743,7 @@
             });
         }
 
-        // Product Stack Carousel (non-circular)
+        // Product Stack Carousel (infinite loop + auto-play)
         (function () {
             const stack = document.getElementById('productStack');
             if (!stack) return;
@@ -2765,24 +2754,23 @@
             const n = cards.length;
             if (!n) return;
             let active = 0;
+            const AUTOPLAY_MS = 3800;
+            let autoplayTimer = null;
 
             const positionClasses = [
-                'pos-center', 'pos-prev-1', 'pos-prev-2',
-                'pos-next-1', 'pos-next-2',
+                'pos-center', 'pos-prev-1', 'pos-next-1',
                 'pos-hidden-left', 'pos-hidden-right'
             ];
 
             const render = () => {
                 cards.forEach((card, i) => {
                     positionClasses.forEach(c => card.classList.remove(c));
-                    const offset = i - active;
+                    const rawOffset = ((i - active) % n + n) % n;
                     let cls;
-                    if (offset === 0) cls = 'pos-center';
-                    else if (offset === 1) cls = 'pos-next-1';
-                    else if (offset === 2) cls = 'pos-next-2';
-                    else if (offset === -1) cls = 'pos-prev-1';
-                    else if (offset === -2) cls = 'pos-prev-2';
-                    else cls = offset > 0 ? 'pos-hidden-right' : 'pos-hidden-left';
+                    if (rawOffset === 0) cls = 'pos-center';
+                    else if (rawOffset === 1) cls = 'pos-next-1';
+                    else if (rawOffset === n - 1) cls = 'pos-prev-1';
+                    else cls = rawOffset < n / 2 ? 'pos-hidden-right' : 'pos-hidden-left';
                     card.classList.add(cls);
                 });
                 const newName = cards[active].dataset.name || '';
@@ -2793,31 +2781,55 @@
                         title.classList.remove('is-changing');
                     }, 220);
                 }
-                prev.disabled = active === 0;
-                next.disabled = active === n - 1;
-                prev.classList.toggle('is-disabled', active === 0);
-                next.classList.toggle('is-disabled', active === n - 1);
             };
 
-            prev.addEventListener('click', () => {
-                if (active > 0) { active -= 1; render(); }
-            });
-            next.addEventListener('click', () => {
-                if (active < n - 1) { active += 1; render(); }
-            });
+            const goNext = () => { active = (active + 1) % n; render(); };
+            const goPrev = () => { active = (active - 1 + n) % n; render(); };
+
+            const startAutoplay = () => {
+                stopAutoplay();
+                autoplayTimer = setInterval(goNext, AUTOPLAY_MS);
+            };
+            const stopAutoplay = () => {
+                if (autoplayTimer) { clearInterval(autoplayTimer); autoplayTimer = null; }
+            };
+
+            prev.addEventListener('click', () => { goPrev(); startAutoplay(); });
+            next.addEventListener('click', () => { goNext(); startAutoplay(); });
+
+            // Pause on hover, resume on leave
+            stack.addEventListener('mouseenter', stopAutoplay);
+            stack.addEventListener('mouseleave', startAutoplay);
 
             // Swipe support for touch devices
             let startX = null;
-            stack.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+            stack.addEventListener('touchstart', (e) => {
+                stopAutoplay();
+                startX = e.touches[0].clientX;
+            }, { passive: true });
             stack.addEventListener('touchend', (e) => {
                 if (startX === null) return;
                 const dx = e.changedTouches[0].clientX - startX;
                 if (Math.abs(dx) > 40) {
-                    if (dx < 0 && active < n - 1) { active += 1; render(); }
-                    else if (dx > 0 && active > 0) { active -= 1; render(); }
+                    if (dx < 0) goNext();
+                    else goPrev();
                 }
                 startX = null;
+                startAutoplay();
             });
+
+            // Pause auto-play when the section is off-screen
+            if ('IntersectionObserver' in window) {
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) startAutoplay();
+                        else stopAutoplay();
+                    });
+                }, { threshold: 0.25 });
+                io.observe(stack);
+            } else {
+                startAutoplay();
+            }
 
             render();
         })();
