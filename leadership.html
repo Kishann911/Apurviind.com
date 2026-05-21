@@ -611,13 +611,15 @@
         .profile-section {
             display: grid;
             grid-template-columns: minmax(320px, 440px) 1fr;
-            gap: 60px;
+            column-gap: 60px;
+            row-gap: 20px;
             align-items: start;
-            padding: 80px 0;
+            padding: 60px 0 70px;
         }
 
         .profile-section .profile-cta {
             grid-column: 1 / -1;
+            margin-top: 0 !important;
         }
 
         .profile-info { max-width: 100%; }
