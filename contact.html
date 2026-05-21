@@ -1395,7 +1395,7 @@
                     <div class="form-group-flex">
                         <div class="form-field">
                             <label>*Phone</label>
-                            <input type="tel" name="phone" required inputmode="tel" pattern="[0-9+\-\s()]{7,20}" maxlength="20" title="Enter a valid phone number (digits, +, -, spaces, parentheses only)">
+                            <input type="tel" name="phone" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" minlength="10" title="Enter a valid 10-digit phone number" placeholder="10-digit number">
                         </div>
                         <div class="form-field">
                             <label>Fax</label>
@@ -1585,17 +1585,26 @@
                 const zip = contactForm.querySelector('input[name="zip"]');
 
                 const stripToPhone = (val) => val.replace(/[^0-9+\-\s()]/g, '');
+                const stripToDigitsOnly = (val) => val.replace(/\D/g, '').slice(0, 10);
                 const stripToDigits = (val) => val.replace(/[^0-9\s\-]/g, '');
 
-                [phone, fax].forEach(el => {
-                    if (!el) return;
-                    el.addEventListener('input', () => { el.value = stripToPhone(el.value); });
-                    el.addEventListener('paste', (e) => {
+                if (phone) {
+                    phone.addEventListener('input', () => { phone.value = stripToDigitsOnly(phone.value); });
+                    phone.addEventListener('paste', (e) => {
+                        e.preventDefault();
+                        const text = (e.clipboardData || window.clipboardData).getData('text');
+                        document.execCommand('insertText', false, stripToDigitsOnly(text));
+                    });
+                }
+
+                if (fax) {
+                    fax.addEventListener('input', () => { fax.value = stripToPhone(fax.value); });
+                    fax.addEventListener('paste', (e) => {
                         e.preventDefault();
                         const text = (e.clipboardData || window.clipboardData).getData('text');
                         document.execCommand('insertText', false, stripToPhone(text));
                     });
-                });
+                }
 
                 if (zip) {
                     zip.addEventListener('input', () => { zip.value = stripToDigits(zip.value); });
@@ -1607,12 +1616,11 @@
                 }
 
                 contactForm.addEventListener('submit', (e) => {
-                    const phoneVal = phone ? phone.value.trim() : '';
-                    const phoneDigits = phoneVal.replace(/\D/g, '');
-                    if (phone && phoneDigits.length < 7) {
+                    const phoneDigits = phone ? phone.value.replace(/\D/g, '') : '';
+                    if (phone && phoneDigits.length !== 10) {
                         e.preventDefault();
                         phone.focus();
-                        alert('Please enter a valid phone number (at least 7 digits).');
+                        alert('Please enter a valid 10-digit phone number.');
                         return;
                     }
                     if (zip && zip.value.trim() && zip.value.replace(/\D/g, '').length < 3) {
