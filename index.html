@@ -2541,7 +2541,7 @@
                 </button>
             </div>
 
-            <div style="text-align: center; margin-top: 40px;">
+            <div style="text-align: center; margin-top: 28px;">
                 <a href="blog.html" class="btn btn-primary">View All Posts</a>
             </div>
         </div>
@@ -2555,14 +2555,14 @@
             }
             .linkedin-track {
                 display: flex;
-                gap: 24px;
+                gap: 32px;
                 transition: transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
                 will-change: transform;
             }
             .linkedin-card {
-                flex: 0 0 calc((100% - 48px) / 3);
+                flex: 0 0 calc((100% - 32px) / 2);
                 min-width: 0;
-                height: 580px;
+                height: 540px;
                 background: transparent;
                 border: 0;
                 border-radius: 0;
@@ -2614,12 +2614,12 @@
 
             @media (max-width: 991px) {
                 .linkedin-carousel { padding: 0 50px; }
-                .linkedin-card { flex: 0 0 calc((100% - 24px) / 2); height: 560px; }
+                .linkedin-card { flex: 0 0 100%; height: 520px; }
                 .linkedin-nav { width: 42px; height: 42px; }
             }
             @media (max-width: 600px) {
                 .linkedin-carousel { padding: 0 40px; }
-                .linkedin-card { flex: 0 0 100%; height: 580px; }
+                .linkedin-card { flex: 0 0 100%; height: 540px; }
             }
         </style>
     </section>
@@ -3048,9 +3048,8 @@
             let index = 0;
 
             const getPerView = () => {
-                if (window.innerWidth <= 600) return 1;
-                if (window.innerWidth <= 991) return 2;
-                return 3;
+                if (window.innerWidth <= 991) return 1;
+                return 2;
             };
 
             const update = () => {
@@ -3060,7 +3059,7 @@
                 const maxIndex = Math.max(0, cards.length - perView);
                 if (index > maxIndex) index = maxIndex;
                 if (index < 0) index = 0;
-                const cardWidth = cards[0].getBoundingClientRect().width + 24;
+                const cardWidth = cards[0].getBoundingClientRect().width + 32;
                 track.style.transform = `translateX(-${index * cardWidth}px)`;
                 prev.classList.toggle('is-disabled', index === 0);
                 next.classList.toggle('is-disabled', index >= maxIndex);
