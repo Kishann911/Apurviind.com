@@ -2562,23 +2562,22 @@
             .linkedin-card {
                 flex: 0 0 calc((100% - 72px) / 4);
                 min-width: 0;
-                height: 460px;
-                background: #fff;
-                border: 1px solid #e6e6e6;
-                border-radius: 12px;
+                height: 580px;
+                background: transparent;
+                border: 0;
+                border-radius: 0;
                 overflow: hidden;
-                box-shadow: 0 2px 14px rgba(0, 0, 0, 0.04);
-                transition: transform 0.25s ease, box-shadow 0.25s ease;
+                padding: 0;
+                box-shadow: none;
+                transition: transform 0.25s ease;
             }
-            .linkedin-card:hover {
-                transform: translateY(-4px);
-                box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-            }
+            .linkedin-card:hover { transform: translateY(-4px); }
             .linkedin-card iframe {
                 width: 100%;
                 height: 100%;
                 border: 0;
                 display: block;
+                background: #fff;
             }
             .linkedin-nav {
                 position: absolute;
@@ -2615,12 +2614,12 @@
 
             @media (max-width: 991px) {
                 .linkedin-carousel { padding: 0 50px; }
-                .linkedin-card { flex: 0 0 calc((100% - 24px) / 2); height: 420px; }
+                .linkedin-card { flex: 0 0 calc((100% - 24px) / 2); height: 560px; }
                 .linkedin-nav { width: 42px; height: 42px; }
             }
             @media (max-width: 600px) {
                 .linkedin-carousel { padding: 0 40px; }
-                .linkedin-card { flex: 0 0 100%; height: 460px; }
+                .linkedin-card { flex: 0 0 100%; height: 580px; }
             }
         </style>
     </section>
