@@ -2503,16 +2503,10 @@
             </div>
             <div class="linkedin-feed">
                 <div class="linkedin-card">
-                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7460612173665488896?collapsed=1" frameborder="0" allowfullscreen title="LinkedIn Post" loading="lazy"></iframe>
-                </div>
-                <div class="linkedin-card">
                     <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7459526226462822400?collapsed=1" frameborder="0" allowfullscreen title="LinkedIn Post" loading="lazy"></iframe>
                 </div>
                 <div class="linkedin-card">
                     <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7457416661902524416?collapsed=1" frameborder="0" allowfullscreen title="LinkedIn Post" loading="lazy"></iframe>
-                </div>
-                <div class="linkedin-card">
-                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7455550738920837120?collapsed=1" frameborder="0" allowfullscreen title="LinkedIn Post" loading="lazy"></iframe>
                 </div>
                 <div class="linkedin-card">
                     <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7455127505239314433?collapsed=1" frameborder="0" allowfullscreen title="LinkedIn Post" loading="lazy"></iframe>
@@ -2521,6 +2515,24 @@
                     <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7452984441561567232?collapsed=1" frameborder="0" allowfullscreen title="LinkedIn Post" loading="lazy"></iframe>
                 </div>
             </div>
+
+            <div class="linkedin-marquee" id="linkedinMarquee" aria-label="More LinkedIn posts">
+                <div class="linkedin-marquee-track">
+                    <!-- First pass -->
+                    <div class="linkedin-marquee-item"><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7460612173665488896?collapsed=1" frameborder="0" allowfullscreen title="LinkedIn Post" loading="lazy"></iframe></div>
+                    <div class="linkedin-marquee-item"><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7455550738920837120?collapsed=1" frameborder="0" allowfullscreen title="LinkedIn Post" loading="lazy"></iframe></div>
+                    <div class="linkedin-marquee-item"><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7452262567055392768?collapsed=1" frameborder="0" allowfullscreen title="LinkedIn Post" loading="lazy"></iframe></div>
+                    <div class="linkedin-marquee-item"><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7450810749846949889?collapsed=1" frameborder="0" allowfullscreen title="LinkedIn Post" loading="lazy"></iframe></div>
+                    <div class="linkedin-marquee-item"><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7449343424371240960?collapsed=1" frameborder="0" allowfullscreen title="LinkedIn Post" loading="lazy"></iframe></div>
+                    <!-- Duplicate pass for seamless infinite loop -->
+                    <div class="linkedin-marquee-item" aria-hidden="true"><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7460612173665488896?collapsed=1" frameborder="0" allowfullscreen title="LinkedIn Post" loading="lazy"></iframe></div>
+                    <div class="linkedin-marquee-item" aria-hidden="true"><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7455550738920837120?collapsed=1" frameborder="0" allowfullscreen title="LinkedIn Post" loading="lazy"></iframe></div>
+                    <div class="linkedin-marquee-item" aria-hidden="true"><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7452262567055392768?collapsed=1" frameborder="0" allowfullscreen title="LinkedIn Post" loading="lazy"></iframe></div>
+                    <div class="linkedin-marquee-item" aria-hidden="true"><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7450810749846949889?collapsed=1" frameborder="0" allowfullscreen title="LinkedIn Post" loading="lazy"></iframe></div>
+                    <div class="linkedin-marquee-item" aria-hidden="true"><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7449343424371240960?collapsed=1" frameborder="0" allowfullscreen title="LinkedIn Post" loading="lazy"></iframe></div>
+                </div>
+            </div>
+
             <div style="text-align: center; margin-top: 40px;">
                 <a href="blog.html" class="btn btn-primary">View All Posts</a>
             </div>
@@ -2528,13 +2540,13 @@
         <style>
             .linkedin-feed {
                 display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 28px;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 24px;
                 align-items: stretch;
             }
             .linkedin-card {
                 position: relative;
-                height: 400px;
+                height: 460px;
                 background: #fff;
                 border: 1px solid #e6e6e6;
                 border-radius: 12px;
@@ -2546,21 +2558,57 @@
                 transform: translateY(-4px);
                 box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
             }
-            .linkedin-card iframe {
+            .linkedin-card iframe,
+            .linkedin-marquee-item iframe {
                 width: 100%;
                 height: 100%;
                 border: 0;
                 display: block;
             }
+
+            /* Infinite marquee for the rest of the posts */
+            .linkedin-marquee {
+                margin-top: 56px;
+                overflow: hidden;
+                position: relative;
+                -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+                mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+            }
+            .linkedin-marquee-track {
+                display: flex;
+                gap: 24px;
+                width: max-content;
+                animation: linkedin-marquee-scroll 60s linear infinite;
+            }
+            .linkedin-marquee:hover .linkedin-marquee-track {
+                animation-play-state: paused;
+            }
+            .linkedin-marquee-item {
+                flex: 0 0 320px;
+                height: 460px;
+                background: #fff;
+                border: 1px solid #e6e6e6;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 2px 14px rgba(0, 0, 0, 0.04);
+            }
+            @keyframes linkedin-marquee-scroll {
+                from { transform: translateX(0); }
+                to { transform: translateX(calc(-50% - 12px)); }
+            }
+
             @media (max-width: 991px) {
                 .linkedin-feed { grid-template-columns: repeat(2, 1fr); }
                 .linkedin-card { height: 420px; }
+                .linkedin-marquee-item { flex: 0 0 280px; height: 420px; }
+                .linkedin-marquee-track { animation-duration: 50s; }
             }
             @media (max-width: 600px) {
-                .linkedin-feed { grid-template-columns: 1fr; gap: 20px; }
-                .linkedin-card { height: 440px; max-width: 480px; margin: 0 auto; }
-            .linkedin-intro { margin-top: 24px !important; }
-            .linkedin-card { height: 460px; max-width: 100%; }
+                .linkedin-feed { grid-template-columns: 1fr; gap: 20px; max-width: 480px; margin: 0 auto; }
+                .linkedin-card { height: 460px; }
+                .linkedin-marquee { margin-top: 36px; }
+                .linkedin-marquee-item { flex: 0 0 260px; height: 440px; }
+                .linkedin-marquee-track { animation-duration: 45s; gap: 16px; }
             }
         </style>
     </section>
