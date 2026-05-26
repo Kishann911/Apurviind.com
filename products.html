@@ -1422,7 +1422,7 @@
             <!-- Product Card 9 -->
             <div class="full-product-card">
                 <div class="product-image-box">
-                    <img src="assets/images/products/special-cardboard-packaging-aluminium-tubing.jpg" alt="Cardboard Packaging">
+                    <img src="assets/cardboardpackage.jpeg" alt="Cardboard Packaging">
                 </div>
                 <div class="product-info-box">
                     <span class="product-tag">Packaging</span>
@@ -1440,28 +1440,105 @@
             <h2 class="h2">Manufacturing Excellence</h2>
             <p style="margin-bottom: 50px; max-width: 800px;">From raw materials to finished products, our systematic approach ensures every component meets international quality standards. Here is a look at our core manufacturing flow.</p>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-                <div style="background: #fff; padding: 20px; text-align: center; border-radius: 4px;">
-                    <img src="https://apurviind.com/wp-content/uploads/2021/04/flow-img-01.jpg" alt="Process 1" style="width: 100%; border-radius: 4px; margin-bottom: 15px;">
-                    <h4 style="font-size: 14px; text-transform: uppercase;">Step 01</h4>
+            <div class="process-carousel" id="processCarousel">
+                <div class="process-track-wrapper">
+                    <div class="process-track">
+                        <div class="process-slide">
+                            <img src="assets/step1.jpeg" alt="Process Step 1">
+                            <h4>Step 01</h4>
+                        </div>
+                        <div class="process-slide">
+                            <img src="assets/step2.jpeg" alt="Process Step 2">
+                            <h4>Step 02</h4>
+                        </div>
+                        <div class="process-slide">
+                            <img src="assets/step3.jpeg" alt="Process Step 3">
+                            <h4>Step 03</h4>
+                        </div>
+                        <div class="process-slide">
+                            <img src="assets/step4.jpeg" alt="Process Step 4">
+                            <h4>Step 04</h4>
+                        </div>
+                        <div class="process-slide">
+                            <img src="assets/step5.jpeg" alt="Process Step 5">
+                            <h4>Step 05</h4>
+                        </div>
+                    </div>
                 </div>
-                <div style="background: #fff; padding: 20px; text-align: center; border-radius: 4px;">
-                    <img src="https://apurviind.com/wp-content/uploads/2021/04/flow-img-02.jpg" alt="Process 2" style="width: 100%; border-radius: 4px; margin-bottom: 15px;">
-                    <h4 style="font-size: 14px; text-transform: uppercase;">Step 02</h4>
-                </div>
-                <div style="background: #fff; padding: 20px; text-align: center; border-radius: 4px;">
-                    <img src="https://apurviind.com/wp-content/uploads/2021/04/flow-img-04.jpg" alt="Process 3" style="width: 100%; border-radius: 4px; margin-bottom: 15px;">
-                    <h4 style="font-size: 14px; text-transform: uppercase;">Step 03</h4>
-                </div>
-                <div style="background: #fff; padding: 20px; text-align: center; border-radius: 4px;">
-                    <img src="https://apurviind.com/wp-content/uploads/2021/04/flow-img-05.jpg" alt="Process 4" style="width: 100%; border-radius: 4px; margin-bottom: 15px;">
-                    <h4 style="font-size: 14px; text-transform: uppercase;">Step 04</h4>
-                </div>
-                <div style="background: #fff; padding: 20px; text-align: center; border-radius: 4px;">
-                    <img src="https://apurviind.com/wp-content/uploads/2021/04/flow-img-06.jpg" alt="Process 5" style="width: 100%; border-radius: 4px; margin-bottom: 15px;">
-                    <h4 style="font-size: 14px; text-transform: uppercase;">Step 05</h4>
-                </div>
+                <button type="button" class="process-nav prev" aria-label="Previous step">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <button type="button" class="process-nav next" aria-label="Next step">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
             </div>
+            <style>
+                .process-carousel {
+                    position: relative;
+                    margin-top: 10px;
+                    padding: 0 60px;
+                }
+                .process-track-wrapper { overflow: hidden; }
+                .process-track {
+                    display: flex;
+                    gap: 20px;
+                    transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+                }
+                .process-slide {
+                    flex: 0 0 calc((100% - 60px) / 4);
+                    min-width: 0;
+                    background: #fff;
+                    padding: 20px;
+                    text-align: center;
+                    border-radius: 6px;
+                    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+                }
+                .process-slide img {
+                    width: 100%;
+                    aspect-ratio: 1 / 1;
+                    object-fit: cover;
+                    border-radius: 4px;
+                    margin-bottom: 15px;
+                    display: block;
+                }
+                .process-slide h4 {
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    color: var(--primary-blue);
+                }
+                .process-nav {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 42px;
+                    height: 42px;
+                    border-radius: 50%;
+                    background: var(--primary-blue);
+                    color: #fff;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: none;
+                    cursor: pointer;
+                    z-index: 5;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+                    transition: background-color 0.2s ease, opacity 0.2s ease;
+                }
+                .process-nav:hover { background: var(--bg-deep); }
+                .process-nav.prev { left: 0; }
+                .process-nav.next { right: 0; }
+                .process-nav.is-disabled,
+                .process-nav[disabled] { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
+                @media (max-width: 991px) {
+                    .process-carousel { padding: 0 50px; }
+                    .process-slide { flex: 0 0 calc((100% - 20px) / 2); }
+                }
+                @media (max-width: 560px) {
+                    .process-carousel { padding: 0 40px; }
+                    .process-slide { flex: 0 0 100%; }
+                }
+            </style>
         </div>
     </section>
 
@@ -1679,6 +1756,50 @@
                 if (Math.abs(delta) < 40) return;
                 if (delta < 0) next.click(); else prev.click();
             });
+            setTimeout(update, 100);
+        })();
+
+        // Manufacturing Process Carousel
+        (function () {
+            const carousel = document.getElementById('processCarousel');
+            if (!carousel) return;
+            const track = carousel.querySelector('.process-track');
+            const prev = carousel.querySelector('.process-nav.prev');
+            const next = carousel.querySelector('.process-nav.next');
+            let index = 0;
+            const getPerView = () => {
+                if (window.innerWidth <= 560) return 1;
+                if (window.innerWidth <= 991) return 2;
+                return 4;
+            };
+            const update = () => {
+                const slides = track.children;
+                if (!slides.length) return;
+                const perView = getPerView();
+                const maxIndex = Math.max(0, slides.length - perView);
+                if (index > maxIndex) index = maxIndex;
+                if (index < 0) index = 0;
+                const slideWidth = slides[0].getBoundingClientRect().width + 20;
+                track.style.transform = `translateX(-${index * slideWidth}px)`;
+                prev.classList.toggle('is-disabled', index === 0);
+                next.classList.toggle('is-disabled', index >= maxIndex);
+                prev.disabled = index === 0;
+                next.disabled = index >= maxIndex;
+            };
+            prev.addEventListener('click', () => { if (index > 0) { index -= 1; update(); } });
+            next.addEventListener('click', () => {
+                const perView = getPerView();
+                const maxIndex = Math.max(0, track.children.length - perView);
+                if (index < maxIndex) { index += 1; update(); }
+            });
+            let touchStartX = 0;
+            track.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+            track.addEventListener('touchend', (e) => {
+                const delta = e.changedTouches[0].clientX - touchStartX;
+                if (Math.abs(delta) < 40) return;
+                if (delta < 0) next.click(); else prev.click();
+            });
+            window.addEventListener('resize', () => setTimeout(update, 120));
             setTimeout(update, 100);
         })();
 
