@@ -812,33 +812,53 @@
                 position: fixed;
                 top: 76px;
                 right: -100%;
-                width: 85%;
-                max-width: 320px;
+                width: 82%;
+                max-width: 300px;
                 height: calc(100vh - 64px);
                 background-color: #fff;
                 flex-direction: column;
-                padding: 30px 25px;
-                gap: 14px;
-                align-items: flex-start;
+                padding: 18px 22px 24px;
+                gap: 0;
+                align-items: stretch;
                 transition: right 0.3s ease;
-                box-shadow: -10px 0 20px rgba(0, 0, 0, 0.08);
+                box-shadow: -10px 0 24px rgba(15, 23, 42, 0.10);
                 z-index: 999;
                 overflow-y: auto;
             }
             .apv-nav-links.active { right: 0; }
-            .apv-nav-links a { font-size: 16px; }
+            .apv-nav-links li { width: 100%; }
+            .apv-nav-links a {
+                display: block;
+                font-size: 14px;
+                font-weight: 600;
+                letter-spacing: 0.6px;
+                text-transform: uppercase;
+                color: #1a1a1a;
+                padding: 12px 4px;
+                border-bottom: 1px solid #f1f1f5;
+                transition: color 0.2s ease, padding-left 0.2s ease;
+            }
+            .apv-nav-links a:hover,
+            .apv-nav-links a.active {
+                color: #3F3A8A;
+                padding-left: 8px;
+            }
             .apv-nav-utility-mobile { display: list-item; }
             .apv-nav-utility-mobile:first-of-type {
-                margin-top: 18px;
-                padding-top: 18px;
-                border-top: 1px solid #e6e6e6;
-                width: 100%;
+                margin-top: 14px;
+                padding-top: 14px;
+                border-top: 1px solid #d9d9e3;
             }
             .apv-nav-utility-mobile a {
-                font-size: 13px;
-                color: #1a1a1a;
-                font-weight: 700;
+                font-size: 11.5px;
+                color: #6D6E71;
+                font-weight: 600;
+                letter-spacing: 0.8px;
+                padding: 9px 4px;
+                border-bottom: 0;
             }
+            .apv-nav-utility-mobile a:hover,
+            .apv-nav-utility-mobile a.active { color: #3F3A8A; }
             body { padding-top: 64px; }
             .hero { margin-top: -64px; }
         }
