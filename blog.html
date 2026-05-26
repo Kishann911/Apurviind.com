@@ -865,11 +865,11 @@
             .apv-hamburger { display: flex; }
             .apv-nav-links {
                 position: fixed;
-                top: 100px;
+                top: 36px;
                 right: -100%;
                 width: 82%;
                 max-width: 300px;
-                height: calc(100vh - 100px);
+                height: calc(100vh - 36px);
                 background-color: #fff;
                 flex-direction: column;
                 padding: 18px 22px 24px;
@@ -877,7 +877,7 @@
                 align-items: stretch;
                 transition: right 0.3s ease;
                 box-shadow: -10px 0 24px rgba(15, 23, 42, 0.10);
-                z-index: 999;
+                z-index: 1100;
                 overflow-y: auto;
             }
             .apv-nav-links.active { right: 0; }
@@ -914,6 +914,14 @@
             }
             .apv-nav-utility-mobile a:hover,
             .apv-nav-utility-mobile a.active { color: #3F3A8A; }
+            
+            body.menu-open .apv-hamburger {
+                position: fixed;
+                top: 56px;
+                right: 18px;
+                z-index: 1200;
+            }
+            body.menu-open .apv-hamburger span { background-color: #1a1a1a !important; }
             /* Force readable colors inside the open drawer on transparent-header pages */
             .apv-nav-links.active a { color: #1a1a1a !important; }
             .apv-nav-links.active .apv-nav-utility-mobile a { color: #6D6E71 !important; }
@@ -1390,12 +1398,14 @@
                     e.stopPropagation();
                     hamburger.classList.toggle('active');
                     navLinks.classList.toggle('active');
+                    document.body.classList.toggle('menu-open', navLinks.classList.contains('active'));
                     document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
                 });
                 document.addEventListener('click', (e) => {
                     if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && e.target !== hamburger && !hamburger.contains(e.target)) {
                         hamburger.classList.remove('active');
                         navLinks.classList.remove('active');
+                        document.body.classList.remove('menu-open');
                         document.body.style.overflow = 'auto';
                     }
                 });
@@ -1403,6 +1413,7 @@
                     link.addEventListener('click', () => {
                         hamburger.classList.remove('active');
                         navLinks.classList.remove('active');
+                        document.body.classList.remove('menu-open');
                         document.body.style.overflow = 'auto';
                     });
                 });
