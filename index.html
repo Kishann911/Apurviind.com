@@ -2704,9 +2704,20 @@
                 .linkedin-nav { width: 42px; height: 42px; }
             }
             @media (max-width: 600px) {
-                .linkedin-carousel { padding: 0 40px; }
-                .linkedin-card { flex: 0 0 100%; height: 520px; }
-                .linkedin-card iframe { height: 100%; }
+                .linkedin-carousel { padding: 0 32px; }
+                .linkedin-card {
+                    flex: 0 0 100%;
+                    height: 480px;
+                    overflow: hidden;
+                    display: block;
+                    background: #fff;
+                }
+                .linkedin-card iframe {
+                    width: 154%;
+                    height: 154%;
+                    transform: scale(0.65);
+                    transform-origin: top left;
+                }
             }
         </style>
     </section>
