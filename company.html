@@ -903,12 +903,25 @@
             display: flex;
             align-items: center;
             text-decoration: none;
+            position: relative;
         }
         .apv-logo img {
             height: 90px;
             width: auto;
             display: block;
         }
+        .apv-logo-light, .apv-logo-dark {
+            transition: opacity 0.35s ease;
+            max-width: 100%;
+        }
+        body.is-home .apv-logo {
+            position: relative;
+        }
+        body.is-home .apv-logo-light,
+        body.is-home .apv-logo-dark {
+            transition: opacity 0.35s ease;
+        }
+
         .apv-nav {
             display: flex;
             align-items: center;
@@ -977,7 +990,7 @@
                 height: calc(100vh - 36px);
                 background-color: #fff;
                 flex-direction: column;
-                padding: 18px 22px 24px;
+                padding: 56px 22px 24px;
                 gap: 0;
                 align-items: stretch;
                 transition: right 0.3s ease;
@@ -1022,8 +1035,8 @@
             
             body.menu-open .apv-hamburger {
                 position: fixed;
-                top: 56px;
-                right: 18px;
+                top: 70px;
+                right: 22px;
                 z-index: 1200;
             }
             body.menu-open .apv-hamburger span { background-color: #1a1a1a !important; }
