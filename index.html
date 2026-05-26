@@ -1661,10 +1661,14 @@
             align-items: center;
             text-decoration: none;
             position: relative;
+            width: 220px;
+            height: 90px;
         }
         .apv-logo img {
-            height: 90px;
-            width: auto;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: left center;
             display: block;
         }
         .apv-logo-light, .apv-logo-dark {
@@ -1742,8 +1746,8 @@
         .apv-hamburger span {
             transition: color 0.3s ease, background-color 0.3s ease;
         }
-        .apv-logo-light { opacity: 0; position: absolute; left: 0; top: 50%; transform: translateY(-50%); pointer-events: none; }
-        .apv-logo-dark { opacity: 1; }
+        .apv-logo-light { opacity: 0; position: absolute; left: 0; top: 0; width: 100%; height: 100%; transform: none; pointer-events: none; }
+        .apv-logo-dark { opacity: 1; position: relative; transform: none; }
 
         body.is-home .apv-header {
             background-color: transparent;
@@ -1758,8 +1762,8 @@
         body.is-home .apv-nav-links a:hover,
         body.is-home .apv-nav-links a.active { color: #fff; opacity: 0.85; }
         body.is-home .apv-hamburger span { background-color: #fff; }
-        body.is-home .apv-logo-light { opacity: 1; position: static; transform: none; }
-        body.is-home .apv-logo-dark { opacity: 0; position: absolute; left: 0; top: 50%; transform: translateY(-50%); pointer-events: none; }
+        body.is-home .apv-logo-light { opacity: 1; position: relative; transform: none; }
+        body.is-home .apv-logo-dark { opacity: 0; position: absolute; left: 0; top: 0; width: 100%; height: 100%; transform: none; pointer-events: none; }
 
         body.is-home.scrolled .apv-header {
             background-color: #fff;
@@ -1774,8 +1778,8 @@
         body.is-home.scrolled .apv-nav-links a:hover,
         body.is-home.scrolled .apv-nav-links a.active { color: #3F3A8A; opacity: 1; }
         body.is-home.scrolled .apv-hamburger span { background-color: #1a1a1a; }
-        body.is-home.scrolled .apv-logo-dark { opacity: 1; position: static; transform: none; }
-        body.is-home.scrolled .apv-logo-light { opacity: 0; position: absolute; left: 0; top: 50%; transform: translateY(-50%); pointer-events: none; }
+        body.is-home.scrolled .apv-logo-dark { opacity: 1; position: relative; transform: none; }
+        body.is-home.scrolled .apv-logo-light { opacity: 0; position: absolute; left: 0; top: 0; width: 100%; height: 100%; transform: none; pointer-events: none; }
 
         /* Push hero content below the fixed header so it visually centers */
         body.is-home .hero { padding-top: 132px; }
@@ -1784,7 +1788,7 @@
             .apv-utility { display: none; }
             .apv-header { top: 0; }
             .apv-header-inner { padding: 0 20px; height: 64px; }
-            .apv-logo img { height: 64px; }
+            .apv-logo { width: 170px; height: 64px; }
             .apv-hamburger { display: flex; }
             .apv-nav-links {
                 position: fixed;
