@@ -723,11 +723,15 @@
         }
 
         .product-stack-footer {
-            display: grid;
-            grid-template-columns: auto 1fr auto;
+            display: flex;
+            justify-content: center;
             align-items: center;
-            gap: 24px;
+            gap: 32px;
             margin-top: 40px;
+        }
+        .product-stack-footer .product-stack-title {
+            flex: 0 0 auto;
+            min-width: 240px;
         }
         .product-stack-title {
             font-size: 22px;
