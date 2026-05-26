@@ -1092,11 +1092,11 @@
             .apv-hamburger { display: flex; }
             .apv-nav-links {
                 position: fixed;
-                top: 76px;
+                top: 100px;
                 right: -100%;
                 width: 82%;
                 max-width: 300px;
-                height: calc(100vh - 64px);
+                height: calc(100vh - 100px);
                 background-color: #fff;
                 flex-direction: column;
                 padding: 18px 22px 24px;
@@ -1141,6 +1141,12 @@
             }
             .apv-nav-utility-mobile a:hover,
             .apv-nav-utility-mobile a.active { color: #3F3A8A; }
+            /* Force readable colors inside the open drawer on transparent-header pages */
+            .apv-nav-links.active a { color: #1a1a1a !important; }
+            .apv-nav-links.active .apv-nav-utility-mobile a { color: #6D6E71 !important; }
+            .apv-nav-links.active a:hover,
+            .apv-nav-links.active a.active { color: #3F3A8A !important; }
+
             body { padding-top: 64px; }
             .hero { margin-top: -64px; }
         }
