@@ -702,54 +702,55 @@
             text-shadow: 0 1px 6px rgba(0,0,0,0.4);
         }
 
-        /* Auto-scrolling marquee */
+        /* Industries arrow carousel (mirrors gallery / process carousels) */
         .industries-marquee {
             position: relative;
             margin-top: 40px;
-            padding: 40px 0;
-            background: #fff;
-            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.08);
-            overflow: hidden;
-            -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-            mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+            padding: 0 60px;
         }
+        .industries-marquee-viewport { overflow: hidden; }
         .industries-marquee-track {
             display: flex;
-            gap: 24px;
-            width: max-content;
-            animation: industries-scroll 65s linear infinite;
-        }
-        .industries-marquee:hover .industries-marquee-track {
-            animation-play-state: paused;
+            gap: 20px;
+            transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .industries-marquee .industry-block {
-            flex: 0 0 360px;
+            flex: 0 0 calc((100% - 60px) / 4);
             min-width: 0;
         }
-        @keyframes industries-scroll {
-            from { transform: translateX(0); }
-            to { transform: translateX(calc(-50% - 12px)); }
+        .industries-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            z-index: 5;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+            transition: background-color 0.2s ease;
         }
+        .industries-nav:hover { background: var(--bg-deep); }
+        .industries-nav.prev { left: 0; }
+        .industries-nav.next { right: 0; }
 
         @media (max-width: 991px) {
-            .industries-marquee { padding: 24px 0; }
-            .industries-marquee .industry-block { flex: 0 0 360px; height: 480px; padding: 36px; }
+            .industries-marquee { padding: 0 50px; }
+            .industries-marquee .industry-block { flex: 0 0 calc((100% - 20px) / 2); height: 480px; padding: 36px; }
             .industries-marquee .industry-block h2 { font-size: 26px; }
-            .industries-marquee-track { animation-duration: 55s; gap: 20px; }
-            @keyframes industries-scroll {
-                from { transform: translateX(0); }
-                to { transform: translateX(calc(-50% - 10px)); }
-            }
         }
         @media (max-width: 600px) {
-            .industries-marquee .industry-block { flex: 0 0 320px; height: 460px; padding: 30px; }
+            .industries-marquee { padding: 0 40px; }
+            .industries-marquee .industry-block { flex: 0 0 100%; height: 460px; padding: 30px; }
             .industries-marquee .industry-block h2 { font-size: 24px; margin-bottom: 12px; }
             .industries-marquee .industry-block p { font-size: 14px; }
-            .industries-marquee-track { animation-duration: 50s; gap: 16px; }
-            @keyframes industries-scroll {
-                from { transform: translateX(0); }
-                to { transform: translateX(calc(-50% - 8px)); }
-            }
+            .industries-nav { width: 42px; height: 42px; }
         }
 
         @media (max-width: 991px) {
@@ -1127,7 +1128,7 @@
             }
             .apv-nav-utility-mobile a {
                 font-size: 14px;
-                color: #6D6E71;
+                color: #1a1a1a;
                 font-weight: 600;
                 letter-spacing: 0.6px;
                 padding: 9px 4px;
@@ -1387,99 +1388,76 @@
         </div>
     </section>
 
-    <div class="container" style="padding-bottom: 100px;">
+    <div class="container" style="padding-bottom: 60px;">
         <div class="industries-marquee" id="indMarquee">
-            <div class="industries-marquee-track">
-                <div class="industry-block">
+            <button type="button" class="industries-nav prev" aria-label="Previous">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="industries-marquee-viewport">
+                <div class="industries-marquee-track">
+                    <div class="industry-block">
                     <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=1000" alt="Submersible Pump">
                     <div class="industry-block-content">
                         <h2>Submersible Pump</h2>
                         <p>Supplying high-quality SS tubes and components to leading pump manufacturers for reliable water extraction solutions.</p>
                     </div>
                 </div>
-                <div class="industry-block">
+                    <div class="industry-block">
                     <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=1000" alt="Motor Manufacturing">
                     <div class="industry-block-content">
                         <h2>Motor Manufacturing</h2>
                         <p>Precision motor tubes and components for submersible and industrial motors, focused on thermal efficiency and durability.</p>
                     </div>
                 </div>
-                <div class="industry-block">
+                    <div class="industry-block">
                     <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=1000" alt="Fuelling Industry">
                     <div class="industry-block-content">
                         <h2>Fuelling Industry</h2>
                         <p>Providing specialized piping solutions for the safe transport and management of fuels and industrial fluids.</p>
                     </div>
                 </div>
-                <div class="industry-block">
+                    <div class="industry-block">
                     <img src="assets/WATERTREAMENT.png" alt="Water Treatment">
                     <div class="industry-block-content">
                         <h2>Water Treatment</h2>
                         <p>Stainless steel solutions for water purification and desalination plants, resisting corrosion in harsh environments.</p>
                     </div>
                 </div>
-                <div class="industry-block">
+                    <div class="industry-block">
                     <img src="assets/agriculture.png" alt="Agriculture">
                     <div class="industry-block-content">
                         <h2>Agriculture</h2>
                         <p>Infrastructure components for large-scale irrigation systems and agricultural machinery.</p>
                     </div>
                 </div>
-                <div class="industry-block">
+                    <div class="industry-block">
                     <img src="assets/food_processing.png" alt="Food Processing">
                     <div class="industry-block-content">
                         <h2>Food Processing</h2>
                         <p>Hygienic stainless steel piping and components for the food and beverage industry, meeting strict safety standards.</p>
                     </div>
                 </div>
-                <div class="industry-block">
+                    <div class="industry-block">
                     <img src="assets/chemical.png" alt="Chemical">
                     <div class="industry-block-content">
                         <h2>Chemical</h2>
                         <p>Corrosion-resistant piping solutions for chemical processing plants and storage facilities.</p>
                     </div>
                 </div>
-                <div class="industry-block">
+                    <div class="industry-block">
                     <img src="https://images.unsplash.com/photo-1563213126-a4273aed2016?auto=format&fit=crop&q=80&w=1000" alt="Pharmaceutical">
                     <div class="industry-block-content">
                         <h2>Pharmaceutical</h2>
                         <p>High-purity stainless steel components for pharmaceutical manufacturing and laboratory plumbing.</p>
                     </div>
                 </div>
-                <!-- Duplicate set for seamless infinite loop -->
-                <div class="industry-block" aria-hidden="true">
-                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=1000" alt="">
-                    <div class="industry-block-content"><h2>Submersible Pump</h2><p>Supplying high-quality SS tubes and components to leading pump manufacturers for reliable water extraction solutions.</p></div>
-                </div>
-                <div class="industry-block" aria-hidden="true">
-                    <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=1000" alt="">
-                    <div class="industry-block-content"><h2>Motor Manufacturing</h2><p>Precision motor tubes and components for submersible and industrial motors, focused on thermal efficiency and durability.</p></div>
-                </div>
-                <div class="industry-block" aria-hidden="true">
-                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=1000" alt="">
-                    <div class="industry-block-content"><h2>Fuelling Industry</h2><p>Providing specialized piping solutions for the safe transport and management of fuels and industrial fluids.</p></div>
-                </div>
-                <div class="industry-block" aria-hidden="true">
-                    <img src="assets/WATERTREAMENT.png" alt="">
-                    <div class="industry-block-content"><h2>Water Treatment</h2><p>Stainless steel solutions for water purification and desalination plants, resisting corrosion in harsh environments.</p></div>
-                </div>
-                <div class="industry-block" aria-hidden="true">
-                    <img src="assets/agriculture.png" alt="">
-                    <div class="industry-block-content"><h2>Agriculture</h2><p>Infrastructure components for large-scale irrigation systems and agricultural machinery.</p></div>
-                </div>
-                <div class="industry-block" aria-hidden="true">
-                    <img src="assets/food_processing.png" alt="">
-                    <div class="industry-block-content"><h2>Food Processing</h2><p>Hygienic stainless steel piping and components for the food and beverage industry, meeting strict safety standards.</p></div>
-                </div>
-                <div class="industry-block" aria-hidden="true">
-                    <img src="assets/chemical.png" alt="">
-                    <div class="industry-block-content"><h2>Chemical</h2><p>Corrosion-resistant piping solutions for chemical processing plants and storage facilities.</p></div>
-                </div>
-                <div class="industry-block" aria-hidden="true">
-                    <img src="https://images.unsplash.com/photo-1563213126-a4273aed2016?auto=format&fit=crop&q=80&w=1000" alt="">
-                    <div class="industry-block-content"><h2>Pharmaceutical</h2><p>High-purity stainless steel components for pharmaceutical manufacturing and laboratory plumbing.</p></div>
                 </div>
             </div>
+            <button type="button" class="industries-nav next" aria-label="Next">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+        </div>
+    </div>
         </div>
     </div>
 
@@ -1551,7 +1529,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 Apurvi Industries. All rights reserved. &nbsp;|&nbsp; Powered by <span style="color: inherit; opacity: 0.9;">Swytch Studios</span></p>
+                <p>&copy; 2026 Apurvi Industries. All rights reserved. &nbsp;|&nbsp; Powered by <span style="color: inherit; opacity: 0.9; white-space: nowrap;">Swytch Studios</span></p>
                 <div class="footer-bottom-right">
                     <div class="footer-social">
                         <a href="https://www.facebook.com/profile.php?id=61576491212714" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
@@ -1580,7 +1558,55 @@
             }
         });
 
-        // Industries marquee is CSS-driven; no JS needed.
+        // Industries Carousel (arrows + autoplay)
+        (function () {
+            const carousel = document.getElementById('indMarquee');
+            if (!carousel) return;
+            const track = carousel.querySelector('.industries-marquee-track');
+            const prev = carousel.querySelector('.industries-nav.prev');
+            const next = carousel.querySelector('.industries-nav.next');
+            if (!track || !prev || !next) return;
+            let index = 0;
+            let autoTimer = null;
+            const AUTOPLAY_MS = 3800;
+            const getPerView = () => {
+                if (window.innerWidth <= 600) return 1;
+                if (window.innerWidth <= 991) return 2;
+                return 4;
+            };
+            const update = () => {
+                const cards = track.children;
+                if (!cards.length) return;
+                const perView = getPerView();
+                const maxIndex = Math.max(0, cards.length - perView);
+                if (index > maxIndex) index = 0;
+                if (index < 0) index = maxIndex;
+                const cardWidth = cards[0].getBoundingClientRect().width + 20;
+                track.style.transform = `translateX(-${index * cardWidth}px)`;
+            };
+            const goNext = () => { index += 1; update(); };
+            const goPrev = () => { index -= 1; update(); };
+            const startAuto = () => { stopAuto(); autoTimer = setInterval(goNext, AUTOPLAY_MS); };
+            const stopAuto = () => { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } };
+
+            prev.addEventListener('click', () => { goPrev(); startAuto(); });
+            next.addEventListener('click', () => { goNext(); startAuto(); });
+            carousel.addEventListener('mouseenter', stopAuto);
+            carousel.addEventListener('mouseleave', startAuto);
+
+            let touchStart = 0;
+            track.addEventListener('touchstart', (e) => { touchStart = e.touches[0].clientX; stopAuto(); }, { passive: true });
+            track.addEventListener('touchend', (e) => {
+                const delta = e.changedTouches[0].clientX - touchStart;
+                if (Math.abs(delta) > 40) {
+                    if (delta < 0) goNext(); else goPrev();
+                }
+                startAuto();
+            });
+
+            window.addEventListener('resize', () => setTimeout(update, 120));
+            setTimeout(() => { update(); startAuto(); }, 100);
+        })();
 
         // Mobile Menu Toggle
         document.addEventListener('DOMContentLoaded', () => {

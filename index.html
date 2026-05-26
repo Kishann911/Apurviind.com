@@ -1841,7 +1841,7 @@
             }
             .apv-nav-utility-mobile a {
                 font-size: 14px;
-                color: #6D6E71;
+                color: #1a1a1a;
                 font-weight: 600;
                 letter-spacing: 0.6px;
                 padding: 9px 4px;
@@ -2645,7 +2645,7 @@
             .linkedin-card {
                 flex: 0 0 calc((100% - 32px) / 2);
                 min-width: 0;
-                height: 440px;
+                height: 500px;
                 background: transparent;
                 border: 0;
                 border-radius: 0;
@@ -2654,11 +2654,13 @@
                 margin: 0;
                 box-shadow: none;
                 transition: transform 0.25s ease;
+                display: flex;
+                align-items: center;
             }
             .linkedin-card:hover { transform: translateY(-4px); }
             .linkedin-card iframe {
                 width: 100%;
-                height: 440px;
+                height: 100%;
                 border: 0;
                 display: block;
                 background: #fff;
@@ -2698,14 +2700,14 @@
 
             @media (max-width: 991px) {
                 .linkedin-carousel { padding: 0 50px; }
-                .linkedin-card { flex: 0 0 100%; height: 460px; }
-                .linkedin-card iframe { height: 460px; }
+                .linkedin-card { flex: 0 0 100%; height: 500px; }
+                .linkedin-card iframe { height: 100%; }
                 .linkedin-nav { width: 42px; height: 42px; }
             }
             @media (max-width: 600px) {
                 .linkedin-carousel { padding: 0 40px; }
-                .linkedin-card { flex: 0 0 100%; height: 460px; }
-                .linkedin-card iframe { height: 460px; }
+                .linkedin-card { flex: 0 0 100%; height: 520px; }
+                .linkedin-card iframe { height: 100%; }
             }
         </style>
     </section>
@@ -2896,7 +2898,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 Apurvi Industries. All rights reserved. &nbsp;|&nbsp; Powered by <span style="color: inherit; opacity: 0.9;">Swytch Studios</span></p>
+                <p>&copy; 2026 Apurvi Industries. All rights reserved. &nbsp;|&nbsp; Powered by <span style="color: inherit; opacity: 0.9; white-space: nowrap;">Swytch Studios</span></p>
                 <div class="footer-bottom-right">
                     <div class="footer-social">
                         <a href="https://www.facebook.com/profile.php?id=61576491212714" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
