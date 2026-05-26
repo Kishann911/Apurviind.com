@@ -1092,21 +1092,14 @@
             </a>
         </div>
 
-        <div style="text-align: center; margin: 80px 0 40px;">
-            <span class="section-label">Direct LinkedIn Feed</span>
-            <h2 style="font-size: 32px; font-weight: 800;">Connect with us on LinkedIn</h2>
-        </div>
-
-        <div class="linkedin-embed-grid">
-            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7460612173665488896?collapsed=1" height="395" frameborder="0" allowfullscreen title="LinkedIn post"></iframe>
-            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7459526226462822400?collapsed=1" height="361" frameborder="0" allowfullscreen title="LinkedIn post"></iframe>
-            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7457416661902524416?collapsed=1" height="361" frameborder="0" allowfullscreen title="LinkedIn post"></iframe>
-            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7455550738920837120?collapsed=1" height="395" frameborder="0" allowfullscreen title="LinkedIn post"></iframe>
-            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7455127505239314433?collapsed=1" height="361" frameborder="0" allowfullscreen title="LinkedIn post"></iframe>
-            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7452984441561567232?collapsed=1" height="361" frameborder="0" allowfullscreen title="LinkedIn post"></iframe>
-            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7452262567055392768?collapsed=1" height="361" frameborder="0" allowfullscreen title="LinkedIn post"></iframe>
-            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7450810749846949889?collapsed=1" height="361" frameborder="0" allowfullscreen title="LinkedIn post"></iframe>
-            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7449343424371240960?collapsed=1" height="361" frameborder="0" allowfullscreen title="LinkedIn post"></iframe>
+        <div class="blog-linkedin-cta">
+            <span class="section-label">Stay in the loop</span>
+            <h2>Follow us on LinkedIn</h2>
+            <p>Get the latest engineering insights, manufacturing updates, and behind-the-scenes stories straight from our company page.</p>
+            <a href="https://www.linkedin.com/company/apurvi-ind/" target="_blank" rel="noopener" class="btn btn-primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 0 1-2.06-2.07 2.06 2.06 0 1 1 4.12 0 2.06 2.06 0 0 1-2.06 2.07zm1.78 13.02H3.56V9h3.56v11.45z"/></svg>
+                Visit our LinkedIn page
+            </a>
         </div>
     </div>
 
@@ -1158,25 +1151,43 @@
             color: #fff;
             text-shadow: 0 2px 12px rgba(0,0,0,0.5);
         }
-        .linkedin-embed-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+        .blog-linkedin-cta {
+            margin-top: 80px;
+            padding: 56px 32px;
+            background: linear-gradient(135deg, #f5f6fb 0%, #ffffff 100%);
+            border: 1px solid #e4e6eb;
+            border-radius: 16px;
+            text-align: center;
         }
-        .linkedin-embed-grid iframe {
-            width: 100%;
-            border: 1px solid #e6e6e6;
-            border-radius: 8px;
-            background: #fff;
+        .blog-linkedin-cta h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin: 6px 0 14px;
+            color: var(--text-primary);
+        }
+        .blog-linkedin-cta p {
+            font-size: 16px;
+            line-height: 1.65;
+            color: var(--text-secondary);
+            max-width: 560px;
+            margin: 0 auto 28px;
+        }
+        .blog-linkedin-cta .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
         }
         @media (max-width: 991px) {
-            .linkedin-embed-grid { grid-template-columns: repeat(2, 1fr); }
             .blog-banner-meta { padding: 20px; }
             .blog-banner-meta h3 { font-size: 20px; }
+            .blog-linkedin-cta { margin-top: 60px; padding: 44px 24px; }
+            .blog-linkedin-cta h2 { font-size: 26px; }
         }
         @media (max-width: 600px) {
-            .linkedin-embed-grid { grid-template-columns: 1fr; }
             .blog-banner-meta h3 { font-size: 16px; }
+            .blog-linkedin-cta h2 { font-size: 22px; }
+            .blog-linkedin-cta p { font-size: 14px; }
         }
     </style>
 
