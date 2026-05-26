@@ -733,16 +733,23 @@
 
         @media (max-width: 991px) {
             .industries-marquee { padding: 24px 0; }
-            .industries-marquee .industry-block { flex: 0 0 280px; }
-            .industries-marquee-track { animation-duration: 55s; gap: 18px; }
+            .industries-marquee .industry-block { flex: 0 0 360px; height: 480px; padding: 36px; }
+            .industries-marquee .industry-block h2 { font-size: 26px; }
+            .industries-marquee-track { animation-duration: 55s; gap: 20px; }
             @keyframes industries-scroll {
                 from { transform: translateX(0); }
-                to { transform: translateX(calc(-50% - 9px)); }
+                to { transform: translateX(calc(-50% - 10px)); }
             }
         }
         @media (max-width: 600px) {
-            .industries-marquee .industry-block { flex: 0 0 240px; }
+            .industries-marquee .industry-block { flex: 0 0 320px; height: 460px; padding: 30px; }
+            .industries-marquee .industry-block h2 { font-size: 24px; margin-bottom: 12px; }
+            .industries-marquee .industry-block p { font-size: 14px; }
             .industries-marquee-track { animation-duration: 50s; gap: 16px; }
+            @keyframes industries-scroll {
+                from { transform: translateX(0); }
+                to { transform: translateX(calc(-50% - 8px)); }
+            }
         }
 
         @media (max-width: 991px) {
