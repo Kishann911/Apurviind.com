@@ -715,8 +715,18 @@
             transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .industries-marquee .industry-block {
-            flex: 0 0 calc((100% - 60px) / 4);
+            flex: 0 0 calc((100% - 40px) / 3);
             min-width: 0;
+            padding: 30px;
+            height: 420px;
+        }
+        .industries-marquee .industry-block h2 {
+            font-size: 24px;
+            letter-spacing: 0;
+            line-height: 1.1;
+        }
+        .industries-marquee .industry-block p {
+            font-size: 14px;
         }
         .industries-nav {
             position: absolute;
@@ -1571,7 +1581,7 @@
             const getPerView = () => {
                 if (window.innerWidth <= 600) return 1;
                 if (window.innerWidth <= 991) return 2;
-                return 4;
+                return 3;
             };
             const update = () => {
                 const cards = track.children;
