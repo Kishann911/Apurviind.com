@@ -1,0 +1,134 @@
+# ============================================
+# Apurvi Industries - Static Site .htaccess
+# Handles WordPress -> Static HTML migration
+# ============================================
+
+RewriteEngine On
+
+# --- Force HTTPS ---
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# --- Force non-www (or change to www if client prefers) ---
+RewriteCond %{HTTP_HOST} ^www\.apurviind\.com$ [NC]
+RewriteRule ^(.*)$ https://apurviind.com/$1 [L,R=301]
+
+# ============================================
+# 301 Redirects: Old WordPress URLs -> New static pages
+# ============================================
+
+# About / Company group
+Redirect 301 /about-company/ https://apurviind.com/company.html
+Redirect 301 /about-company-2/ https://apurviind.com/company.html
+Redirect 301 /why-apurvi/ https://apurviind.com/company.html
+Redirect 301 /corporate-responsibility/ https://apurviind.com/company.html
+Redirect 301 /quality-policy/ https://apurviind.com/company.html
+
+# Products group
+Redirect 301 /products/nech-ring-stage-pipe/ https://apurviind.com/products.html
+Redirect 301 /products/6mm-tube-for-nrv-with-expansion/ https://apurviind.com/products.html
+Redirect 301 /products/pump-tube-with-od-id-spot-welding-ring/ https://apurviind.com/products.html
+Redirect 301 /products/motor-tubes/ https://apurviind.com/products.html
+Redirect 301 /products/pressure-pump-sleeve/ https://apurviind.com/products.html
+Redirect 301 /products/groowing-embassed-an-outer-side/ https://apurviind.com/products.html
+Redirect 301 /products/pressure-pump-sleeve-2/ https://apurviind.com/products.html
+Redirect 301 /products/pressure-pump-sleeve-2-2/ https://apurviind.com/products.html
+Redirect 301 /products/aluminium-tubing-for-fuelling-industries/ https://apurviind.com/products.html
+Redirect 301 /products/special-cardboard-packaging-for-aluminium-tubing/ https://apurviind.com/products.html
+Redirect 301 /products/special-film-wrapping/ https://apurviind.com/products.html
+Redirect 301 /products/special-film-wrapping-2/ https://apurviind.com/products.html
+Redirect 301 /products/15-range-of-product-motor-pump-and-pump-pipe/ https://apurviind.com/products.html
+Redirect 301 /products/ https://apurviind.com/products.html
+
+# Catch any remaining /products/* pages
+RedirectMatch 301 ^/products/.*$ https://apurviind.com/products.html
+
+# Downloads / Catalogs
+Redirect 301 /catalogs/ https://apurviind.com/downloads.html
+Redirect 301 /downlaods/ https://apurviind.com/downloads.html
+
+# Contact / Inquiry
+Redirect 301 /contact-us/ https://apurviind.com/contact.html
+Redirect 301 /inquiry-now/ https://apurviind.com/contact.html
+
+# Career
+Redirect 301 /career/ https://apurviind.com/career.html
+
+# Blog / News
+Redirect 301 /blog/ https://apurviind.com/blog.html
+
+# Privacy
+Redirect 301 /privacy-policy/ https://apurviind.com/privacy-policy.html
+
+# Sitemap (HTML version)
+Redirect 301 /sitemap/ https://apurviind.com/sitemap.html
+
+# Clients / Exhibitions -> Industries
+Redirect 301 /clientele/ https://apurviind.com/industries.html
+Redirect 301 /exhibitions/ https://apurviind.com/industries.html
+
+# Photo gallery / duplicate home -> Home
+Redirect 301 /photo-gallery/ https://apurviind.com/
+Redirect 301 /homepage2/ https://apurviind.com/
+
+# WordPress media folder fallback (if anything still references /wp-content/uploads/)
+RedirectMatch 301 ^/wp-content/uploads/.*$ https://apurviind.com/
+
+# Block access to old WordPress admin paths
+RedirectMatch 410 ^/wp-admin/.*$
+RedirectMatch 410 ^/wp-login\.php$
+
+# ============================================
+# Pretty URLs (optional): hide .html extension
+# Visiting /company will serve /company.html
+# ============================================
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# If user visits /company.html, redirect to /company (cleaner URL)
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# ============================================
+# Performance: Browser caching & compression
+# ============================================
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html "access plus 1 hour"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 6 months"
+    ExpiresByType image/png "access plus 6 months"
+    ExpiresByType image/webp "access plus 6 months"
+    ExpiresByType image/svg+xml "access plus 6 months"
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 year"
+</IfModule>
+
+# ============================================
+# Security headers
+# ============================================
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Block hidden files
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# Block the inquiry log file from public access
+<Files "inquiries.log">
+    Require all denied
+</Files>
+
+# Default index
+DirectoryIndex index.html
