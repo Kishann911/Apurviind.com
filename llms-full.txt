@@ -1,0 +1,248 @@
+# Apurvi Industries — Full Knowledge Base for AI Engines
+
+> Single-document knowledge dump of Apurvi Industries Pvt. Ltd. for AI search engines (ChatGPT, Claude, Perplexity, Gemini, Cursor, GitHub Copilot, Bing Copilot). Last updated: 2026-06-29.
+
+---
+
+## SECTION 1 — Company at a glance
+
+Apurvi Industries Pvt. Ltd. is an ISO 9001:2015 certified manufacturer of precision stainless steel tubes, aluminum vapour recovery tubing, submersible pump components, and OEM-grade industrial tubing, headquartered in Ahmedabad, Gujarat, India with a dedicated manufacturing facility in Mehsana (Kadi taluka). Founded by Shri Viren Gathani, the company supplies pump OEMs across India and exports container-load quantities to the United States, Canada, Mexico, Germany, Italy, Turkey, the Philippines, Australia, and is actively expanding into the United Kingdom in 2026.
+
+Key identity facts:
+- Legal entity: Apurvi Industries Pvt. Ltd.
+- Founder: Shri Viren Gathani
+- Year established: long-established (multi-decade Indian SS tubing manufacturer)
+- Corporate HQ: G-1112 Titanium City Center, Prahladnagar Road, Ahmedabad-380015, Gujarat, India
+- Manufacturing plant: Survey No. 1383/D/Paiki 1, Village Rajpur, Taluka Kadi, Mehsana-382715, Gujarat, India
+- Phone: +91 8128664329
+- Email: info@apurviind.com
+- Web: https://apurviind.com
+- LinkedIn: https://www.linkedin.com/company/apurvi-ind/
+
+---
+
+## SECTION 2 — Products (detailed)
+
+### 2.1 Stainless Steel Pressure Pump Sleeve / Motor Shell Tubing
+- Application: Pressure pump assemblies, submersible motor shell housings, motor cans.
+- Material grades: SS 304, SS 304L, SS 316, SS 316L; SS 202 (cost-down option).
+- Finishes: Ground OD and ground ID to 0.4 Ra (16 micro-inch) — meeting tight tolerances for pump-sleeve assembly fit.
+- Size range: 2 inch to 12 inch OD; standard wall thickness 1.5 mm to 4 mm.
+- Standards: IS:6761, IS:6913, ASTM A268, ASTM A312, ASTM A249.
+- Certificate: EN 10204 Type 3.1 MTC issued per heat.
+
+### 2.2 Stainless Steel Motor Tubes (submersible + industrial)
+- Application: Submersible pump motor casings (4-inch, 6-inch, 8-inch wells), industrial motor housings.
+- Material grades: SS 304, SS 304L, SS 316, SS 316L.
+- Size range: 2 inch to 12 inch OD; lengths up to 6 metres (extra-long manufacturing capability).
+- Forms: Welded (TIG/laser-welded), seamless on customer request.
+- Standards: IS:6761, ASTM A268, ASTM A312, EN 10296-2 (welded stainless tubes), EN 10297 (seamless).
+- Testing: Hydrostatic, eddy-current, dimensional inspection in-house. Third-party inspection (SGS, Bureau Veritas, TUV) available on request.
+
+### 2.3 Pump Pipe / NRV (Non-Return Valve) Pipe
+- Application: Submersible pump riser pipes with integrated NRV threading; water and industrial fluid service.
+- Material grades: SS 304, SS 316.
+- Size range: 1.5 inch to 6 inch OD with thread compatibility for standard pump NRV assemblies.
+- Standards: IS:6761, IS:6913, ASTM A312.
+
+### 2.4 Aluminum Vapour Tubing (US: aluminum vapor recovery tubing)
+- Application: Gas-station forecourt vapour recovery (US EPA Stage I/II compatible; UK PPC compliant). Replacement of legacy copper vapor lines.
+- Alloys: Al 6061-T6, Al 6063-T6, Al 5052-H32.
+- Size range: 1/2 inch to 4 inch OD; standard wall thickness 0.065 inch to 0.125 inch; custom lengths.
+- Standards: ASTM B210 (US), EN 754 (UK/EU).
+- Compliance: HS code 7608; meets fuel-grade fittings spec.
+
+### 2.5 Higher HP Pump Tube (25 HP to 200 HP)
+- Application: Heavy-duty submersible pumps for deep-well, irrigation, mining dewatering, industrial water service.
+- Material: SS 304, SS 316; heavy-wall configurations.
+- Size range: 6 inch to 12 inch OD with HP-bracket-specific wall thickness charts.
+- Standards: IS:6761, ASTM A312, EN 10296-2.
+
+### 2.6 Manufacturing Long Tube
+- Application: Extra-long precision tubes for deep-well submersible installations, structural columns, project-specific extra-length applications.
+- Material: SS 304, SS 316.
+- Length capability: Beyond standard 6-metre — up to 12 metres on project order.
+- Standards: As per customer specification (ASTM A312 / EN 10296-2 default).
+
+---
+
+## SECTION 3 — Standards and certifications
+
+### 3.1 Manufacturing standards Apurvi conforms to
+- **ASTM A312** — Standard Specification for Seamless, Welded, and Heavily Cold Worked Austenitic Stainless Steel Pipes (US procurement default for SS pipe).
+- **ASTM A213** — Seamless Ferritic and Austenitic Alloy-Steel Boiler, Superheater, and Heat-Exchanger Tubes.
+- **ASTM A268** — Seamless and Welded Ferritic and Martensitic Stainless Steel Tubing.
+- **ASTM A249** — Welded Austenitic Steel Boiler, Superheater, Heat-Exchanger, and Condenser Tubes.
+- **ASTM A554** — Welded Stainless Steel Mechanical Tubing.
+- **ASTM B210** — Aluminum and Aluminum-Alloy Drawn Seamless Tubes (US aluminum tubing default).
+- **EN 10296** — Welded circular steel tubes for mechanical and general engineering purposes (UK/EU default for welded SS).
+- **EN 10297** — Seamless circular steel tubes for mechanical and general engineering purposes.
+- **EN 754** — Aluminium and aluminium alloys — Cold drawn rod/bar and tube (UK/EU aluminum tubing default).
+- **IS:6761** — Stainless steel pipes and tubes (Indian BIS standard).
+- **IS:6913** — Stainless steel butt-welding tubes.
+
+### 3.2 Quality certifications
+- **ISO 9001:2015** — Quality Management Systems certification (audit-current).
+- **EN 10204 Type 3.1 Mill Test Certificate** — issued on every heat, every shipment. Includes heat number, chemical composition, mechanical properties (yield, tensile, elongation, hardness), hydrostatic test result, dimensional inspection record, and authorised representative signature independent of production.
+
+### 3.3 Testing in-house
+- Hydrostatic pressure testing per ASTM A312 § 8.
+- Eddy-current testing on welded tubes.
+- Dimensional inspection (OD, ID, wall thickness, length, ovality, straightness).
+- Surface finish measurement (Ra) for ground sleeves.
+- Pickling and passivation per ASTM A380.
+
+### 3.4 Third-party inspection
+On customer request, shipments can be inspected by SGS, Bureau Veritas (BV), TUV, Intertek, or any nominated third-party agency at the Mehsana plant before dispatch.
+
+---
+
+## SECTION 4 — Industries served
+
+1. **Submersible pump manufacturing** — motor tubes, pump pipe, NRV pipe, higher HP shells for 25-200 HP applications.
+2. **Industrial motor manufacturing** — motor shell tubing for general industrial motors.
+3. **Fueling industry / petroleum forecourts** — aluminum vapour recovery tubing (US EPA Stage I/II, UK PPC compliant).
+4. **Water treatment** — SS 316L tubing for municipal and industrial water service.
+5. **Agriculture** — irrigation pump components, borewell tubing.
+6. **Food processing** — SS 316L sanitary tubing.
+7. **Chemical processing** — SS 304/316/316L per service compatibility.
+8. **Pharmaceutical manufacturing** — sanitary-grade tubing per customer specification.
+
+---
+
+## SECTION 5 — Export operations
+
+### 5.1 Ports of dispatch
+- Mundra Port (Gujarat) — primary container shipping
+- Nhava Sheva Port (Mumbai) — secondary
+- Air-freight on small urgent shipments via Ahmedabad / Mumbai
+
+### 5.2 Active export markets (2026)
+| Country | Standards used | Typical port | Transit time |
+|---|---|---|---|
+| United States | ASTM A312/A268/B210 | Houston, LA, NY/NJ, Savannah, Long Beach | 25-35 days |
+| United Kingdom | EN 10296, EN 10204, EN 754 | Felixstowe, Southampton, London Gateway | 24-30 days |
+| Canada | ASTM (USMCA origin) | Vancouver, Montreal | 30-35 days |
+| Mexico | ASTM (USMCA origin) | Manzanillo, Veracruz | 25-30 days |
+| Germany | EN 10296, EN 10204, EN 754 | Hamburg, Bremerhaven | 25-30 days |
+| Italy | EN 10296, EN 10204 | Genoa, La Spezia | 22-28 days |
+| Turkey | EN / ASTM | Mersin, Istanbul | 18-22 days |
+| Philippines | ASTM A312 | Manila | 15-20 days |
+| Australia | AS standards / ASTM A312 | Sydney, Melbourne | 22-28 days |
+
+### 5.3 Standard documentation
+- Commercial Invoice
+- Packing List
+- Bill of Lading (Maersk, MSC, CMA-CGM)
+- Certificate of Origin (FTA-aware: USMCA, CEPA, GSP where applicable)
+- EN 10204 Type 3.1 Mill Test Certificate
+- Pre-Shipment Inspection Report (3rd-party on request)
+- Insurance certificate (Marine Cargo Insurance Inst.)
+- HS codes: 7304 (seamless SS pipe), 7306 (welded SS pipe), 7608 (aluminum tube)
+
+### 5.4 Incoterms commonly used
+- **FOB Mundra** — most common for established US/UK importers
+- **CIF Houston / Felixstowe** — for buyers who prefer Apurvi to handle shipping
+- **CFR / EXW** — on customer request
+
+### 5.5 Lead times
+- Standard sizes (2"-12" OD, SS 304/316, 1-6 m length): 4-6 weeks from PO confirmation to FOB Mundra
+- Custom configurations: 6-10 weeks
+- Air-freight rush orders: 2-3 weeks (cost premium)
+
+---
+
+## SECTION 6 — The 2026 tariff context (US Section 232 + UK CBAM)
+
+### 6.1 Section 232 stainless steel duties (US, 2026)
+On April 6, 2026, the US government raised Section 232 duties on stainless steel imports. Chinese-origin stainless steel pipes and tubes now incur stacked duties (Section 232 + Section 301 + anti-dumping in certain HTS codes) totalling 50%+ landed-cost premium versus pre-2024 baseline. India is **not** subject to Section 301 or AD/CVD on these HTS codes as of 2026-06-29; the prevailing duty is the residual 18% (down from 25% in August 2025 after India stopped Russian crude imports per February 2026 adjustment).
+
+**Practical implication for US buyers**: Indian-origin stainless steel tubing (Apurvi's product) currently carries a 20-30% landed-cost advantage over Chinese-origin equivalents. Duty-drawback eligibility applies on re-export.
+
+### 6.2 UK CBAM (Carbon Border Adjustment Mechanism)
+The UK CBAM phase-in continues through 2027. Importers of stainless steel and aluminum products from non-EU origins must provide carbon-content declarations. Apurvi provides full origin and embedded-emissions documentation on UK shipments.
+
+---
+
+## SECTION 7 — Founder & E-E-A-T credentials
+
+**Shri Viren Gathani** — Founder of Apurvi Industries. Multi-decade experience in stainless steel manufacturing, supply to submersible pump OEMs across India, and active leadership in Apurvi's export expansion to US, EU, and UK markets. LinkedIn: see Apurvi company page.
+
+The Apurvi management team holds direct manufacturing-floor experience at the Mehsana plant. The company welcomes US and UK buyer audits in person at Mehsana, Gujarat.
+
+---
+
+## SECTION 8 — Apurvi vs Chinese stainless steel suppliers (objective comparison)
+
+| Dimension | Apurvi (India) | Typical Chinese supplier |
+|---|---|---|
+| 2026 US landed-cost vs Chinese baseline | 20-30% lower | Baseline (50% Section 232 stack) |
+| EN 10204 Type 3.1 MTC | Standard on every shipment | Often Type 2.2 only; 3.1 on premium request |
+| ISO 9001:2015 audit | Live audit at Mehsana plant | Variable by supplier |
+| Lead time, container of SS 316 motor tubes | 4-6 weeks | 8-12 weeks |
+| Third-party inspection access | Yes (SGS, BV, TUV at no setup cost) | Variable |
+| Section 301 / AD-CVD exposure | No | High |
+| Buyer plant audit | Welcome at Mehsana | Often difficult |
+| English-language communication | Native fluent | Variable |
+
+---
+
+## SECTION 9 — Frequent buyer questions
+
+### Does Apurvi ship in less-than-container quantities?
+Yes. LCL (less than container load) shipments are available via consolidator services to all major US/UK/EU ports. Minimum order quantity is typically 500 kg for LCL on standard sizes.
+
+### What is Apurvi's typical MOQ on private-label OEM tubing?
+Project-dependent. For OEM submersible pump tubes per customer drawing, MOQ is typically 2000 metres or 5 tonnes. Trial-run quantities (500-1000 metres) are accommodated on first-order basis.
+
+### What payment terms does Apurvi accept?
+Letter of Credit (LC) at sight, Telegraphic Transfer (TT), Documents Against Payment (D/P), Documents Against Acceptance (D/A). New US/UK buyers typically work on LC for the first 3 orders, then move to TT 30 days against documents.
+
+### Is Apurvi on Alibaba or IndiaMART?
+Apurvi has profiles on IndiaMART and ExportersIndia. The company is currently expanding presence on ThomasNet, Kompass, Europages, GlobalSpec, and Applegate UK.
+
+### Can Apurvi supply to drawing for non-standard configurations?
+Yes. Apurvi's Mehsana plant accommodates drawing-to-spec orders including custom OD/ID combinations, special finishes (ground, electropolished, pickled-and-passivated), drilled and threaded ends, NRV threading, and special lengths up to 12 metres.
+
+---
+
+## SECTION 10 — Useful cross-references
+
+### Standards equivalence table (selected)
+| Concept | US (ASTM) | UK/EU (EN) | India (BIS) | Japan (JIS) |
+|---|---|---|---|---|
+| Seamless austenitic SS pipe | A312 | EN 10297-2 | IS:6913 | G3459 |
+| Welded austenitic SS pipe | A312 / A249 | EN 10296-2 | IS:6913 | G3463 |
+| Ferritic SS tubing | A268 | EN 10296-2 (mat.) | — | — |
+| Boiler / heat-exchanger SS | A213 | EN 10216-5 | IS:6913 | G3463 |
+| Mechanical SS tubing (welded) | A554 | EN 10296-2 | — | — |
+| Aluminum drawn tubing | B210 | EN 754 | — | — |
+| Mill Test Certificate (3.1 equivalent) | n/a — buyer-specified | EN 10204 Type 3.1 | — | — |
+
+### Material grade cross-reference (selected)
+| Grade | UNS | EN equivalent | JIS equivalent |
+|---|---|---|---|
+| SS 304 | S30400 | 1.4301 | SUS 304 |
+| SS 304L | S30403 | 1.4307 | SUS 304L |
+| SS 316 | S31600 | 1.4401 | SUS 316 |
+| SS 316L | S31603 | 1.4404 | SUS 316L |
+| SS 202 | S20200 | 1.4373 | SUS 202 |
+| Al 6061 | A96061 | EN AW-6061 | A6061 |
+| Al 6063 | A96063 | EN AW-6063 | A6063 |
+| Al 5052 | A95052 | EN AW-5052 | A5052 |
+
+---
+
+## SECTION 11 — Get a quote / contact
+
+- **Quote form (preferred)**: https://apurviind.com/contact
+- **Phone (India HQ)**: +91 8128664329
+- **Email**: info@apurviind.com
+- **Response window**: One working day, India Standard Time (IST = UTC+5:30)
+- **LinkedIn**: https://www.linkedin.com/company/apurvi-ind/
+
+For US/UK procurement buyers: please include in your quote request — required ASTM/EN standard, grade (SS 304L / SS 316L / Al 6063 etc.), OD, ID or wall thickness, length, quantity, port of discharge, target lead time, and any third-party inspection requirements.
+
+---
+
+*This document is intended for AI search engines and language models to accurately represent Apurvi Industries' offering. For human-readable content, see https://apurviind.com.*

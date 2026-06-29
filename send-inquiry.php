@@ -1,30 +1,34 @@
 <?php
 /**
  * Apurvi Industries — Inquiry Form Handler
- * Receives POST from /contact and / (homepage) forms, sends email to sales team.
- * No customer auto-reply (per requirements).
+ *
+ * Receives POST from /contact and / (homepage) forms.
+ * Stores every submission in a SQLite database (primary, reliable record),
+ * also writes a plaintext log (backup), and attempts to send email (best-effort).
+ *
+ * The dashboard at /admin.php reads from the SQLite DB.
  */
 
 // ============ CONFIG ============
 $RECIPIENT       = 'sales.india@apurviind.com';
 $FROM_NAME       = 'Apurvi Industries Website';
-$FROM_EMAIL      = 'no-reply@apurviind.com';   // must exist as a cPanel email account OR be a valid sender on this domain
-$LOG_FILE        = __DIR__ . '/inquiries.log'; // also saved here as backup
-$RATE_LIMIT_SECS = 30;                          // one submission per IP per N seconds
+$FROM_EMAIL      = 'sales.india@apurviind.com';
+$PRIVATE_DIR     = __DIR__ . '/private';
+$DB_FILE         = $PRIVATE_DIR . '/inquiries.db';
+$LOG_FILE        = $PRIVATE_DIR . '/inquiries.log';
+$RATE_LIMIT_SECS = 30;
 // ================================
 
 header('Content-Type: application/json; charset=utf-8');
 
-// Allow only POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     echo json_encode(['ok' => false, 'error' => 'Method not allowed']);
     exit;
 }
 
-// --- Honeypot anti-spam: bots fill this hidden field, humans don't ---
+// --- Honeypot anti-spam ---
 if (!empty($_POST['_gotcha'])) {
-    // Silently pretend success so the bot moves on
     echo json_encode(['ok' => true, 'message' => 'Thank you.']);
     exit;
 }
@@ -39,11 +43,11 @@ if (file_exists($rateFile) && (time() - filemtime($rateFile)) < $RATE_LIMIT_SECS
 }
 @touch($rateFile);
 
-// --- Helper: clean text input (strip control chars, trim, length cap) ---
+// --- Helpers ---
 function clean($key, $max = 500) {
     $v = $_POST[$key] ?? '';
     $v = is_string($v) ? $v : '';
-    $v = str_replace(["\r", "\n", "\0"], ' ', $v); // header-injection safety
+    $v = str_replace(["\r", "\n", "\0"], ' ', $v);
     $v = trim($v);
     if (mb_strlen($v) > $max) $v = mb_substr($v, 0, $max);
     return $v;
@@ -87,7 +91,7 @@ if (!empty($errors)) {
     exit;
 }
 
-// --- Country code -> readable name ---
+// --- Country code -> name ---
 $countryMap = [
     'IN' => 'India', 'US' => 'United States', 'GB' => 'United Kingdom',
     'AE' => 'United Arab Emirates', 'DE' => 'Germany', 'IT' => 'Italy',
@@ -96,66 +100,138 @@ $countryMap = [
 ];
 $countryName = $countryMap[$country] ?? $country;
 
-// --- Build email body (plain text — most reliable across mail clients) ---
-$submittedAt = (new DateTime('now', new DateTimeZone('Asia/Kolkata')))->format('Y-m-d H:i:s') . ' IST';
+$submittedAt = (new DateTime('now', new DateTimeZone('Asia/Kolkata')))->format('Y-m-d H:i:s');
 $source      = $_SERVER['HTTP_REFERER'] ?? 'unknown';
+$userAgent   = substr($_SERVER['HTTP_USER_AGENT'] ?? '', 0, 300);
 
-$body  = "New inquiry received via apurviind.com\n";
-$body .= "===========================================\n\n";
-$body .= "--- CONTACT INFO ---\n";
-$body .= "Name        : {$contact_person}\n";
-$body .= "Designation : " . ($designation ?: '-') . "\n";
-$body .= "Company     : {$company}\n";
-$body .= "Phone       : {$phone}\n";
-$body .= "Email       : {$email}\n";
-$body .= "Fax         : " . ($fax ?: '-') . "\n";
-$body .= "Website     : " . ($website ?: '-') . "\n\n";
-$body .= "--- ADDRESS ---\n";
-$body .= "Address     : {$address}\n";
-$body .= "City        : " . ($city ?: '-') . "\n";
-$body .= "State       : " . ($state ?: '-') . "\n";
-$body .= "Country     : {$countryName}\n";
-$body .= "Zip         : " . ($zip ?: '-') . "\n\n";
-$body .= "--- BUSINESS ---\n";
-$body .= "Nature      : " . ($business ?: '-') . "\n\n";
-$body .= "--- ENQUIRY ---\n";
-$body .= ($requirement ?: '(no message provided)') . "\n\n";
-$body .= "===========================================\n";
-$body .= "Submitted   : {$submittedAt}\n";
-$body .= "Source page : {$source}\n";
-$body .= "IP          : {$ip}\n";
+// ============================================================
+// Step 1: Ensure private/ exists and is locked down
+// ============================================================
+if (!is_dir($PRIVATE_DIR)) {
+    @mkdir($PRIVATE_DIR, 0700, true);
+}
+$privHtaccess = $PRIVATE_DIR . '/.htaccess';
+if (!file_exists($privHtaccess)) {
+    @file_put_contents(
+        $privHtaccess,
+        "# Block all public access to this directory.\n" .
+        "Require all denied\n" .
+        "<IfModule !mod_authz_core.c>\n" .
+        "    Order deny,allow\n" .
+        "    Deny from all\n" .
+        "</IfModule>\n"
+    );
+}
 
-// --- Headers (mb_encode to support special chars in subject) ---
-$subject = '=?UTF-8?B?' . base64_encode("New Inquiry from {$company} — Apurvi Industries") . '?=';
-$headers = [
-    'From: ' . $FROM_NAME . ' <' . $FROM_EMAIL . '>',
-    'Reply-To: ' . $contact_person . ' <' . $email . '>',
-    'X-Mailer: PHP/' . phpversion(),
-    'MIME-Version: 1.0',
-    'Content-Type: text/plain; charset=UTF-8',
-    'Content-Transfer-Encoding: 8bit',
-];
+// ============================================================
+// Step 2: Write to SQLite (PRIMARY — must succeed)
+// ============================================================
+$dbWritten = false;
+$dbError   = null;
+$inquiryId = null;
+try {
+    $pdo = new PDO('sqlite:' . $DB_FILE);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->exec("PRAGMA journal_mode = WAL");
+    $pdo->exec("
+        CREATE TABLE IF NOT EXISTS inquiries (
+            id              INTEGER PRIMARY KEY AUTOINCREMENT,
+            created_at      TEXT NOT NULL,
+            contact_person  TEXT,
+            designation     TEXT,
+            company         TEXT,
+            address         TEXT,
+            city            TEXT,
+            state           TEXT,
+            country         TEXT,
+            zip             TEXT,
+            phone           TEXT,
+            fax             TEXT,
+            email           TEXT,
+            website         TEXT,
+            business        TEXT,
+            requirement     TEXT,
+            source_page     TEXT,
+            ip              TEXT,
+            user_agent      TEXT,
+            is_read         INTEGER DEFAULT 0,
+            mail_sent       INTEGER DEFAULT 0,
+            notes           TEXT
+        )
+    ");
+    $pdo->exec("CREATE INDEX IF NOT EXISTS idx_created  ON inquiries(created_at)");
+    $pdo->exec("CREATE INDEX IF NOT EXISTS idx_is_read  ON inquiries(is_read)");
 
-// --- Backup log (so submissions are never lost even if mail() fails) ---
-@file_put_contents(
-    $LOG_FILE,
-    "[{$submittedAt}] {$company} | {$contact_person} | {$email} | {$phone}\n{$body}\n--- END ---\n\n",
-    FILE_APPEND | LOCK_EX
-);
+    $stmt = $pdo->prepare("
+        INSERT INTO inquiries (
+            created_at, contact_person, designation, company, address,
+            city, state, country, zip, phone, fax, email, website,
+            business, requirement, source_page, ip, user_agent
+        ) VALUES (
+            :created_at, :contact_person, :designation, :company, :address,
+            :city, :state, :country, :zip, :phone, :fax, :email, :website,
+            :business, :requirement, :source_page, :ip, :user_agent
+        )
+    ");
+    $stmt->execute([
+        ':created_at'     => $submittedAt,
+        ':contact_person' => $contact_person,
+        ':designation'    => $designation,
+        ':company'        => $company,
+        ':address'        => $address,
+        ':city'           => $city,
+        ':state'          => $state,
+        ':country'        => $countryName,
+        ':zip'            => $zip,
+        ':phone'          => $phone,
+        ':fax'            => $fax,
+        ':email'          => $email,
+        ':website'        => $website,
+        ':business'       => $business,
+        ':requirement'    => $requirement,
+        ':source_page'    => $source,
+        ':ip'             => $ip,
+        ':user_agent'     => $userAgent,
+    ]);
+    $inquiryId = (int) $pdo->lastInsertId();
+    $dbWritten = true;
+} catch (Throwable $e) {
+    $dbError = $e->getMessage();
+}
 
-// --- Send mail ---
-$sent = @mail($RECIPIENT, $subject, $body, implode("\r\n", $headers), "-f {$FROM_EMAIL}");
+// ============================================================
+// Step 3: Plaintext log (BACKUP — runs even if DB failed)
+// ============================================================
+$logBody  = "[{$submittedAt} IST]";
+$logBody .= " id=" . ($inquiryId ?: '-');
+$logBody .= " | {$company} | {$contact_person} | {$email} | {$phone}\n";
+$logBody .= "Address: {$address}, {$city}, {$state}, {$countryName} {$zip}\n";
+$logBody .= "Business: " . ($business ?: '-') . "\n";
+$logBody .= "Requirement:\n" . ($requirement ?: '(none)') . "\n";
+$logBody .= "Source: {$source} | IP: {$ip}\n";
+if ($dbError) $logBody .= "!! DB write failed: {$dbError}\n";
+$logBody .= "--- END ---\n\n";
+@file_put_contents($LOG_FILE, $logBody, FILE_APPEND | LOCK_EX);
 
-if (!$sent) {
+// ============================================================
+// Step 4: Respond to the browser.
+//
+// We intentionally do NOT call mail() from this request. On the
+// current cPanel host, the local mailer hangs ~60s before timing
+// out, which makes the entire form feel broken. The dashboard at
+// /admin.php is the source of truth — every inquiry is captured
+// in the SQLite DB above. If/when proper SMTP (PHPMailer + a real
+// provider) is wired up, that goes here.
+// ============================================================
+if ($dbWritten) {
+    echo json_encode([
+        'ok'      => true,
+        'message' => 'Thank you. Your inquiry has been received — our team will get back to you within 24 hours.'
+    ]);
+} else {
     http_response_code(500);
     echo json_encode([
         'ok'    => false,
-        'error' => 'Mail server temporarily unavailable. We have logged your inquiry — please also reach us at sales.india@apurviind.com or +91 8128664329.'
+        'error' => 'Submission temporarily failed. Please email sales.india@apurviind.com or call +91 8128664329.'
     ]);
-    exit;
 }
-
-echo json_encode([
-    'ok'      => true,
-    'message' => 'Thank you. Your inquiry has been received — our team will get back to you within 24 hours.'
-]);

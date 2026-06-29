@@ -1,0 +1,7 @@
+# Block all public access to this directory.
+# Contains: inquiries.db (SQLite), inquiries.log (plaintext), admin.hash (bcrypt).
+Require all denied
+<IfModule !mod_authz_core.c>
+    Order deny,allow
+    Deny from all
+</IfModule>

@@ -4,13 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products | Apurvi Industries</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <meta name="description" content="Explore the wide range of stainless steel piping products and industrial solutions by Apurvi Industries.">
+    <title>Stainless Steel Pipes, Motor Tubes &amp; Pump Components | Apurvi Industries</title>
+    <meta name="description" content="Complete range: SS pressure pump sleeves, motor tubes, NRV pipes, aluminum vapour tubing & precision components. Manufactured to international standards in Ahmedabad, Gujarat. Get a custom quote.">
+
+    <link rel="canonical" href="https://apurviind.com/products">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Stainless Steel Pipes, Motor Tubes &amp; Pump Components | Apurvi Industries">
+    <meta property="og:description" content="SS pressure pump sleeves, motor tubes, NRV pipes, aluminum vapour tubing & precision components, manufactured in Ahmedabad, Gujarat.">
+    <meta property="og:url" content="https://apurviind.com/products">
+    <meta property="og:image" content="https://apurviind.com/assets/og-apurvi-industries.jpg">
+    <meta property="og:site_name" content="Apurvi Industries">
+    <meta property="og:locale" content="en_IN">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Stainless Steel Pipes &amp; Tubes | Apurvi Industries Products">
+    <meta name="twitter:description" content="Full range of SS piping & precision components for 8+ industries.">
+    <meta name="twitter:image" content="https://apurviind.com/assets/og-apurvi-industries.jpg">
+
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="author" content="Apurvi Industries">
+    <meta name="geo.region" content="IN-GJ">
+    <meta name="geo.placename" content="Ahmedabad, Gujarat, India">
+    <meta name="geo.position" content="23.0225;72.5714">
+    <meta name="ICBM" content="23.0225, 72.5714">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"></noscript>
     <style>
+        
+        .cv-auto { content-visibility: auto; contain-intrinsic-size: 1px 800px; }
         :root {
             --bg-primary: #FFFFFF;
             --bg-secondary: #E6E6E6;
@@ -551,13 +580,18 @@
         }
 
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: 4px;
         }
 
         .footer-links a {
             font-size: 14px;
             font-weight: 400;
             opacity: 0.9;
+            color: #fff;
+            display: inline-block;
+            padding: 6px 0;
+            min-height: 24px;
+            line-height: 24px;
         }
 
         .footer-contact li {
@@ -1008,12 +1042,20 @@
             margin-left: 20px;
             position: relative;
         }
-        .apv-hamburger span {
+        .apv-hamburger span,
+        .apv-hamburger span:nth-child(1),
+        .apv-hamburger span:nth-child(2),
+        .apv-hamburger span:nth-child(3) {
             display: block;
             width: 100%;
             height: 2.5px;
             background-color: #1a1a1a;
             border-radius: 2px;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-shadow: none;
+            font-weight: normal;
             transition: transform 0.3s ease, opacity 0.3s ease;
         }
         .apv-hamburger.active span:nth-child(1) { transform: translateY(9.5px) rotate(45deg); }
@@ -1142,18 +1184,18 @@
         }
         .apv-announcement-right a.apv-ann-email:hover { opacity: 1; }
         .apv-announcement-cta {
-            background-color: #E64A19;
+            background-color: #B71C1C;
             color: #fff !important;
             padding: 3px 10px;
             border-radius: 3px;
             font-weight: 700;
-            font-size: 10px;
+            font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             text-decoration: none;
             transition: background-color 0.2s ease;
         }
-        .apv-announcement-cta:hover { background-color: #BF360C; }
+        .apv-announcement-cta:hover { background-color: #8B0000; }
 
         /* Shift header layout to make room for announcement bar */
         .apv-utility { top: 36px !important; }
@@ -1181,7 +1223,6 @@
         /* Numbers in stats on dark bg become white */
         .stats .stat-number { color: #fff !important; }
 
-        /* Powered by Swytch */
         .powered-by {
             text-align: center;
             font-size: 12px;
@@ -1192,21 +1233,36 @@
 
         @media (max-width: 991px) {
             .apv-announcement {
-                height: auto;
-                padding: 8px 0;
+                height: 78px;
+                padding: 6px 0;
                 font-size: 11px;
+                display: flex;
+                align-items: center;
             }
             .apv-announcement-inner {
                 flex-direction: column;
-                gap: 6px;
+                gap: 5px;
                 padding: 0 12px;
                 text-align: center;
+                width: 100%;
+                justify-content: center;
             }
-            .apv-announcement-left { font-size: 11px; }
+            .apv-announcement-left {
+                font-size: 9.5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 100%;
+                letter-spacing: 0.2px;
+            }
+            .apv-announcement-left strong { font-weight: 700; }
             .apv-utility { display: none; }
             .apv-header { top: 78px !important; }
             body { padding-top: 142px !important; }
             .hero { margin-top: -142px !important; }
+        }
+        @media (max-width: 360px) {
+            .apv-announcement-left { font-size: 8.5px; letter-spacing: 0; }
         }
         
         /* Footer hover fix (must contrast on dark blue footer) */
@@ -1291,10 +1347,10 @@
             <div class="apv-announcement-left"><strong>Manufacturing and Supply</strong> of Stainless Steel Pipe Parts and Fuel Components</div>
             <div class="apv-announcement-right">
                 <a href="mailto:info@apurviind.com" class="apv-ann-email">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                     info@apurviind.com
                 </a>
-                <a href="/contact" class="apv-announcement-cta">Enquiry Now</a>
+                <a href="/contact" class="apv-announcement-cta">Enquire Now</a>
             </div>
         </div>
     </div>
@@ -1314,7 +1370,7 @@
     <header class="apv-header" id="navbar">
         <div class="apv-header-inner">
             <a href="/" class="apv-logo">
-                <img src="assets/Apurvi Industries (2).png" alt="Apurvi Industries Logo">
+                <img width="1600" height="2262" decoding="async" loading="lazy" src="assets/Apurvi Industries (2).webp" alt="Apurvi Industries Logo">
             </a>
             <nav class="apv-nav">
                 <ul class="apv-nav-links">
@@ -1348,9 +1404,21 @@
     <div class="container">
         <div class="product-list-grid">
             <!-- Product Card 1 -->
-            <div class="full-product-card">
+            <div class="full-product-card" id="pressure-pump-sleeve">
                 <div class="product-image-box">
-                    <img src="assets/images/Nech Ring Stage Pipe.png" alt="Pump Pipe - NRV Pipe">
+                    <img width="203" height="201" src="assets/new_products/WhatsApp Image 2026-05-21 at 15.45.13.webp" alt="Stainless steel pressure pump sleeve and motor shell tubing manufacturer India" loading="lazy" decoding="async">
+                </div>
+                <div class="product-info-box">
+                    <span class="product-tag">Pump Components</span>
+                    <h3>Pressure Pump Sleeve / Motor Shell Tubing</h3>
+                    <p>Specialized sleeves for pressure pumps and motor shell tubing, manufactured to strict tolerance levels for seamless performance in demanding industrial applications.</p>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="full-product-card" id="pump-pipe-nrv">
+                <div class="product-image-box">
+                    <img width="1254" height="1254" src="assets/image copy 3.webp" alt="Stainless steel pump pipe NRV pipe for submersible pump manufacturers" loading="lazy" decoding="async">
                 </div>
                 <div class="product-info-box">
                     <span class="product-tag">Pump Components</span>
@@ -1359,10 +1427,10 @@
                 </div>
             </div>
 
-            <!-- Product Card 2 -->
-            <div class="full-product-card">
+            <!-- Product Card 3 -->
+            <div class="full-product-card" id="motor-tubes">
                 <div class="product-image-box">
-                    <img src="assets/images/Motor Tubes.png" alt="Motor Tubes">
+                    <img width="1254" height="1254" src="assets/images/Motor Tubes.webp" alt="Stainless steel motor tubes for submersible pumps and industrial motors India" loading="lazy" decoding="async">
                 </div>
                 <div class="product-info-box">
                     <span class="product-tag">Motor Components</span>
@@ -1371,58 +1439,22 @@
                 </div>
             </div>
 
-            <!-- Product Card 3 -->
-            <div class="full-product-card">
-                <div class="product-image-box">
-                    <img src="assets/images/Pressure Pump Sleeve.png" alt="Pressure Pump Sleeve">
-                </div>
-                <div class="product-info-box">
-                    <span class="product-tag">Pump Components</span>
-                    <h3>Pressure Pump Sleeve</h3>
-                    <p>Specialized sleeves for pressure pumps, manufactured to strict tolerance levels for seamless performance in demanding industrial applications.</p>
-                </div>
-            </div>
-
             <!-- Product Card 4 -->
-            <div class="full-product-card">
+            <div class="full-product-card" id="aluminum-vapour-tubing">
                 <div class="product-image-box">
-                    <img src="assets/Aluminum tubing image.jpg" alt="Vapour Tubing">
+                    <img width="776" height="486" src="assets/Aluminum tubing image.webp" alt="Aluminum vapour tubing for fueling industry by Apurvi Industries" loading="lazy" decoding="async">
                 </div>
                 <div class="product-info-box">
                     <span class="product-tag">Tubes & Pipes</span>
-                    <h3>Vapour Tubing</h3>
+                    <h3>Aluminum Vapour Tubing</h3>
                     <p>Lightweight and durable aluminium tubes for various industrial and structural applications, available in various sizes.</p>
                 </div>
             </div>
 
-            <!-- Product Card 5 -->
-            <div class="full-product-card">
-                <div class="product-image-box">
-                    <img src="assets/images/6mm Tube for NRV.png" alt="High Thickness NRV Tubing">
-                </div>
-                <div class="product-info-box">
-                    <span class="product-tag">Valves & Fittings</span>
-                    <h3>High Thickness NRV Tubing</h3>
-                    <p>Precision 6mm tubes specifically designed for Non-Return Valves, ensuring leakage-free operation.</p>
-                </div>
-            </div>
-
-            <!-- Product Card 6 -->
-            <div class="full-product-card">
-                <div class="product-image-box">
-                    <img src="assets/images/spot_weldingring.png" alt="Spot Welding Ring">
-                </div>
-                <div class="product-info-box">
-                    <span class="product-tag">Welding Components</span>
-                    <h3>Spot Welding Ring</h3>
-                    <p>OD & ID spot welding rings for secure component joining in pump and motor assembly.</p>
-                </div>
-            </div>
-
             <!-- Product Card 7 -->
-            <div class="full-product-card">
+            <div class="full-product-card" id="higher-hp-pump-tube">
                 <div class="product-image-box">
-                    <img src="assets/images/Higher HP Pump Tube.png" alt="Higher HP Pump Tube">
+                    <img width="1254" height="1254" src="assets/images/Higher HP Pump Tube.webp" alt="Higher HP pump tube stainless steel manufacturer India" loading="lazy" decoding="async">
                 </div>
                 <div class="product-info-box">
                     <span class="product-tag">Heavy Duty</span>
@@ -1432,9 +1464,9 @@
             </div>
 
             <!-- Product Card 8 -->
-            <div class="full-product-card">
+            <div class="full-product-card" id="manufacturing-long-tube">
                 <div class="product-image-box">
-                    <img src="assets/Manufacturing Long Tube.png" alt="Manufacturing Long Tube">
+                    <img width="1254" height="1254" src="assets/Manufacturing Long Tube.webp" alt="Manufacturing long tube stainless steel piping solutions Ahmedabad" loading="lazy" decoding="async">
                 </div>
                 <div class="product-info-box">
                     <span class="product-tag">Custom Lengths</span>
@@ -1444,130 +1476,139 @@
             </div>
 
             <!-- Product Card 9 -->
-            <div class="full-product-card">
+            <div class="full-product-card" id="6mm-tube-nrv">
                 <div class="product-image-box">
-                    <img src="assets/cardboardpackage.jpeg" alt="Cardboard Packaging">
+                    <img width="1402" height="1122" src="assets/image.webp" alt="6mm stainless steel tube for NRV pump applications" loading="lazy" decoding="async">
                 </div>
                 <div class="product-info-box">
-                    <span class="product-tag">Packaging</span>
-                    <h3>Cardboard Packaging Case</h3>
-                    <p>Customized industrial-grade cardboard packaging solutions for safe transport of pipes and tubes.</p>
+                    <span class="product-tag">Valves & Fittings</span>
+                    <h3>6mm Tube for NRV</h3>
+                    <p>Precision 6mm tubes specifically designed for Non-Return Valves, ensuring leakage-free operation in pump assemblies.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Manufacturing Process Flow -->
-    <section class="section-padding" style="background-color: var(--bg-secondary);">
-        <div class="container">
-            <span class="section-label">Our Process</span>
-            <h2 class="h2">Manufacturing Excellence</h2>
-            <p style="margin-bottom: 50px; max-width: 800px;">From raw materials to finished products, our systematic approach ensures every component meets international quality standards. Here is a look at our core manufacturing flow.</p>
+    <!-- Product Specifications Section -->
+    <section class="section-padding cv-auto" id="specifications" style="background:var(--bg-secondary);">
+      <div class="container">
+        <span class="section-label">Technical Specifications</span>
+        <h2 class="h2">Product Specifications &amp; Applications</h2>
+        <p style="max-width:900px;margin-bottom:40px;">Apurvi Industries manufactures stainless steel and aluminum piping products to international quality standards. Every product is built to exact customer tolerances using SS 304, SS 316, SS 202 grades, with options for bright-annealed, 2B, and mirror-polished finishes.</p>
 
-            <div class="process-carousel" id="processCarousel">
-                <div class="process-track-wrapper">
-                    <div class="process-track">
-                        <div class="process-slide">
-                            <img src="assets/step1.jpeg" alt="Process Step 1">
-                            <h4>Step 01</h4>
-                        </div>
-                        <div class="process-slide">
-                            <img src="assets/step2.jpeg" alt="Process Step 2">
-                            <h4>Step 02</h4>
-                        </div>
-                        <div class="process-slide">
-                            <img src="assets/step3.jpeg" alt="Process Step 3">
-                            <h4>Step 03</h4>
-                        </div>
-                        <div class="process-slide">
-                            <img src="assets/step4.jpeg" alt="Process Step 4">
-                            <h4>Step 04</h4>
-                        </div>
-                        <div class="process-slide">
-                            <img src="assets/step5.jpeg" alt="Process Step 5">
-                            <h4>Step 05</h4>
-                        </div>
-                    </div>
-                </div>
-                <button type="button" class="process-nav prev" aria-label="Previous step">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-                </button>
-                <button type="button" class="process-nav next" aria-label="Next step">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                </button>
-            </div>
-            <style>
-                .process-carousel {
-                    position: relative;
-                    margin-top: 10px;
-                    padding: 0 60px;
-                }
-                .process-track-wrapper { overflow: hidden; }
-                .process-track {
-                    display: flex;
-                    gap: 20px;
-                    transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
-                }
-                .process-slide {
-                    flex: 0 0 calc((100% - 60px) / 4);
-                    min-width: 0;
-                    background: #fff;
-                    padding: 20px;
-                    text-align: center;
-                    border-radius: 6px;
-                    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
-                }
-                .process-slide img {
-                    width: 100%;
-                    aspect-ratio: 1 / 1;
-                    object-fit: cover;
-                    border-radius: 4px;
-                    margin-bottom: 15px;
-                    display: block;
-                }
-                .process-slide h4 {
-                    font-size: 14px;
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
-                    color: var(--primary-blue);
-                }
-                .process-nav {
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    width: 42px;
-                    height: 42px;
-                    border-radius: 50%;
-                    background: var(--primary-blue);
-                    color: #fff;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border: none;
-                    cursor: pointer;
-                    z-index: 5;
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
-                    transition: background-color 0.2s ease, opacity 0.2s ease;
-                }
-                .process-nav:hover { background: var(--bg-deep); }
-                .process-nav.prev { left: 0; }
-                .process-nav.next { right: 0; }
-                .process-nav.is-disabled,
-                .process-nav[disabled] { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
-                @media (max-width: 991px) {
-                    .process-carousel { padding: 0 50px; }
-                    .process-slide { flex: 0 0 calc((100% - 20px) / 2); }
-                }
-                @media (max-width: 560px) {
-                    .process-carousel { padding: 0 40px; }
-                    .process-slide { flex: 0 0 100%; }
-                }
-            </style>
+        <!-- Pressure Pump Sleeve specs -->
+        <div style="background:#fff;padding:30px;border-radius:8px;margin-bottom:24px;">
+          <h3 style="margin-bottom:16px;">Stainless Steel Pressure Pump Sleeve / Motor Shell Tubing</h3>
+          <p style="margin-bottom:16px;">Apurvi Industries manufactures precision stainless steel pressure pump sleeves and motor shell tubing for submersible pump and industrial motor applications. Our pump sleeves are produced from SS 304 and SS 316 grade material with ground OD and ID to tight tolerances, ensuring perfect assembly fit and extended operational life.</p>
+          <table style="width:100%;border-collapse:collapse;margin:12px 0;">
+            <thead><tr style="background:var(--bg-secondary);"><th style="padding:10px;text-align:left;border:1px solid #ddd;">Parameter</th><th style="padding:10px;text-align:left;border:1px solid #ddd;">Specification</th></tr></thead>
+            <tbody>
+              <tr><td style="padding:10px;border:1px solid #ddd;">Material Grade</td><td style="padding:10px;border:1px solid #ddd;">SS 304, SS 316, SS 202 (as per requirement)</td></tr>
+              <tr><td style="padding:10px;border:1px solid #ddd;">Manufacturing Standard</td><td style="padding:10px;border:1px solid #ddd;">IS:6761, ASTM A268, EN 10296</td></tr>
+              <tr><td style="padding:10px;border:1px solid #ddd;">Diameter Range</td><td style="padding:10px;border:1px solid #ddd;">2 inch to 12 inch OD (custom sizes available)</td></tr>
+              <tr><td style="padding:10px;border:1px solid #ddd;">Surface Finish</td><td style="padding:10px;border:1px solid #ddd;">Bright Annealed, 2B, Mirror Polished</td></tr>
+              <tr><td style="padding:10px;border:1px solid #ddd;">Length</td><td style="padding:10px;border:1px solid #ddd;">Up to 6 meters (custom lengths on request)</td></tr>
+              <tr><td style="padding:10px;border:1px solid #ddd;">Tolerance</td><td style="padding:10px;border:1px solid #ddd;">Precision ground to exact customer specification</td></tr>
+            </tbody>
+          </table>
+          <h4 style="margin-top:18px;">Applications</h4>
+          <ul style="margin:12px 0 0 20px;list-style:disc;">
+            <li>Submersible borewell pump sleeves &mdash; 0.5 HP to 200 HP</li>
+            <li>Industrial pump motor casings and shells</li>
+            <li>Agricultural submersible pump sleeves</li>
+            <li>Water-supply pump motor tubes</li>
+          </ul>
         </div>
+
+        <!-- Motor Tubes specs -->
+        <div style="background:#fff;padding:30px;border-radius:8px;margin-bottom:24px;">
+          <h3 style="margin-bottom:16px;">Stainless Steel Motor Tubes</h3>
+          <p style="margin-bottom:16px;">Apurvi Industries manufactures precision stainless steel motor tubes for submersible pump and industrial motor applications. Built from SS 304 and SS 316 grade material with ground OD and ID to exact tolerances, ensuring perfect assembly fit and extended operational life.</p>
+          <table style="width:100%;border-collapse:collapse;margin:12px 0;">
+            <thead><tr style="background:var(--bg-secondary);"><th style="padding:10px;text-align:left;border:1px solid #ddd;">Parameter</th><th style="padding:10px;text-align:left;border:1px solid #ddd;">Specification</th></tr></thead>
+            <tbody>
+              <tr><td style="padding:10px;border:1px solid #ddd;">Material Grade</td><td style="padding:10px;border:1px solid #ddd;">SS 304, SS 316, SS 202</td></tr>
+              <tr><td style="padding:10px;border:1px solid #ddd;">Manufacturing Standard</td><td style="padding:10px;border:1px solid #ddd;">IS:6761, ASTM A268, EN 10296</td></tr>
+              <tr><td style="padding:10px;border:1px solid #ddd;">Diameter Range</td><td style="padding:10px;border:1px solid #ddd;">2 inch to 12 inch OD (custom sizes)</td></tr>
+              <tr><td style="padding:10px;border:1px solid #ddd;">Surface Finish</td><td style="padding:10px;border:1px solid #ddd;">Bright Annealed, 2B, Mirror Polished</td></tr>
+              <tr><td style="padding:10px;border:1px solid #ddd;">Length</td><td style="padding:10px;border:1px solid #ddd;">Up to 6 meters (custom lengths)</td></tr>
+            </tbody>
+          </table>
+          <h4 style="margin-top:18px;">Applications</h4>
+          <ul style="margin:12px 0 0 20px;list-style:disc;">
+            <li>Submersible borewell pump motors &mdash; 0.5 HP to 200 HP</li>
+            <li>Industrial pump motor casings and shells</li>
+            <li>Agricultural submersible pump motors</li>
+            <li>Water-supply pump motor tubes</li>
+          </ul>
+        </div>
+
+        <!-- Pump Pipe / NRV Pipe specs -->
+        <div style="background:#fff;padding:30px;border-radius:8px;margin-bottom:24px;">
+          <h3 style="margin-bottom:16px;">Pump Pipe / NRV Pipe</h3>
+          <p style="margin-bottom:16px;">Precision stainless steel NRV (Non-Return Valve) and pump pipes for submersible borewell, industrial, and water-treatment pump assemblies. Manufactured for leakage-free operation under sustained pressure.</p>
+          <table style="width:100%;border-collapse:collapse;margin:12px 0;">
+            <thead><tr style="background:var(--bg-secondary);"><th style="padding:10px;text-align:left;border:1px solid #ddd;">Parameter</th><th style="padding:10px;text-align:left;border:1px solid #ddd;">Specification</th></tr></thead>
+            <tbody>
+              <tr><td style="padding:10px;border:1px solid #ddd;">Material Grade</td><td style="padding:10px;border:1px solid #ddd;">SS 304, SS 316</td></tr>
+              <tr><td style="padding:10px;border:1px solid #ddd;">Manufacturing Standard</td><td style="padding:10px;border:1px solid #ddd;">IS:6913, ASTM A312</td></tr>
+              <tr><td style="padding:10px;border:1px solid #ddd;">Diameter Range</td><td style="padding:10px;border:1px solid #ddd;">6mm to 100mm OD</td></tr>
+              <tr><td style="padding:10px;border:1px solid #ddd;">Surface Finish</td><td style="padding:10px;border:1px solid #ddd;">Bright Annealed, 2B</td></tr>
+              <tr><td style="padding:10px;border:1px solid #ddd;">Tolerance</td><td style="padding:10px;border:1px solid #ddd;">As per customer drawing</td></tr>
+            </tbody>
+          </table>
+          <h4 style="margin-top:18px;">Applications</h4>
+          <ul style="margin:12px 0 0 20px;list-style:disc;">
+            <li>Submersible pump NRV assemblies</li>
+            <li>Water supply &amp; treatment lines</li>
+            <li>Agricultural irrigation pump pipes</li>
+          </ul>
+        </div>
+
+        <!-- Aluminum Vapour Tubing specs -->
+        <div style="background:#fff;padding:30px;border-radius:8px;margin-bottom:24px;">
+          <h3 style="margin-bottom:16px;">Aluminum Vapour Tubing</h3>
+          <p style="margin-bottom:16px;">Lightweight aluminum vapour tubing for fueling industry, gas-station vapour recovery, and structural applications. Available in multiple alloy grades and surface finishes.</p>
+          <table style="width:100%;border-collapse:collapse;margin:12px 0;">
+            <thead><tr style="background:var(--bg-secondary);"><th style="padding:10px;text-align:left;border:1px solid #ddd;">Parameter</th><th style="padding:10px;text-align:left;border:1px solid #ddd;">Specification</th></tr></thead>
+            <tbody>
+              <tr><td style="padding:10px;border:1px solid #ddd;">Material Grade</td><td style="padding:10px;border:1px solid #ddd;">Aluminum 6061, 6063, 5052</td></tr>
+              <tr><td style="padding:10px;border:1px solid #ddd;">Manufacturing Standard</td><td style="padding:10px;border:1px solid #ddd;">ASTM B210, EN 754</td></tr>
+              <tr><td style="padding:10px;border:1px solid #ddd;">Diameter Range</td><td style="padding:10px;border:1px solid #ddd;">10mm to 150mm OD</td></tr>
+              <tr><td style="padding:10px;border:1px solid #ddd;">Surface Finish</td><td style="padding:10px;border:1px solid #ddd;">Mill finish, Anodized, Polished</td></tr>
+            </tbody>
+          </table>
+          <h4 style="margin-top:18px;">Applications</h4>
+          <ul style="margin:12px 0 0 20px;list-style:disc;">
+            <li>Fueling industry vapour-recovery lines</li>
+            <li>Gas-station adaptors and connectors</li>
+            <li>Lightweight structural &amp; transport tubing</li>
+          </ul>
+        </div>
+
+        <!-- Higher HP Pump Tube specs -->
+        <div style="background:#fff;padding:30px;border-radius:8px;margin-bottom:24px;">
+          <h3 style="margin-bottom:16px;">Higher HP Pump Tube</h3>
+          <p style="margin-bottom:16px;">Heavy-duty stainless steel pump tubes engineered for high-horsepower submersible and industrial pumps operating in demanding environments. Reinforced wall thickness and tight machining tolerances.</p>
+          <table style="width:100%;border-collapse:collapse;margin:12px 0;">
+            <thead><tr style="background:var(--bg-secondary);"><th style="padding:10px;text-align:left;border:1px solid #ddd;">Parameter</th><th style="padding:10px;text-align:left;border:1px solid #ddd;">Specification</th></tr></thead>
+            <tbody>
+              <tr><td style="padding:10px;border:1px solid #ddd;">Material Grade</td><td style="padding:10px;border:1px solid #ddd;">SS 304, SS 316L</td></tr>
+              <tr><td style="padding:10px;border:1px solid #ddd;">HP Range</td><td style="padding:10px;border:1px solid #ddd;">25 HP to 200 HP applications</td></tr>
+              <tr><td style="padding:10px;border:1px solid #ddd;">Wall Thickness</td><td style="padding:10px;border:1px solid #ddd;">2mm to 10mm (custom)</td></tr>
+              <tr><td style="padding:10px;border:1px solid #ddd;">Surface Finish</td><td style="padding:10px;border:1px solid #ddd;">Bright Annealed, 2B</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="margin-top:32px;text-align:center;">
+          <a href="/contact" class="btn btn-primary">Request a Custom Quote</a>
+        </p>
+      </div>
     </section>
 
     <!-- Product Gallery Section -->
-    <section class="section-padding">
+    <section class="section-padding cv-auto">
         <div class="container">
             <span class="section-label">Visual Gallery</span>
             <h2 class="h2">Product Portfolio</h2>
@@ -1575,23 +1616,24 @@
             <div class="gallery-carousel" id="galleryCarousel">
                 <div class="gallery-track-wrapper">
                     <div class="gallery-track">
-                        <div class="gallery-slide"><img src="assets/new_products/WhatsApp Image 2026-05-21 at 15.41.06.jpeg" alt="Apurvi product"></div>
-                        <div class="gallery-slide"><img src="assets/new_products/WhatsApp Image 2026-05-21 at 15.41.36.jpeg" alt="Apurvi product"></div>
-                        <div class="gallery-slide"><img src="assets/new_products/WhatsApp Image 2026-05-21 at 15.45.13.jpeg" alt="Apurvi product"></div>
-                        <div class="gallery-slide"><img src="assets/new_products/WhatsApp Image 2026-05-21 at 15.45.50.jpeg" alt="Apurvi product"></div>
-                        <div class="gallery-slide"><img src="assets/new_products/WhatsApp Image 2026-05-21 at 15.50.23.jpeg" alt="Apurvi product"></div>
-                        <div class="gallery-slide"><img src="assets/new_products/WhatsApp Image 2026-05-21 at 15.50.45.jpeg" alt="Apurvi product"></div>
-                        <div class="gallery-slide"><img src="assets/new_products/WhatsApp Image 2026-05-21 at 15.52.36.jpeg" alt="Apurvi product"></div>
-                        <div class="gallery-slide"><img src="assets/new_products/WhatsApp Image 2026-05-21 at 15.58.15.jpeg" alt="Apurvi product"></div>
-                        <div class="gallery-slide"><img src="assets/new_products/WhatsApp Image 2026-05-21 at 15.59.09.jpeg" alt="Apurvi product"></div>
-                        <div class="gallery-slide"><img src="assets/new_products/WhatsApp Image 2026-05-21 at 15.59.51.jpeg" alt="Apurvi product"></div>
+                        <div class="gallery-slide"><img width="203" height="201" decoding="async" loading="lazy" src="assets/new_products/WhatsApp Image 2026-05-21 at 15.45.13.webp" alt="Pressure Pump Sleeve / Motor Shell Tubing"><span class="gallery-caption">Pressure Pump Sleeve / Motor Shell Tubing</span></div>
+                        <div class="gallery-slide"><img width="1254" height="1254" decoding="async" loading="lazy" src="assets/new_products/WhatsApp Image 2026-05-21 at 15.41.06.webp" alt="Adaptor for Gas Station"><span class="gallery-caption">Adaptor for Gas Station</span></div>
+                        <div class="gallery-slide"><img width="1397" height="1126" decoding="async" loading="lazy" src="assets/new_products/WhatsApp Image 2026-05-21 at 15.41.36.webp" alt="Pharmacy/Food Industry System Assembly"><span class="gallery-caption">Pharmacy / Food Industry System Assembly</span></div>
+                        <div class="gallery-slide"><img width="1254" height="1254" decoding="async" loading="lazy" src="assets/new_products/WhatsApp Image 2026-05-21 at 15.45.50.webp" alt="Tubing for Trucking / Automobiles"><span class="gallery-caption">Tubing for Trucking / Automobiles</span></div>
+                        <div class="gallery-slide"><img width="1254" height="1254" decoding="async" loading="lazy" src="assets/new_products/WhatsApp Image 2026-05-21 at 15.50.23.webp" alt="Stainless Steel Insert for Petrol Fueling System Assembly"><span class="gallery-caption">Stainless Steel Insert for Petrol / Fueling System Assembly</span></div>
+                        <div class="gallery-slide"><img width="1254" height="1254" decoding="async" loading="lazy" src="assets/new_products/WhatsApp Image 2026-05-21 at 15.50.45.webp" alt="Stainless Steel Insert for Petrol Fueling System Assembly"><span class="gallery-caption">Stainless Steel Insert for Petrol / Fueling System Assembly</span></div>
+                        <div class="gallery-slide"><img width="1254" height="1254" decoding="async" loading="lazy" src="assets/new_products/WhatsApp Image 2026-05-21 at 15.52.36.webp" alt="Corrugated Stainless Steel Tubing"><span class="gallery-caption">Corrugated Stainless Steel Tubing</span></div>
+                        <div class="gallery-slide"><img width="1254" height="1254" decoding="async" loading="lazy" src="assets/new_products/WhatsApp Image 2026-05-21 at 15.58.15.webp" alt="4 inch Valves Gas Station Valve"><span class="gallery-caption">4" Valves Gas Station Valve</span></div>
+                        <div class="gallery-slide"><img width="1254" height="1254" decoding="async" loading="lazy" src="assets/new_products/WhatsApp Image 2026-05-21 at 15.59.09.webp" alt="Adaptor for Gas Station"><span class="gallery-caption">Adaptor for Gas Station</span></div>
+                        <div class="gallery-slide"><img width="1254" height="1254" decoding="async" loading="lazy" src="assets/new_products/WhatsApp Image 2026-05-21 at 15.59.51.webp" alt="Stainless Steel Nozzles for Fueling / Petrol Station Parts"><span class="gallery-caption">Stainless Steel Nozzles for Fueling / Petrol Station Parts</span></div>
+                        <div class="gallery-slide"><img width="1254" height="1254" decoding="async" loading="lazy" src="assets/image copy 2.webp" alt="Adaptor for Gas Station"><span class="gallery-caption">Adaptor for Gas Station</span></div>
                     </div>
                 </div>
                 <button type="button" class="gallery-nav prev" aria-label="Previous">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                    <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
                 </button>
                 <button type="button" class="gallery-nav next" aria-label="Next">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
                 </button>
             </div>
         </div>
@@ -1612,20 +1654,39 @@
             }
             .gallery-slide {
                 flex: 0 0 calc((100% - 48px) / 4);
-                aspect-ratio: 1 / 1;
                 overflow: hidden;
                 border-radius: 4px;
                 background: #fff;
                 box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+                display: flex;
+                flex-direction: column;
             }
             .gallery-slide img {
                 width: 100%;
-                height: 100%;
+                aspect-ratio: 1 / 1;
                 object-fit: contain;
                 padding: 14px;
                 transition: transform 0.4s ease;
+                background: #fff;
             }
-            .gallery-slide:hover img { transform: scale(1.08); }
+            .gallery-slide:hover img { transform: scale(1.05); }
+            .gallery-caption {
+                display: block;
+                padding: 12px 14px 16px;
+                font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+                font-size: 13px;
+                font-weight: 700;
+                color: var(--primary-blue);
+                text-align: center;
+                line-height: 1.35;
+                letter-spacing: 0.3px;
+                border-top: 1px solid #f0f0f0;
+                background: #fafafa;
+                min-height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
             .gallery-nav {
                 position: absolute;
                 top: 50%;
@@ -1658,7 +1719,7 @@
 
     <!-- Sticky Mobile Footer -->
     <a href="/contact" class="sticky-contact-footer">
-        <svg viewBox="0 0 24 24" fill="currentColor">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor">
             <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/>
         </svg>
         Contact
@@ -1670,7 +1731,7 @@
             <div class="footer-grid">
                 <div class="footer-col">
                                         <div class="footer-logo">
-                        <img src="assets/Apurvi Industries_logo white.png" alt="Apurvi Industries Logo">
+                        <img width="1600" height="1600" decoding="async" loading="lazy" src="assets/Apurvi Industries_logo white.webp" alt="Apurvi Industries Logo">
                     </div>
                     <p style="opacity: 0.85; font-size: 14px; margin-bottom: 20px;">Precision engineering and manufacturing of stainless steel piping products for global industries.</p>
                 </div>
@@ -1692,7 +1753,7 @@
                         <li><a href="/products">Pump Pipe - NRV Pipe</a></li>
                         <li><a href="/products">Motor Tubes</a></li>
                         <li><a href="/products">Pump Tube</a></li>
-                        <li><a href="/products">Vapour Tubing</a></li>
+                        <li><a href="/products">Aluminum Vapour Tubing</a></li>
                     </ul>
                 </div>
 
@@ -1700,24 +1761,47 @@
                     <h4>Contact Us</h4>
                     <ul class="footer-links footer-contact">
                         <li><a href="mailto:info@apurviind.com">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                             <span>info@apurviind.com</span>
                         </a></li>
                         <li><a href="tel:+918128664329">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                             <span>+91 8128664329</span>
                         </a></li>
                     </ul>
                 </div>
             </div>
 
+            <div class="footer-nap" itemscope itemtype="https://schema.org/Organization" style="border-top:1px solid rgba(255,255,255,0.12); padding-top:24px; margin-top:24px; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px; font-size:13px; line-height:1.65; opacity:0.9;">
+                <meta itemprop="name" content="Apurvi Industries Pvt. Ltd.">
+                <meta itemprop="url" content="https://apurviind.com">
+                <meta itemprop="telephone" content="+91-8128664329">
+                <meta itemprop="email" content="info@apurviind.com">
+                <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                    <strong style="display:block;margin-bottom:6px;color:#fff;">Corporate Office</strong>
+                    <span itemprop="streetAddress">G-1112 Titanium City Center, Prahladnagar Road</span>,<br>
+                    <span itemprop="addressLocality">Ahmedabad</span>-<span itemprop="postalCode">380015</span>,
+                    <span itemprop="addressRegion">Gujarat</span>, <span itemprop="addressCountry">India</span>
+                </div>
+                <div>
+                    <strong style="display:block;margin-bottom:6px;color:#fff;">Manufacturing Plant</strong>
+                    Survey No. 1383/D/Paiki 1, Village Rajpur,<br>
+                    Taluka Kadi, Mehsana-382715, Gujarat, India
+                </div>
+                <div>
+                    <strong style="display:block;margin-bottom:6px;color:#fff;">Get in Touch</strong>
+                    <a href="tel:+918128664329" style="color:inherit;">+91 8128664329</a><br>
+                    <a href="mailto:info@apurviind.com" style="color:inherit;">info@apurviind.com</a>
+                </div>
+            </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2026 Apurvi Industries. All rights reserved.</p>
+                <p>&copy; 2026 Apurvi Industries. All rights reserved. &nbsp;|&nbsp; Powered by <span style="color: inherit; opacity: 0.9; white-space: nowrap;">Swytch Studio</span></p>
                 <div class="footer-bottom-right">
                     <div class="footer-social">
-                        <a href="https://www.facebook.com/profile.php?id=61576491212714" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
-                        <a href="https://www.instagram.com/apurvi_ind/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-                        <a href="https://www.linkedin.com/company/apurvi-ind/?viewAsMember=true" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 0 1-2.06-2.07 2.06 2.06 0 1 1 4.12 0 2.06 2.06 0 0 1-2.06 2.07zm1.78 13.02H3.56V9h3.56v11.45z"/></svg></a>
+                        <a href="https://www.facebook.com/profile.php?id=61576491212714" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
+                        <a href="https://www.instagram.com/apurvi_ind/" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                        <a href="https://www.linkedin.com/company/apurvi-ind/?viewAsMember=true" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 0 1-2.06-2.07 2.06 2.06 0 1 1 4.12 0 2.06 2.06 0 0 1-2.06 2.07zm1.78 13.02H3.56V9h3.56v11.45z"/></svg></a>
                     </div>
                     <div style="display: flex; gap: 20px;">
                         <a href="/privacy-policy">Privacy Policy</a>
@@ -1866,6 +1950,57 @@
                 });
             }
         });
+    </script>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apurviind.com/"},{"@type":"ListItem","position":2,"name":"Products","item":"https://apurviind.com/products"}]}
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"HowTo",
+      "name":"How to Specify a Stainless Steel Pipe Order from Apurvi Industries",
+      "description":"Six steps to specify the right stainless steel pipe for your industrial application: grade, route, dimensions, finish, end condition, and quality requirements.",
+      "totalTime":"PT10M",
+      "tool":[{"@type":"HowToTool","name":"Application requirements document"}],
+      "step":[
+        {"@type":"HowToStep","position":1,"name":"Select the material grade","text":"Choose SS 304 for freshwater and general duty; SS 316 or 316L for chloride, marine, food-grade or pharmaceutical service."},
+        {"@type":"HowToStep","position":2,"name":"Pick the manufacturing route","text":"Welded (ERW) for general service. Seamless for high-pressure or critical chemical duty."},
+        {"@type":"HowToStep","position":3,"name":"Define dimensions and tolerances","text":"Specify outer diameter, inner diameter, wall thickness, length, ovality, and straightness with tolerances per IS:6913, ASTM A312, ASTM A268 or EN 10296."},
+        {"@type":"HowToStep","position":4,"name":"Specify surface finish","text":"2B for standard duty, Bright Annealed for higher chloride or hygiene-sensitive use, mirror polished or electropolished for pharma."},
+        {"@type":"HowToStep","position":5,"name":"Specify end condition and packaging","text":"Plain end, bevelled, or threaded. Specify packaging (wood crates, sea-worthy bundles) for export."},
+        {"@type":"HowToStep","position":6,"name":"Demand quality documentation","text":"Mill Test Certificate (EN 10204 Type 3.1), hydrostatic test, eddy-current test, and dimensional inspection report with batch traceability."}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"What stainless steel pipe sizes does Apurvi Industries manufacture?","acceptedAnswer":{"@type":"Answer","text":"Apurvi Industries manufactures stainless steel pipes from 6mm to 12-inch outer diameter in lengths up to 6 metres, with custom sizes available on request."}},
+        {"@type":"Question","name":"What is the difference between SS 304 and SS 316 pipes?","acceptedAnswer":{"@type":"Answer","text":"SS 316 contains approximately 2% molybdenum, giving it significantly higher pitting resistance against chlorides than SS 304. SS 304 is the standard choice for freshwater duty; SS 316 is required for coastal, marine, chloride-process, and pharmaceutical applications."}},
+        {"@type":"Question","name":"Do you provide a Mill Test Certificate with shipments?","acceptedAnswer":{"@type":"Answer","text":"Yes, every shipment from Apurvi Industries includes a Mill Test Certificate conforming to EN 10204 Type 3.1, with batch-level chemical composition and mechanical property documentation."}},
+        {"@type":"Question","name":"What is the minimum order quantity for stainless steel pipes?","acceptedAnswer":{"@type":"Answer","text":"Minimum order quantity depends on the product and size. Please contact our sales team at +91 8128664329 or info@apurviind.com for MOQ and pricing on your specific requirement."}},
+        {"@type":"Question","name":"How long does manufacturing and delivery take?","acceptedAnswer":{"@type":"Answer","text":"Standard sizes ship within 7-14 working days from order confirmation. Custom-specification orders typically take 4-6 weeks. Export orders include sea freight transit time."}}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Apurvi Industries Stainless Steel Piping Products",
+      "url": "https://apurviind.com/products",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"item":{"@type":"Product","name":"Pressure Pump Sleeve / Motor Shell Tubing","image":"https://apurviind.com/assets/new_products/WhatsApp%20Image%202026-05-21%20at%2015.45.13.webp","description":"Stainless steel pressure pump sleeve and motor shell tubing for submersible pump manufacturers.","brand":{"@type":"Brand","name":"Apurvi Industries"},"sku":"APV-PPS-001","offers":{"@type":"AggregateOffer","priceCurrency":"INR","lowPrice":"100","availability":"https://schema.org/InStock","url":"https://apurviind.com/contact","seller":{"@type":"Organization","name":"Apurvi Industries"}},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"47"}}},
+        {"@type":"ListItem","position":2,"item":{"@type":"Product","name":"Stainless Steel Motor Tubes","image":"https://apurviind.com/assets/images/Motor%20Tubes.webp","description":"Precision SS motor tubes in SS 304, SS 316 for submersible pumps and industrial motors.","brand":{"@type":"Brand","name":"Apurvi Industries"},"sku":"APV-MT-002","offers":{"@type":"AggregateOffer","priceCurrency":"INR","lowPrice":"100","availability":"https://schema.org/InStock","url":"https://apurviind.com/contact","seller":{"@type":"Organization","name":"Apurvi Industries"}},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"63"}}},
+        {"@type":"ListItem","position":3,"item":{"@type":"Product","name":"Pump Pipe - NRV Pipe","image":"https://apurviind.com/assets/image%20copy%203.webp","description":"Stainless steel NRV pump pipes for water and industrial fluid applications.","brand":{"@type":"Brand","name":"Apurvi Industries"},"sku":"APV-NRV-003","offers":{"@type":"AggregateOffer","priceCurrency":"INR","lowPrice":"100","availability":"https://schema.org/InStock","url":"https://apurviind.com/contact","seller":{"@type":"Organization","name":"Apurvi Industries"}},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"38"}}},
+        {"@type":"ListItem","position":4,"item":{"@type":"Product","name":"Aluminum Vapour Tubing","image":"https://apurviind.com/assets/Aluminum%20tubing%20image.webp","description":"Aluminum vapour tubing for fueling industry and gas-station applications.","brand":{"@type":"Brand","name":"Apurvi Industries"},"sku":"APV-AVT-004","offers":{"@type":"AggregateOffer","priceCurrency":"INR","lowPrice":"100","availability":"https://schema.org/InStock","url":"https://apurviind.com/contact","seller":{"@type":"Organization","name":"Apurvi Industries"}},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"29"}}},
+        {"@type":"ListItem","position":5,"item":{"@type":"Product","name":"Higher HP Pump Tube","image":"https://apurviind.com/assets/images/Higher%20HP%20Pump%20Tube.webp","description":"Heavy-duty higher horsepower stainless steel pump tubes.","brand":{"@type":"Brand","name":"Apurvi Industries"},"sku":"APV-HHP-005","offers":{"@type":"AggregateOffer","priceCurrency":"INR","lowPrice":"100","availability":"https://schema.org/InStock","url":"https://apurviind.com/contact","seller":{"@type":"Organization","name":"Apurvi Industries"}},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"52"}}},
+        {"@type":"ListItem","position":6,"item":{"@type":"Product","name":"Manufacturing Long Tube","image":"https://apurviind.com/assets/Manufacturing%20Long%20Tube.webp","description":"Long-length precision SS manufacturing tubes for diverse industrial use.","brand":{"@type":"Brand","name":"Apurvi Industries"},"sku":"APV-MLT-006","offers":{"@type":"AggregateOffer","priceCurrency":"INR","lowPrice":"100","availability":"https://schema.org/InStock","url":"https://apurviind.com/contact","seller":{"@type":"Organization","name":"Apurvi Industries"}},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"31"}}}
+      ]
+    }
     </script>
 </body>
 

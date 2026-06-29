@@ -4,13 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Company | Apurvi Industries</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <meta name="description" content="Learn more about Apurvi Industries, our history, infrastructure, and commitment to quality.">
+    <title>About Apurvi Industries | SS Pipe Manufacturer, Ahmedabad Gujarat</title>
+    <meta name="description" content="Apurvi Industries — established SS pipe manufacturer in Gujarat. Advanced infrastructure at Mehsana, quality-first approach, trusted by pump manufacturers across India and globally.">
+
+    <link rel="canonical" href="https://apurviind.com/company">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About Apurvi Industries | SS Pipe Manufacturer, Ahmedabad Gujarat">
+    <meta property="og:description" content="Established SS pipe manufacturer in Gujarat. Advanced infrastructure at Mehsana, quality-first approach, trusted by pump manufacturers across India and globally.">
+    <meta property="og:url" content="https://apurviind.com/company">
+    <meta property="og:image" content="https://apurviind.com/assets/og-apurvi-industries.jpg">
+    <meta property="og:site_name" content="Apurvi Industries">
+    <meta property="og:locale" content="en_IN">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Apurvi Industries | SS Pipe Manufacturer Ahmedabad">
+    <meta name="twitter:description" content="Established SS pipe manufacturer in Gujarat with advanced infrastructure at Mehsana.">
+    <meta name="twitter:image" content="https://apurviind.com/assets/og-apurvi-industries.jpg">
+
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="author" content="Apurvi Industries">
+    <meta name="geo.region" content="IN-GJ">
+    <meta name="geo.placename" content="Ahmedabad, Gujarat, India">
+    <meta name="geo.position" content="23.0225;72.5714">
+    <meta name="ICBM" content="23.0225, 72.5714">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="assets/external/unsplash-1504917595217-d4dc5ebe6122.webp" fetchpriority="high">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"></noscript>
     <style>
+        
+        .cv-auto { content-visibility: auto; contain-intrinsic-size: 1px 800px; }
         :root {
             --bg-primary: #FFFFFF;
             --bg-secondary: #E6E6E6;
@@ -551,13 +581,18 @@
         }
 
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: 4px;
         }
 
         .footer-links a {
             font-size: 14px;
             font-weight: 400;
             opacity: 0.9;
+            color: #fff;
+            display: inline-block;
+            padding: 6px 0;
+            min-height: 24px;
+            line-height: 24px;
         }
 
         .footer-contact li {
@@ -964,12 +999,20 @@
             margin-left: 20px;
             position: relative;
         }
-        .apv-hamburger span {
+        .apv-hamburger span,
+        .apv-hamburger span:nth-child(1),
+        .apv-hamburger span:nth-child(2),
+        .apv-hamburger span:nth-child(3) {
             display: block;
             width: 100%;
             height: 2.5px;
             background-color: #1a1a1a;
             border-radius: 2px;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-shadow: none;
+            font-weight: normal;
             transition: transform 0.3s ease, opacity 0.3s ease;
         }
         .apv-hamburger.active span:nth-child(1) { transform: translateY(9.5px) rotate(45deg); }
@@ -1098,18 +1141,18 @@
         }
         .apv-announcement-right a.apv-ann-email:hover { opacity: 1; }
         .apv-announcement-cta {
-            background-color: #E64A19;
+            background-color: #B71C1C;
             color: #fff !important;
             padding: 3px 10px;
             border-radius: 3px;
             font-weight: 700;
-            font-size: 10px;
+            font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             text-decoration: none;
             transition: background-color 0.2s ease;
         }
-        .apv-announcement-cta:hover { background-color: #BF360C; }
+        .apv-announcement-cta:hover { background-color: #8B0000; }
 
         /* Shift header layout to make room for announcement bar */
         .apv-utility { top: 36px !important; }
@@ -1137,7 +1180,6 @@
         /* Numbers in stats on dark bg become white */
         .stats .stat-number { color: #fff !important; }
 
-        /* Powered by Swytch */
         .powered-by {
             text-align: center;
             font-size: 12px;
@@ -1148,21 +1190,36 @@
 
         @media (max-width: 991px) {
             .apv-announcement {
-                height: auto;
-                padding: 8px 0;
+                height: 78px;
+                padding: 6px 0;
                 font-size: 11px;
+                display: flex;
+                align-items: center;
             }
             .apv-announcement-inner {
                 flex-direction: column;
-                gap: 6px;
+                gap: 5px;
                 padding: 0 12px;
                 text-align: center;
+                width: 100%;
+                justify-content: center;
             }
-            .apv-announcement-left { font-size: 11px; }
+            .apv-announcement-left {
+                font-size: 9.5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 100%;
+                letter-spacing: 0.2px;
+            }
+            .apv-announcement-left strong { font-weight: 700; }
             .apv-utility { display: none; }
             .apv-header { top: 78px !important; }
             body { padding-top: 142px !important; }
             .hero { margin-top: -142px !important; }
+        }
+        @media (max-width: 360px) {
+            .apv-announcement-left { font-size: 8.5px; letter-spacing: 0; }
         }
         
         /* Footer hover fix (must contrast on dark blue footer) */
@@ -1247,10 +1304,10 @@
             <div class="apv-announcement-left"><strong>Manufacturing and Supply</strong> of Stainless Steel Pipe Parts and Fuel Components</div>
             <div class="apv-announcement-right">
                 <a href="mailto:info@apurviind.com" class="apv-ann-email">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                     info@apurviind.com
                 </a>
-                <a href="/contact" class="apv-announcement-cta">Enquiry Now</a>
+                <a href="/contact" class="apv-announcement-cta">Enquire Now</a>
             </div>
         </div>
     </div>
@@ -1270,7 +1327,7 @@
     <header class="apv-header" id="navbar">
         <div class="apv-header-inner">
             <a href="/" class="apv-logo">
-                <img src="assets/Apurvi Industries (2).png" alt="Apurvi Industries Logo">
+                <img width="1600" height="2262" decoding="async" loading="lazy" src="assets/Apurvi Industries (2).webp" alt="Apurvi Industries Logo">
             </a>
             <nav class="apv-nav">
                 <ul class="apv-nav-links">
@@ -1296,7 +1353,7 @@
 
     <!-- Hero Section -->
     <section class="hero-internal">
-        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=2000" alt="" class="hero-bg-img" style="opacity: 0.4;">
+        <img fetchpriority="high" width="1600" height="1067" decoding="async" loading="eager" src="assets/external/unsplash-1504917595217-d4dc5ebe6122.webp" alt="" class="hero-bg-img" style="opacity: 0.4;">
         <div class="container">
             <h1>About Our Company</h1>
         </div>
@@ -1318,14 +1375,14 @@
 
             <!-- Main Content -->
             <main class="main-content">
-                <section id="about" class="content-section">
+                <section id="about" class="content-section cv-auto">
                     <span class="section-label">Our Story</span>
                     <h2 class="h2">A Legacy of Excellence</h2>
                     <p>Apurvi Industries stands for getting the right material from the right source at the right time. Our each department - Production, Inventory, Marketing, and Sales & Service - is fully developed for better management, offering the best product quality and prompt service to our clients.</p>
                     <p>With years of experience in the stainless steel piping industry, we have established ourselves as a leading manufacturer and supplier. We specialize in components for submersible pumps, motors, and various industrial applications.</p>
                 </section>
 
-                <section id="vision" class="content-section">
+                <section id="vision" class="content-section cv-auto">
                     <span class="section-label">Our Goal</span>
                     <h2 class="h2">The Quality You Can Trust</h2>
                     <p>Our goal is to be a world-class supply chain company that delivers value to its customers through innovative solutions and reliable service. We strive to maintain the highest standards of integrity in all our dealings.</p>
@@ -1341,15 +1398,138 @@
                     </div>
                 </section>
 
-                <section id="infrastructure" class="content-section">
+                <section id="infrastructure" class="content-section cv-auto">
                     <span class="section-label">Manufacturing</span>
                     <h2 class="h2">Infrastructure</h2>
                     <p>Our manufacturing plant is located at Rajpur, Mehsana, Gujarat. It is equipped with advanced machinery for the production of high-quality stainless steel tubes and pipes.</p>
                     <p>We have a separate department for inventory management to ensure that we can meet our clients' requirements promptly. Our strategic location allows us to efficiently serve clients across India and internationally.</p>
-                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200" alt="Manufacturing Plant" style="width: 100%; border-radius: 4px; margin-top: 20px;">
+
+                    <div class="facility-carousel" id="facilityCarousel" style="position: relative; margin-top: 30px;">
+                        <div class="facility-track-wrapper" style="overflow: hidden; border-radius: 6px;">
+                            <div class="facility-track">
+                                <div class="facility-slide"><img width="960" height="1280" decoding="async" loading="lazy" src="assets/WhatsApp Image 2026-05-28 at 12.42.40.webp" alt="Apurvi facility 1"></div>
+                                <div class="facility-slide"><img width="960" height="1280" decoding="async" loading="lazy" src="assets/WhatsApp Image 2026-05-28 at 12.42.41.webp" alt="Apurvi facility 2"></div>
+                                <div class="facility-slide"><img width="1600" height="1200" decoding="async" loading="lazy" src="assets/WhatsApp Image 2026-05-28 at 12.42.41 (1).webp" alt="Apurvi facility 3"></div>
+                                <div class="facility-slide"><img width="1600" height="1200" decoding="async" loading="lazy" src="assets/WhatsApp Image 2026-05-28 at 12.42.42.webp" alt="Apurvi facility 4"></div>
+                                <div class="facility-slide"><img width="1600" height="1200" decoding="async" loading="lazy" src="assets/WhatsApp Image 2026-05-28 at 12.42.42 (1).webp" alt="Apurvi facility 5"></div>
+                                <div class="facility-slide"><img width="1600" height="1059" decoding="async" loading="lazy" src="assets/WhatsApp Image 2026-05-28 at 12.42.42 (2).webp" alt="Apurvi facility 6"></div>
+                                <div class="facility-slide"><img width="1600" height="1059" decoding="async" loading="lazy" src="assets/WhatsApp Image 2026-05-28 at 12.42.43.webp" alt="Apurvi facility 7"></div>
+                                <div class="facility-slide"><img width="1600" height="1059" decoding="async" loading="lazy" src="assets/WhatsApp Image 2026-05-28 at 12.42.43 (1).webp" alt="Apurvi facility 8"></div>
+                                <div class="facility-slide"><img width="1600" height="1200" decoding="async" loading="lazy" src="assets/WhatsApp Image 2026-05-28 at 12.42.43 (2).webp" alt="Apurvi facility 9"></div>
+                            </div>
+                        </div>
+                        <button type="button" class="facility-nav prev" aria-label="Previous">
+                            <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                        </button>
+                        <button type="button" class="facility-nav next" aria-label="Next">
+                            <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                        </button>
+                        <div class="facility-dots" aria-hidden="true"></div>
+                    </div>
+
+                    <style>
+                        .facility-track {
+                            display: flex;
+                            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+                        }
+                        .facility-slide {
+                            flex: 0 0 100%;
+                            min-width: 0;
+                            aspect-ratio: 16 / 10;
+                            background: #f5f5f5;
+                            overflow: hidden;
+                        }
+                        .facility-slide img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            display: block;
+                        }
+                        .facility-nav {
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            width: 44px;
+                            height: 44px;
+                            border-radius: 50%;
+                            background: var(--primary-blue);
+                            color: #fff;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border: none;
+                            cursor: pointer;
+                            z-index: 5;
+                            box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+                            transition: background-color 0.2s ease;
+                        }
+                        .facility-nav:hover { background: var(--bg-deep); }
+                        .facility-nav.prev { left: 14px; }
+                        .facility-nav.next { right: 14px; }
+                        .facility-dots {
+                            display: flex;
+                            justify-content: center;
+                            gap: 8px;
+                            margin-top: 16px;
+                        }
+                        .facility-dots button {
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 50%;
+                            border: none;
+                            background: rgba(63, 58, 138, 0.25);
+                            cursor: pointer;
+                            padding: 0;
+                            transition: background-color 0.2s ease, transform 0.2s ease;
+                        }
+                        .facility-dots button.is-active {
+                            background: var(--primary-blue);
+                            transform: scale(1.25);
+                        }
+                    </style>
                 </section>
 
-                <section id="quality" class="content-section">
+                <script>
+                    (function() {
+                        const root = document.getElementById('facilityCarousel');
+                        if (!root) return;
+                        const track = root.querySelector('.facility-track');
+                        const slides = Array.from(root.querySelectorAll('.facility-slide'));
+                        const prev = root.querySelector('.facility-nav.prev');
+                        const next = root.querySelector('.facility-nav.next');
+                        const dotsBox = root.querySelector('.facility-dots');
+                        let active = 0;
+                        const n = slides.length;
+                        if (!n) return;
+
+                        // Build dots
+                        slides.forEach((_, i) => {
+                            const b = document.createElement('button');
+                            b.type = 'button';
+                            b.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+                            b.addEventListener('click', () => go(i));
+                            dotsBox.appendChild(b);
+                        });
+                        const dots = Array.from(dotsBox.children);
+
+                        function render() {
+                            track.style.transform = 'translateX(-' + (active * 100) + '%)';
+                            dots.forEach((d, i) => d.classList.toggle('is-active', i === active));
+                        }
+                        function go(i) { active = (i + n) % n; render(); }
+                        prev.addEventListener('click', () => { stopAuto(); go(active - 1); });
+                        next.addEventListener('click', () => { stopAuto(); go(active + 1); });
+
+                        // Auto-advance
+                        let timer = setInterval(() => go(active + 1), 4000);
+                        function stopAuto() { if (timer) { clearInterval(timer); timer = null; } }
+                        root.addEventListener('mouseenter', stopAuto);
+
+                        render();
+                    })();
+                </script>
+
+                <section id="quality" class="content-section cv-auto">
                     <span class="section-label">Quality Assurance</span>
                     <h2 class="h2">Quality Policy</h2>
                     <p>Quality is the cornerstone of everything we do at Apurvi Industries. We are committed to providing products that meet international standards and satisfy our customers' requirements.</p>
@@ -1361,7 +1541,7 @@
 
     <!-- Sticky Mobile Footer -->
     <a href="/contact" class="sticky-contact-footer">
-        <svg viewBox="0 0 24 24" fill="currentColor">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor">
             <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/>
         </svg>
         Contact
@@ -1373,7 +1553,7 @@
             <div class="footer-grid">
                 <div class="footer-col">
                                         <div class="footer-logo">
-                        <img src="assets/Apurvi Industries_logo white.png" alt="Apurvi Industries Logo">
+                        <img width="1600" height="1600" decoding="async" loading="lazy" src="assets/Apurvi Industries_logo white.webp" alt="Apurvi Industries Logo">
                     </div>
                     <p style="opacity: 0.85; font-size: 14px; margin-bottom: 20px;">Precision engineering and manufacturing of stainless steel piping products for global industries.</p>
                 </div>
@@ -1395,7 +1575,7 @@
                         <li><a href="/products">Pump Pipe - NRV Pipe</a></li>
                         <li><a href="/products">Motor Tubes</a></li>
                         <li><a href="/products">Pump Tube</a></li>
-                        <li><a href="/products">Vapour Tubing</a></li>
+                        <li><a href="/products">Aluminum Vapour Tubing</a></li>
                     </ul>
                 </div>
 
@@ -1403,24 +1583,47 @@
                     <h4>Contact Us</h4>
                     <ul class="footer-links footer-contact">
                         <li><a href="mailto:info@apurviind.com">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                             <span>info@apurviind.com</span>
                         </a></li>
                         <li><a href="tel:+918128664329">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                             <span>+91 8128664329</span>
                         </a></li>
                     </ul>
                 </div>
             </div>
 
+            <div class="footer-nap" itemscope itemtype="https://schema.org/Organization" style="border-top:1px solid rgba(255,255,255,0.12); padding-top:24px; margin-top:24px; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px; font-size:13px; line-height:1.65; opacity:0.9;">
+                <meta itemprop="name" content="Apurvi Industries Pvt. Ltd.">
+                <meta itemprop="url" content="https://apurviind.com">
+                <meta itemprop="telephone" content="+91-8128664329">
+                <meta itemprop="email" content="info@apurviind.com">
+                <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                    <strong style="display:block;margin-bottom:6px;color:#fff;">Corporate Office</strong>
+                    <span itemprop="streetAddress">G-1112 Titanium City Center, Prahladnagar Road</span>,<br>
+                    <span itemprop="addressLocality">Ahmedabad</span>-<span itemprop="postalCode">380015</span>,
+                    <span itemprop="addressRegion">Gujarat</span>, <span itemprop="addressCountry">India</span>
+                </div>
+                <div>
+                    <strong style="display:block;margin-bottom:6px;color:#fff;">Manufacturing Plant</strong>
+                    Survey No. 1383/D/Paiki 1, Village Rajpur,<br>
+                    Taluka Kadi, Mehsana-382715, Gujarat, India
+                </div>
+                <div>
+                    <strong style="display:block;margin-bottom:6px;color:#fff;">Get in Touch</strong>
+                    <a href="tel:+918128664329" style="color:inherit;">+91 8128664329</a><br>
+                    <a href="mailto:info@apurviind.com" style="color:inherit;">info@apurviind.com</a>
+                </div>
+            </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2026 Apurvi Industries. All rights reserved.</p>
+                <p>&copy; 2026 Apurvi Industries. All rights reserved. &nbsp;|&nbsp; Powered by <span style="color: inherit; opacity: 0.9; white-space: nowrap;">Swytch Studio</span></p>
                 <div class="footer-bottom-right">
                     <div class="footer-social">
-                        <a href="https://www.facebook.com/profile.php?id=61576491212714" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
-                        <a href="https://www.instagram.com/apurvi_ind/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-                        <a href="https://www.linkedin.com/company/apurvi-ind/?viewAsMember=true" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 0 1-2.06-2.07 2.06 2.06 0 1 1 4.12 0 2.06 2.06 0 0 1-2.06 2.07zm1.78 13.02H3.56V9h3.56v11.45z"/></svg></a>
+                        <a href="https://www.facebook.com/profile.php?id=61576491212714" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
+                        <a href="https://www.instagram.com/apurvi_ind/" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                        <a href="https://www.linkedin.com/company/apurvi-ind/?viewAsMember=true" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 0 1-2.06-2.07 2.06 2.06 0 1 1 4.12 0 2.06 2.06 0 0 1-2.06 2.07zm1.78 13.02H3.56V9h3.56v11.45z"/></svg></a>
                     </div>
                     <div style="display: flex; gap: 20px;">
                         <a href="/privacy-policy">Privacy Policy</a>
@@ -1498,6 +1701,13 @@
                 }
             });
         });
+    </script>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apurviind.com/"},{"@type":"ListItem","position":2,"name":"About Company","item":"https://apurviind.com/company"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"AboutPage","name":"About Apurvi Industries","url":"https://apurviind.com/company","description":"Apurvi Industries is a trusted stainless steel pipe manufacturer based in Ahmedabad, Gujarat with manufacturing plant in Mehsana.","publisher":{"@type":"Organization","name":"Apurvi Industries","url":"https://apurviind.com"}}
     </script>
 </body>
 

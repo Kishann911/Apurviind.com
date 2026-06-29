@@ -55,7 +55,8 @@ Redirect 301 /inquiry-now/ https://apurviind.com/contact.html
 Redirect 301 /career/ https://apurviind.com/career.html
 
 # Blog / News
-Redirect 301 /blog/ https://apurviind.com/blog.html
+# NOTE: /blog/ is now a real directory containing blog post HTML files.
+# A dedicated rewrite rule below makes /blog and /blog/ serve blog.html (the listing page).
 
 # Privacy
 Redirect 301 /privacy-policy/ https://apurviind.com/privacy-policy.html
@@ -79,6 +80,12 @@ RedirectMatch 410 ^/wp-admin/.*$
 RedirectMatch 410 ^/wp-login\.php$
 
 # ============================================
+# /blog and /blog/ should serve the blog listing page (blog.html).
+# Must run BEFORE the .html stripper to avoid the directory-vs-file loop.
+# ============================================
+RewriteRule ^blog/?$ blog.html [L]
+
+# ============================================
 # Pretty URLs (optional): hide .html extension
 # Visiting /company will serve /company.html
 # ============================================
@@ -88,47 +95,101 @@ RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*)$ $1.html [L]
 
 # If user visits /company.html, redirect to /company (cleaner URL)
+# Excludes blog.html so the /blog → blog.html serve above doesn't loop.
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteCond %1 !^blog$
 RewriteRule ^ /%1 [R=301,L]
 
 # ============================================
-# Performance: Browser caching & compression
+# Performance: Compression (Brotli preferred, Gzip fallback)
 # ============================================
-<IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml
+<IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/html text/css text/javascript application/javascript application/json application/xml application/rss+xml image/svg+xml text/plain text/xml application/x-font-ttf application/x-font-opentype application/vnd.ms-fontobject font/woff font/woff2
 </IfModule>
 
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json application/xml application/rss+xml image/svg+xml text/plain text/xml application/x-font-ttf application/x-font-opentype application/vnd.ms-fontobject font/woff font/woff2
+</IfModule>
+
+# ============================================
+# Performance: Browser caching (immutable for hashed assets, long for media)
+# ============================================
 <IfModule mod_expires.c>
     ExpiresActive On
-    ExpiresByType text/html "access plus 1 hour"
-    ExpiresByType text/css "access plus 1 month"
-    ExpiresByType application/javascript "access plus 1 month"
-    ExpiresByType image/jpeg "access plus 6 months"
-    ExpiresByType image/png "access plus 6 months"
-    ExpiresByType image/webp "access plus 6 months"
-    ExpiresByType image/svg+xml "access plus 6 months"
-    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresDefault "access plus 1 month"
+    ExpiresByType text/html "access plus 0 seconds"
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/avif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
     ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    ExpiresByType video/mp4 "access plus 1 year"
 </IfModule>
 
+<IfModule mod_headers.c>
+    # Long cache for static assets
+    <FilesMatch "\.(webp|jpg|jpeg|png|gif|svg|ico|woff|woff2|ttf|otf|eot|mp4|webm|pdf|css|js)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    # Always revalidate HTML so updates roll out instantly
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "no-cache, must-revalidate"
+    </FilesMatch>
+    # Remove ETag (use Cache-Control instead — avoids unnecessary 304 round-trips)
+    Header unset ETag
+</IfModule>
+FileETag None
+
 # ============================================
-# Security headers
+# Security headers (Best Practices score)
 # ============================================
 <IfModule mod_headers.c>
     Header set X-Content-Type-Options "nosniff"
     Header set X-Frame-Options "SAMEORIGIN"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), interest-cohort=()"
+    Header set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" env=HTTPS
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Cross-Origin-Opener-Policy "same-origin-allow-popups"
 </IfModule>
+
+# Correct MIME types
+<IfModule mod_mime.c>
+    AddType image/webp .webp
+    AddType image/avif .avif
+    AddType font/woff2 .woff2
+    AddType font/woff .woff
+</IfModule>
+
+# Disable server signature (Best Practices)
+ServerSignature Off
 
 # Block hidden files
 <FilesMatch "^\.">
     Require all denied
 </FilesMatch>
 
-# Block the inquiry log file from public access
+# Block the inquiry log file from public access (legacy path)
 <Files "inquiries.log">
     Require all denied
 </Files>
+
+# Block the /private/ directory entirely (contains SQLite DB, log, password hash)
+RedirectMatch 404 ^/private(/.*)?$
+
+# Defense in depth: block direct access to data files by extension anywhere
+<FilesMatch "\.(db|sqlite|sqlite3|sqlite-journal|sqlite-wal|sqlite-shm|hash)$">
+    Require all denied
+</FilesMatch>
 
 # Default index
 DirectoryIndex index.html

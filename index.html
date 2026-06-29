@@ -4,14 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apurvi Industries | More Than Pipes</title>
+    <title>Stainless Steel Pipe Manufacturer India | Apurvi Industries Ahmedabad</title>
     <meta name="description"
-        content="Apurvi Industries - Manufacturing and Supply of Stainless Steel Piping Products, Tubes, and Industrial Solutions.">
-    <!-- Typography -->
+        content="Apurvi Industries — India's trusted manufacturer &amp; supplier of stainless steel pipes, motor tubes, pump pipes &amp; precision components. 8+ industries. Export to 10+ countries. Enquire now.">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://apurviind.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Stainless Steel Pipe Manufacturer India | Apurvi Industries">
+    <meta property="og:description" content="India's trusted manufacturer & supplier of SS pipes, motor tubes, pump pipes & precision components. 8+ industries. Export to 10+ countries.">
+    <meta property="og:url" content="https://apurviind.com/">
+    <meta property="og:image" content="https://apurviind.com/assets/og-apurvi-industries.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Apurvi Industries">
+    <meta property="og:locale" content="en_IN">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Stainless Steel Pipe Manufacturer India | Apurvi Industries">
+    <meta name="twitter:description" content="India's trusted manufacturer & supplier of SS pipes, motor tubes & precision components.">
+    <meta name="twitter:image" content="https://apurviind.com/assets/og-apurvi-industries.jpg">
+
+    <!-- SEO & Geo -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="author" content="Apurvi Industries">
+    <meta name="geo.region" content="IN-GJ">
+    <meta name="geo.placename" content="Ahmedabad, Gujarat, India">
+    <meta name="geo.position" content="23.0225;72.5714">
+    <meta name="ICBM" content="23.0225, 72.5714">
+
+    <!-- Typography & Performance hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preload" as="image" href="assets/images/teamphoto-mobile.webp" media="(max-width: 768px)" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/images/teamphoto.webp" media="(min-width: 769px)" fetchpriority="high">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"></noscript>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="favicon-192.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#3F3A8A">
+    <meta name="msapplication-TileColor" content="#3F3A8A">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Hreflang for international audiences -->
+    <link rel="alternate" hreflang="en-IN" href="https://apurviind.com/">
+    <link rel="alternate" hreflang="en" href="https://apurviind.com/">
+    <link rel="alternate" hreflang="x-default" href="https://apurviind.com/">
 
     <style>
         :root {
@@ -41,6 +85,12 @@
 
         html {
             scroll-behavior: smooth;
+        }
+
+        /* Performance: skip rendering work for off-screen sections until they scroll into view */
+        .cv-auto {
+            content-visibility: auto;
+            contain-intrinsic-size: 1px 800px;
         }
 
         body {
@@ -323,12 +373,13 @@
             min-height: 700px;
             position: relative;
             display: flex;
-            align-items: center;
-            justify-content: flex-end;
+            align-items: flex-end;
+            justify-content: flex-start;
             color: var(--text-white);
             overflow: hidden;
             background: #000;
-            text-align: right;
+            text-align: left;
+            padding-bottom: 80px;
         }
 
         .sticky-contact-footer {
@@ -404,7 +455,8 @@
             z-index: 0;
         }
 
-        .hero-video-bg video {
+        .hero-video-bg video,
+        .hero-video-bg img {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -433,7 +485,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to left, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 40%, transparent 100%);
+            background:
+                linear-gradient(to top right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.5) 28%, rgba(0, 0, 0, 0.15) 50%, transparent 70%);
             z-index: 1;
         }
 
@@ -441,13 +494,15 @@
             position: relative;
             z-index: 10;
             width: 100%;
+            max-width: 720px;
             display: flex;
             flex-direction: column;
-            align-items: flex-end;
+            align-items: flex-start;
+            text-align: left;
         }
 
         .hero h1 {
-            font-size: 110px;
+            font-size: 92px;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: -3px;
@@ -518,6 +573,15 @@
             transform: translateX(-50%);
             cursor: pointer;
             z-index: 10;
+            background: transparent;
+            border: 0;
+            padding: 8px;
+            color: inherit;
+        }
+        .hero-scroll:focus-visible {
+            outline: 2px solid #fff;
+            outline-offset: 4px;
+            border-radius: 4px;
         }
 
         /* --- About Section --- */
@@ -638,7 +702,7 @@
         .products-intro p {
             font-size: 16px;
             line-height: 1.7;
-            color: var(--text-secondary);
+            color: #4A4B4E;
             margin-bottom: 32px;
             max-width: 520px;
         }
@@ -679,7 +743,7 @@
             margin-left: -130px;
             background: #fff;
             border-radius: 14px;
-            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+            box-shadow: 0 8px 24px rgba(63, 58, 138, 0.06), 0 2px 6px rgba(63, 58, 138, 0.04);
             overflow: hidden;
             transform-origin: center center;
             transition: transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1),
@@ -785,14 +849,37 @@
             .product-stack-card { width: 220px; margin-left: -110px; }
             .product-stack-card.pos-prev-1 { transform: translateX(-90px) scale(0.82) rotate(-4deg); }
             .product-stack-card.pos-next-1 { transform: translateX(90px) scale(0.82) rotate(4deg); }
-            .product-stack-footer { gap: 14px; margin-top: 24px; }
+            .product-stack-footer {
+                gap: 12px;
+                margin-top: 24px;
+                padding: 0 12px;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
             .stack-nav { width: 44px; height: 44px; }
-            .product-stack-title { font-size: 17px; min-height: 46px; }
+            .product-stack-footer .product-stack-title {
+                min-width: 0;
+                flex: 1 1 auto;
+                max-width: calc(100% - 120px);
+            }
+            .product-stack-title {
+                font-size: 15px;
+                min-height: 46px;
+                line-height: 1.25;
+                padding: 0 4px;
+                word-wrap: break-word;
+                overflow-wrap: anywhere;
+                hyphens: auto;
+            }
             .products-headline { font-size: 36px; }
         }
         @media (max-width: 480px) {
             .product-stack-viewport { height: 300px; }
             .product-stack-card { width: 200px; margin-left: -100px; border-radius: 12px; }
+            .product-stack-footer { gap: 10px; padding: 0 10px; }
+            .stack-nav { width: 40px; height: 40px; }
+            .product-stack-footer .product-stack-title { max-width: calc(100% - 100px); }
+            .product-stack-title { font-size: 13.5px; min-height: 44px; }
             .product-stack-card.pos-prev-1 { transform: translateX(-75px) scale(0.8) rotate(-4deg); }
             .product-stack-card.pos-next-1 { transform: translateX(75px) scale(0.8) rotate(4deg); }
             .products-headline { font-size: 30px; }
@@ -1052,16 +1139,35 @@
         }
 
         .founder-link {
-            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
             text-transform: uppercase;
-            font-weight: 800;
-            letter-spacing: 1px;
-            color: var(--primary-blue);
-            border-bottom: 2px solid transparent;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            padding: 13px 28px;
+            border-radius: 50px;
+            background-color: #fff;
+            color: var(--primary-blue) !important;
+            border: 2px solid #fff;
+            transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+            line-height: 1;
         }
-
         .founder-link:hover {
-            border-bottom-color: var(--primary-blue);
+            background-color: transparent;
+            color: #fff !important;
+            transform: translateY(-2px);
+        }
+        .founder-link.founder-link-outline {
+            background-color: transparent;
+            color: #fff !important;
+            border-color: rgba(255, 255, 255, 0.55);
+        }
+        .founder-link.founder-link-outline:hover {
+            background-color: #fff;
+            color: var(--primary-blue) !important;
+            border-color: #fff;
         }
 
         /* --- Exhibitions --- */
@@ -1272,13 +1378,18 @@
         }
 
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: 4px;
         }
 
         .footer-links a {
             font-size: 14px;
             font-weight: 400;
-            opacity: 0.9;
+            opacity: 0.95;
+            color: #fff;
+            display: inline-block;
+            padding: 6px 0;
+            min-height: 24px;
+            line-height: 24px;
         }
 
         .footer-contact li {
@@ -1435,16 +1546,19 @@
             }
 
             .hero {
-                justify-content: center;
+                justify-content: flex-start;
+                align-items: flex-end;
                 padding-top: 80px;
-                text-align: right;
+                padding-bottom: 60px;
+                text-align: left;
             }
 
             .hero-content {
                 display: flex;
                 flex-direction: column;
-                align-items: flex-end;
+                align-items: flex-start;
                 width: 100%;
+                max-width: 100%;
             }
 
             .hero h1 {
@@ -1453,7 +1567,7 @@
                 font-weight: 700;
                 letter-spacing: -1px;
                 margin-bottom: 14px;
-                text-align: right;
+                text-align: left;
                 width: 100%;
                 text-transform: uppercase;
             }
@@ -1461,8 +1575,8 @@
             .hero-subline {
                 font-size: 16px;
                 letter-spacing: 1px;
-                margin-bottom: 40px;
-                text-align: right;
+                margin-bottom: 30px;
+                text-align: left;
                 width: 100%;
                 color: var(--text-white);
                 font-weight: 700;
@@ -1470,10 +1584,13 @@
             }
 
             .hero-btns {
-                flex-direction: column;
-                width: auto;
-                gap: 12px;
-                align-items: flex-end;
+                flex-direction: column !important;
+                width: auto !important;
+                gap: 12px !important;
+                align-items: flex-start !important;
+                justify-content: flex-start !important;
+                margin-left: 0 !important;
+                margin-right: auto !important;
             }
 
             .btn-hero {
@@ -1486,12 +1603,16 @@
                 font-size: 14px;
                 font-weight: 700;
                 border: none;
+                align-self: flex-start !important;
+                margin-left: 0 !important;
+                margin-right: auto !important;
             }
 
             .btn-hero.outline {
                 background-color: transparent;
                 border: 2px solid var(--accent-red);
                 color: #fff;
+                align-self: flex-start !important;
             }
 
             .sticky-contact-footer {
@@ -1728,12 +1849,20 @@
             margin-left: 20px;
             position: relative;
         }
-        .apv-hamburger span {
+        .apv-hamburger span,
+        .apv-hamburger span:nth-child(1),
+        .apv-hamburger span:nth-child(2),
+        .apv-hamburger span:nth-child(3) {
             display: block;
             width: 100%;
             height: 2.5px;
             background-color: #1a1a1a;
             border-radius: 2px;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-shadow: none;
+            font-weight: normal;
             transition: transform 0.3s ease, opacity 0.3s ease;
         }
         .apv-hamburger.active span:nth-child(1) { transform: translateY(9.5px) rotate(45deg); }
@@ -1910,18 +2039,18 @@
         }
         .apv-announcement-right a.apv-ann-email:hover { opacity: 1; }
         .apv-announcement-cta {
-            background-color: #E64A19;
+            background-color: #B71C1C;
             color: #fff !important;
             padding: 3px 10px;
             border-radius: 3px;
             font-weight: 700;
-            font-size: 10px;
+            font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             text-decoration: none;
             transition: background-color 0.2s ease;
         }
-        .apv-announcement-cta:hover { background-color: #BF360C; }
+        .apv-announcement-cta:hover { background-color: #8B0000; }
 
         /* Shift header layout to make room for announcement bar */
         .apv-utility { top: 36px !important; }
@@ -1950,7 +2079,6 @@
         /* Numbers in stats on dark bg become white */
         .stats .stat-number { color: #fff !important; }
 
-        /* Powered by Swytch */
         .powered-by {
             text-align: center;
             font-size: 12px;
@@ -1961,24 +2089,42 @@
 
         @media (max-width: 991px) {
             .apv-announcement {
-                height: auto;
-                padding: 8px 0;
+                height: 78px;
+                padding: 6px 0;
                 font-size: 11px;
+                display: flex;
+                align-items: center;
             }
             .apv-announcement-inner {
                 flex-direction: column;
-                gap: 6px;
+                gap: 5px;
                 padding: 0 12px;
                 text-align: center;
+                width: 100%;
+                justify-content: center;
             }
-            .apv-announcement-left { font-size: 11px; }
+            .apv-announcement-left {
+                font-size: 8.5px;
+                white-space: nowrap;
+                overflow: visible;
+                text-overflow: clip;
+                max-width: 100%;
+                letter-spacing: 0;
+            }
+            .apv-announcement-left strong { font-weight: 700; }
             .apv-utility { display: none; }
             .apv-header { top: 78px !important; }
             body { padding-top: 142px !important; }
             .hero { margin-top: -142px !important; }
             body.is-home .hero { padding-top: 128px; }
         }
-        
+        @media (max-width: 480px) {
+            .apv-announcement-left { font-size: 7.5px; letter-spacing: 0; }
+        }
+        @media (max-width: 360px) {
+            .apv-announcement-left { font-size: 6.5px; letter-spacing: -0.1px; }
+        }
+
         /* Footer hover fix (must contrast on dark blue footer) */
         footer .footer-links a:hover,
         footer .footer-contact a:hover {
@@ -2020,7 +2166,7 @@
         }
         .contact-card-icon svg { width: 24px; height: 24px; }
         .contact-card > div:last-child { display: flex; flex-direction: column; gap: 6px; }
-        .contact-card h4 {
+        .contact-card h3 {
             font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 1.5px;
@@ -2249,10 +2395,10 @@
             <div class="apv-announcement-left"><strong>Manufacturing and Supply</strong> of Stainless Steel Pipe Parts and Fuel Components</div>
             <div class="apv-announcement-right">
                 <a href="mailto:info@apurviind.com" class="apv-ann-email">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                     info@apurviind.com
                 </a>
-                <a href="/contact" class="apv-announcement-cta">Enquiry Now</a>
+                <a href="/contact" class="apv-announcement-cta">Enquire Now</a>
             </div>
         </div>
     </div>
@@ -2272,8 +2418,8 @@
     <header class="apv-header" id="navbar">
         <div class="apv-header-inner">
             <a href="/" class="apv-logo">
-                <img class="apv-logo-dark" src="assets/Apurvi Industries (2).png" alt="Apurvi Industries Logo">
-                <img class="apv-logo-light" src="assets/Apurvi Industries_logo white.png" alt="Apurvi Industries Logo">
+                <img loading="lazy" class="apv-logo-dark" src="assets/Apurvi Industries (2).webp" alt="Apurvi Industries - Stainless Steel Pipe Manufacturer" width="160" height="50" decoding="async">
+                <img loading="lazy" class="apv-logo-light" src="assets/Apurvi Industries_logo white.webp" alt="Apurvi Industries - Stainless Steel Pipe Manufacturer" width="160" height="50" decoding="async">
             </a>
             <nav class="apv-nav">
                 <ul class="apv-nav-links">
@@ -2299,11 +2445,11 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <!-- Background Video (local mp4 — autoplay, muted, loop, no controls) -->
         <div class="hero-video-bg" aria-hidden="true">
-            <video autoplay muted loop playsinline preload="auto" disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback noplaybackrate" tabindex="-1">
-                <source src="assets/videos/hero.mp4" type="video/mp4">
-            </video>
+            <picture>
+                <source media="(max-width: 768px)" srcset="assets/images/teamphoto-mobile.webp" type="image/webp">
+                <img width="1400" height="926" src="assets/images/teamphoto.webp" alt="Apurvi Industries manufacturing team at stainless steel pipe production facility Ahmedabad" loading="eager" fetchpriority="high" decoding="async">
+            </picture>
         </div>
         <div class="hero-gradient"></div>
         <div class="container hero-content">
@@ -2311,27 +2457,27 @@
             <p class="hero-subline">For a Better Quality of Life</p>
             <div class="hero-btns">
                 <a href="/products" class="btn btn-hero">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
                     Our Products
                 </a>
                 <a href="/contact" class="btn btn-hero outline">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                    Enquiry Now
+                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    Enquire Now
                 </a>
             </div>
         </div>
-        <div class="hero-scroll" onclick="document.getElementById('about').scrollIntoView()">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        <button type="button" class="hero-scroll" aria-label="Scroll to next section" onclick="document.getElementById('about').scrollIntoView()">
+            <svg aria-hidden="true" focusable="false" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
             </svg>
-        </div>
+        </button>
         <div class="bottom-yellow-bar"></div>
     </section>
 
     <!-- Sticky Mobile Footer -->
     <a href="/contact" class="sticky-contact-footer">
-        <svg viewBox="0 0 24 24" fill="currentColor">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor">
             <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/>
         </svg>
         Contact
@@ -2350,21 +2496,21 @@
                         clients.</p>
                     <div class="about-bullets">
                         <div class="bullet-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M20 6L9 17l-5-5" />
                             </svg>
                             A Wide Range of Products
                         </div>
                         <div class="bullet-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M20 6L9 17l-5-5" />
                             </svg>
                             International Quality Assurance
                         </div>
                         <div class="bullet-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M20 6L9 17l-5-5" />
                             </svg>
@@ -2374,7 +2520,7 @@
                     <a href="/contact" class="btn btn-primary">Know More</a>
                 </div>
                 <div class="about-image">
-                    <img src="https://apurviind.com/wp-content/uploads/2024/02/WhatsApp-Image-2024-02-02-at-14.11.47.jpeg" alt="Apurvi Industries Team" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img width="1024" height="768" src="assets/homepageteamphoto.webp" alt="Apurvi Industries team at stainless steel pipe manufacturing facility Mehsana Gujarat" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
             </div>
         </div>
@@ -2385,17 +2531,17 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <div class="stat-number" data-target="25">0</div>
+                    <div class="stat-number" data-target="25">25</div>
                     <div class="stat-label">Years of Experience</div>
                     <p class="stat-desc">Trusted by pump manufacturers across India and internationally.</p>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number" data-target="500">0</div>
+                    <div class="stat-number" data-target="500">500</div>
                     <div class="stat-label">Products Delivered</div>
                     <p class="stat-desc">Stainless steel pipes, aluminum components, and precision piping parts for diverse sectors.</p>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-number" data-target="15">15</div>
                     <div class="stat-label">Industries Served</div>
                     <p class="stat-desc">Delivering precision-engineered solutions across key industrial sectors.</p>
                 </div>
@@ -2404,7 +2550,7 @@
     </section>
 
     <!-- Products Section -->
-    <section class="section-padding bg-gray" id="products">
+    <section class="section-padding bg-gray cv-auto" id="products">
         <div class="container">
             <div class="products-layout">
                 <div class="products-intro">
@@ -2416,44 +2562,44 @@
                         finish for industries that cannot compromise on quality.</p>
                     <a href="/products" class="products-cta-link">
                         View All Products
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </a>
                 </div>
 
                 <div class="product-stack" id="productStack">
                     <div class="product-stack-viewport">
+                        <div class="product-stack-card" data-name="Pressure Pump Sleeve / Motor Shell Tubing">
+                            <img width="203" height="201" src="assets/new_products/WhatsApp Image 2026-05-21 at 15.45.13.webp" alt="Stainless steel pressure pump sleeve and motor shell tubing manufacturer India" loading="lazy" decoding="async">
+                        </div>
                         <div class="product-stack-card" data-name="Pump Pipe - NRV Pipe">
-                            <img src="assets/images/Nech Ring Stage Pipe.png" alt="Pump Pipe - NRV Pipe">
-                        </div>
-                        <div class="product-stack-card" data-name="High Thickness NRV Tubing">
-                            <img src="assets/images/6mm Tube for NRV.png" alt="High Thickness NRV Tubing">
-                        </div>
-                        <div class="product-stack-card" data-name="Pressure Pump Sleeve">
-                            <img src="assets/images/Pressure Pump Sleeve.png" alt="Pressure Pump Sleeve">
+                            <img width="1254" height="1254" src="assets/image copy 3.webp" alt="Stainless steel pump pipe and NRV pipe for submersible pump manufacturers" loading="lazy" decoding="async">
                         </div>
                         <div class="product-stack-card" data-name="Motor Tubes">
-                            <img src="assets/images/Motor Tubes.png" alt="Motor Tubes">
+                            <img width="1254" height="1254" src="assets/images/Motor Tubes.webp" alt="Stainless steel motor tubes for submersible pumps and industrial motors India" loading="lazy" decoding="async">
                         </div>
-                        <div class="product-stack-card" data-name="OD & ID Spot Welding Ring">
-                            <img src="assets/images/spot_weldingring.png" alt="OD & ID Spot Welding Ring">
+                        <div class="product-stack-card" data-name="Aluminum Vapour Tubing">
+                            <img width="776" height="486" src="assets/Aluminum tubing image.webp" alt="Aluminum vapour tubing for fueling industry by Apurvi Industries" loading="lazy" decoding="async">
                         </div>
                         <div class="product-stack-card" data-name="Higher HP Pump Tube">
-                            <img src="assets/images/Higher HP Pump Tube.png" alt="Higher HP Pump Tube">
+                            <img width="1254" height="1254" src="assets/images/Higher HP Pump Tube.webp" alt="Higher HP pump tube stainless steel manufacturer India" loading="lazy" decoding="async">
                         </div>
                         <div class="product-stack-card" data-name="Manufacturing Long Tube">
-                            <img src="assets/Manufacturing Long Tube.png" alt="Manufacturing Long Tube">
+                            <img width="1254" height="1254" src="assets/Manufacturing Long Tube.webp" alt="Manufacturing long tube stainless steel piping solutions Ahmedabad" loading="lazy" decoding="async">
                         </div>
-                        <div class="product-stack-card" data-name="Vapour Tubing">
-                            <img src="assets/Aluminum tubing image.jpg" alt="Vapour Tubing">
+                        <div class="product-stack-card" data-name="6mm Tube for NRV">
+                            <img width="1402" height="1122" src="assets/image.webp" alt="6mm stainless steel tube for NRV pump applications" loading="lazy" decoding="async">
+                        </div>
+                        <div class="product-stack-card" data-name="Adaptor Gas Station">
+                            <img width="1254" height="1254" src="assets/image copy 2.webp" alt="Aluminum adaptor for gas station fueling industry components" loading="lazy" decoding="async">
                         </div>
                     </div>
                     <div class="product-stack-footer">
                         <button type="button" class="stack-nav prev" aria-label="Previous product">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                            <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
                         </button>
-                        <h3 class="product-stack-title">Pump Pipe - NRV Pipe</h3>
+                        <h3 class="product-stack-title">Pressure Pump Sleeve / Motor Shell Tubing</h3>
                         <button type="button" class="stack-nav next" aria-label="Next product">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                            <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
                         </button>
                     </div>
                 </div>
@@ -2462,7 +2608,7 @@
     </section>
 
     <!-- Industry Section -->
-    <section class="section-padding" id="industries">
+    <section class="section-padding cv-auto" id="industries">
         <div class="container">
             <span class="section-label">Industries We Serve</span>
             <h2 class="h2">Solutions for Many Industries</h2>
@@ -2470,54 +2616,54 @@
 
             <div class="industries-carousel" id="industriesCarousel">
                 <button type="button" class="industry-nav prev" aria-label="Previous">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                    <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
                 </button>
                 <div class="industries-track-wrapper">
                     <div class="industries-track">
                         <div class="industry-card">
-                            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=1000" alt="Submersible Pump">
+                            <img width="1600" height="1068" src="assets/external/unsplash-1621905251189-08b45d6a269e.webp" alt="Submersible pump manufacturer stainless steel piping solutions" loading="lazy" decoding="async">
                             <div class="industry-overlay"></div>
                             <span class="industry-name">Submersible Pump</span>
                             <p class="industry-desc">SS tubes and components for reliable water extraction solutions.</p>
                         </div>
                         <div class="industry-card">
-                            <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=1000" alt="Motor Manufacturing">
+                            <img width="1600" height="2400" src="assets/external/unsplash-1544724569-5f546fd6f2b5.webp" alt="Motor manufacturing industry stainless steel piping solutions" loading="lazy" decoding="async">
                             <div class="industry-overlay"></div>
                             <span class="industry-name">Motor Manufacturing</span>
                             <p class="industry-desc">Precision motor tubes for submersible and industrial motors.</p>
                         </div>
                         <div class="industry-card">
-                            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=1000" alt="Fuelling Industry">
+                            <img width="1600" height="2421" src="assets/external/unsplash-1518709268805-4e9042af9f23.webp" alt="Fueling industry aluminum vapour tubing solutions India" loading="lazy" decoding="async">
                             <div class="industry-overlay"></div>
                             <span class="industry-name">Fuelling Industry</span>
                             <p class="industry-desc">Specialized piping for safe transport of fuels and fluids.</p>
                         </div>
                         <div class="industry-card">
-                            <img src="assets/WATERTREAMENT.png" alt="Water Treatment">
+                            <img width="650" height="325" src="assets/WATERTREAMENT.webp" alt="Water treatment industry stainless steel piping solutions Apurvi" loading="lazy" decoding="async">
                             <div class="industry-overlay"></div>
                             <span class="industry-name">Water Treatment</span>
                             <p class="industry-desc">Corrosion-resistant solutions for purification plants.</p>
                         </div>
                         <div class="industry-card">
-                            <img src="assets/agriculture.png" alt="Agriculture">
+                            <img width="800" height="525" src="assets/agriculture.webp" alt="Agriculture industry stainless steel piping and submersible pump components" loading="lazy" decoding="async">
                             <div class="industry-overlay"></div>
                             <span class="industry-name">Agriculture</span>
                             <p class="industry-desc">Components for large-scale irrigation and farming machinery.</p>
                         </div>
                         <div class="industry-card">
-                            <img src="assets/food_processing.png" alt="Food Processing">
+                            <img width="1600" height="1066" src="assets/food_processing.webp" alt="Food processing industry stainless steel piping solutions India" loading="lazy" decoding="async">
                             <div class="industry-overlay"></div>
                             <span class="industry-name">Food Processing</span>
                             <p class="industry-desc">Hygienic stainless steel piping for food and beverage.</p>
                         </div>
                         <div class="industry-card">
-                            <img src="assets/chemical.png" alt="Chemical">
+                            <img width="1600" height="900" src="assets/chemical.webp" alt="Chemical industry stainless steel piping solutions Ahmedabad" loading="lazy" decoding="async">
                             <div class="industry-overlay"></div>
                             <span class="industry-name">Chemical</span>
                             <p class="industry-desc">Corrosion-resistant piping for chemical processing.</p>
                         </div>
                         <div class="industry-card">
-                            <img src="https://images.unsplash.com/photo-1563213126-a4273aed2016?auto=format&fit=crop&q=80&w=1000" alt="Pharmaceutical">
+                            <img width="1600" height="1067" src="assets/external/unsplash-1563213126-a4273aed2016.webp" alt="Pharmaceutical industry stainless steel piping precision components" loading="lazy" decoding="async">
                             <div class="industry-overlay"></div>
                             <span class="industry-name">Pharmaceutical</span>
                             <p class="industry-desc">High-purity components for pharmaceutical manufacturing.</p>
@@ -2525,18 +2671,18 @@
                     </div>
                 </div>
                 <button type="button" class="industry-nav next" aria-label="Next">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
                 </button>
             </div>
         </div>
     </section>
 
     <!-- Founder Section -->
-    <section class="section-padding founder-section" id="founder">
+    <section class="section-padding founder-section cv-auto" id="founder">
         <div class="container">
             <div class="founder-grid">
                 <div class="founder-img">
-                    <img src="assets/images/vc.jpeg" alt="Shri Viren Gathani - Founder of Apurvi Industries">
+                    <img width="1600" height="1059" src="assets/images/vc.webp" alt="Shri Viren Gathani - Founder of Apurvi Industries, stainless steel pipe manufacturer Ahmedabad" loading="lazy" decoding="async">
                 </div>
                 <div class="founder-text">
                     <span class="section-label">Leadership</span>
@@ -2546,16 +2692,15 @@
                         Our focus remains on quality, integrity, and building long-term relationships with our clients.
                     </p>
                     <div class="founder-links">
-                        <a href="/leadership" class="founder-link" style="color: #fff;">Read More</a>
-                        <a href="/downloads" class="founder-link" style="color: #fff;">Download Brochure</a>
-                        <a href="/contact" class="founder-link" style="color: #fff;">Inquiry Now</a>
+                        <a href="/leadership" class="founder-link">Read More About Leadership</a>
+                        <a href="/downloads" class="founder-link founder-link-outline">Download Brochure</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- Testimonials & Trust Section -->
-    <section class="section-padding testimonials-section">
+    <section class="section-padding testimonials-section cv-auto">
         <div class="container">
             <div style="text-align: center; max-width: 800px; margin: 0 auto 60px;">
                 <span class="section-label">Testimonials</span>
@@ -2578,20 +2723,20 @@
     </section>
 
     <!-- Global Presence Section -->
-    <section class="section-padding" style="background-color: #F5F7FB; text-align: center;">
+    <section class="section-padding cv-auto" style="background-color: #F5F7FB; text-align: center;">
         <div class="container">
             <span class="section-label">Global Presence</span>
             <h2 class="h2">Our Global Reach</h2>
             <p style="max-width: 800px; margin: 0 auto 50px; color: var(--text-secondary);">Apurvi Industries exports high-quality stainless steel piping solutions to clients worldwide, ensuring reliability and precision across continents.</p>
             <div style="background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06); max-width: 1100px; margin: 0 auto;">
-                <img src="https://apurviind.com/wp-content/uploads/2021/05/world-map-3.jpg" alt="Apurvi Industries Global Presence Map" style="width: 100%; height: auto; display: block;">
+                <img width="1051" height="582" src="assets/whitemap.webp" alt="Apurvi Industries global export presence - USA, Canada, Germany, Turkey, Philippines, Australia" loading="lazy" decoding="async" style="width: 100%; height: auto; display: block;">
                 <p style="margin-top: 24px; color: var(--text-secondary); font-size: 14px;">Serving clients across India, USA, Canada, Mexico, Germany, Italy, Turkey, Philippines, Australia and more.</p>
             </div>
         </div>
     </section>
 
     <!-- LinkedIn Blog Feed -->
-    <section class="linkedin-section" style="background-color: #fff;">
+    <section class="linkedin-section cv-auto" style="background-color: #fff;">
         <div class="container">
             <div class="linkedin-intro" style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
                 <span class="section-label">From Our LinkedIn</span>
@@ -2600,14 +2745,14 @@
             </div>
             <div class="linkedin-carousel" id="linkedinCarousel">
                 <button type="button" class="linkedin-nav prev" aria-label="Previous posts">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
                 </button>
                 <div class="linkedin-viewport">
                     <div class="linkedin-track">
 
                         <article class="lk-card">
                             <header class="lk-card-head">
-                                <span class="lk-card-avatar"><img src="assets/Apurvi Industries (1).png" alt=""></span>
+                                <span class="lk-card-avatar"><img width="1600" height="2262" decoding="async" loading="lazy" src="assets/Apurvi Industries (1).webp" alt=""></span>
                                 <div class="lk-card-meta">
                                     <strong>Apurvi Industries Pvt. Ltd.</strong>
                                     <span>11 followers · 1w</span>
@@ -2615,17 +2760,17 @@
                             </header>
                             <p class="lk-card-text">Most businesses switch suppliers to save costs. The smartest ones build relationships to create value.</p>
                             <a class="lk-card-image" href="https://www.linkedin.com/feed/update/urn:li:share:7459526226462822400" target="_blank" rel="noopener">
-                                <img src="assets/linkedin_images/Apurvi Industries_Sourcing Problem.jpg" alt="Best supplier relationships are built on trust" loading="lazy">
+                                <img width="1600" height="400" decoding="async" src="assets/linkedin_images/Apurvi Industries_Sourcing Problem.webp" alt="Best supplier relationships are built on trust" loading="lazy">
                             </a>
                             <a class="lk-card-cta" href="https://www.linkedin.com/feed/update/urn:li:share:7459526226462822400" target="_blank" rel="noopener">
                                 Read on LinkedIn
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                             </a>
                         </article>
 
                         <article class="lk-card">
                             <header class="lk-card-head">
-                                <span class="lk-card-avatar"><img src="assets/Apurvi Industries (1).png" alt=""></span>
+                                <span class="lk-card-avatar"><img width="1600" height="2262" decoding="async" loading="lazy" src="assets/Apurvi Industries (1).webp" alt=""></span>
                                 <div class="lk-card-meta">
                                     <strong>Apurvi Industries Pvt. Ltd.</strong>
                                     <span>11 followers · 2w</span>
@@ -2633,17 +2778,17 @@
                             </header>
                             <p class="lk-card-text">Customization is no longer a premium. It is becoming the baseline expectation.</p>
                             <a class="lk-card-image" href="https://www.linkedin.com/feed/update/urn:li:share:7457416661902524416" target="_blank" rel="noopener">
-                                <img src="assets/linkedin_images/Apurvi Industries_Companies Evaluate cover image.jpg" alt="Customization is the new standard" loading="lazy">
+                                <img width="1600" height="400" decoding="async" src="assets/linkedin_images/Apurvi Industries_Companies Evaluate cover image.webp" alt="Customization is the new standard" loading="lazy">
                             </a>
                             <a class="lk-card-cta" href="https://www.linkedin.com/feed/update/urn:li:share:7457416661902524416" target="_blank" rel="noopener">
                                 Read on LinkedIn
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                             </a>
                         </article>
 
                         <article class="lk-card">
                             <header class="lk-card-head">
-                                <span class="lk-card-avatar"><img src="assets/Apurvi Industries (1).png" alt=""></span>
+                                <span class="lk-card-avatar"><img width="1600" height="2262" decoding="async" loading="lazy" src="assets/Apurvi Industries (1).webp" alt=""></span>
                                 <div class="lk-card-meta">
                                     <strong>Apurvi Industries Pvt. Ltd.</strong>
                                     <span>11 followers · 3w</span>
@@ -2651,17 +2796,17 @@
                             </header>
                             <p class="lk-card-text">The industrial piping industry is quietly transforming. Not louder. Not flashier. Just smarter, faster, and far more precise.</p>
                             <a class="lk-card-image" href="https://www.linkedin.com/feed/update/urn:li:share:7455127505239314433" target="_blank" rel="noopener">
-                                <img src="assets/linkedin_images/Apurvi Industries_Cover image 1.jpg" alt="Industrial piping is evolving" loading="lazy">
+                                <img width="1600" height="400" decoding="async" src="assets/linkedin_images/Apurvi Industries_Cover image 1.webp" alt="Industrial piping is evolving" loading="lazy">
                             </a>
                             <a class="lk-card-cta" href="https://www.linkedin.com/feed/update/urn:li:share:7455127505239314433" target="_blank" rel="noopener">
                                 Read on LinkedIn
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                             </a>
                         </article>
 
                         <article class="lk-card">
                             <header class="lk-card-head">
-                                <span class="lk-card-avatar"><img src="assets/Apurvi Industries (1).png" alt=""></span>
+                                <span class="lk-card-avatar"><img width="1600" height="2262" decoding="async" loading="lazy" src="assets/Apurvi Industries (1).webp" alt=""></span>
                                 <div class="lk-card-meta">
                                     <strong>Apurvi Industries Pvt. Ltd.</strong>
                                     <span>11 followers · 4w</span>
@@ -2669,17 +2814,17 @@
                             </header>
                             <p class="lk-card-text">Innovation gets attention. Consistency builds industries.</p>
                             <a class="lk-card-image" href="https://www.linkedin.com/feed/update/urn:li:share:7452984441561567232" target="_blank" rel="noopener">
-                                <img src="assets/linkedin_images/Apurvi Industries_Cover image 2.jpg" alt="Innovation and consistency" loading="lazy">
+                                <img width="1600" height="400" decoding="async" src="assets/linkedin_images/Apurvi Industries_Cover image 2.webp" alt="Innovation and consistency" loading="lazy">
                             </a>
                             <a class="lk-card-cta" href="https://www.linkedin.com/feed/update/urn:li:share:7452984441561567232" target="_blank" rel="noopener">
                                 Read on LinkedIn
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                             </a>
                         </article>
 
                         <article class="lk-card">
                             <header class="lk-card-head">
-                                <span class="lk-card-avatar"><img src="assets/Apurvi Industries (1).png" alt=""></span>
+                                <span class="lk-card-avatar"><img width="1600" height="2262" decoding="async" loading="lazy" src="assets/Apurvi Industries (1).webp" alt=""></span>
                                 <div class="lk-card-meta">
                                     <strong>Apurvi Industries Pvt. Ltd.</strong>
                                     <span>11 followers · 5w</span>
@@ -2687,17 +2832,17 @@
                             </header>
                             <p class="lk-card-text">Most people think manufacturing is only about production capacity. The real impact comes from the solutions we build around it.</p>
                             <a class="lk-card-image" href="https://www.linkedin.com/feed/update/urn:li:share:7460612173665488896" target="_blank" rel="noopener">
-                                <img src="assets/linkedin_images/Apurvi Industries_Companies Evaluate cover image02.jpg" alt="Solutions that create impact" loading="lazy">
+                                <img width="1600" height="400" decoding="async" src="assets/linkedin_images/Apurvi Industries_Companies Evaluate cover image02.webp" alt="Solutions that create impact" loading="lazy">
                             </a>
                             <a class="lk-card-cta" href="https://www.linkedin.com/feed/update/urn:li:share:7460612173665488896" target="_blank" rel="noopener">
                                 Read on LinkedIn
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                             </a>
                         </article>
 
                         <article class="lk-card">
                             <header class="lk-card-head">
-                                <span class="lk-card-avatar"><img src="assets/Apurvi Industries (1).png" alt=""></span>
+                                <span class="lk-card-avatar"><img width="1600" height="2262" decoding="async" loading="lazy" src="assets/Apurvi Industries (1).webp" alt=""></span>
                                 <div class="lk-card-meta">
                                     <strong>Apurvi Industries Pvt. Ltd.</strong>
                                     <span>11 followers · 6w</span>
@@ -2705,18 +2850,18 @@
                             </header>
                             <p class="lk-card-text">You don't notice stainless steel pipes — but industries collapse without them. At Apurvi we engineer the reliability that builds nations.</p>
                             <a class="lk-card-image" href="https://www.linkedin.com/feed/update/urn:li:share:7455550738920837120" target="_blank" rel="noopener">
-                                <img src="assets/linkedin_images/Apurvi Industries.jpg" alt="Stainless steel piping" loading="lazy">
+                                <img width="1600" height="400" decoding="async" src="assets/linkedin_images/Apurvi Industries.webp" alt="Stainless steel piping" loading="lazy">
                             </a>
                             <a class="lk-card-cta" href="https://www.linkedin.com/feed/update/urn:li:share:7455550738920837120" target="_blank" rel="noopener">
                                 Read on LinkedIn
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                             </a>
                         </article>
 
                     </div>
                 </div>
                 <button type="button" class="linkedin-nav next" aria-label="Next posts">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
                 </button>
             </div>
         </div>
@@ -2788,17 +2933,20 @@
             }
             .lk-card-image {
                 display: block;
-                background: #f3f3f6;
+                background: linear-gradient(135deg, #f7f7fa 0%, #ececf3 100%);
                 overflow: hidden;
+                aspect-ratio: 1200 / 627;
+                position: relative;
             }
             .lk-card-image img {
                 width: 100%;
-                height: 200px;
+                height: 100%;
                 object-fit: cover;
+                object-position: center;
                 display: block;
-                transition: transform 0.4s ease;
+                transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
             }
-            .lk-card:hover .lk-card-image img { transform: scale(1.04); }
+            .lk-card:hover .lk-card-image img { transform: scale(1.05); }
             .lk-card-cta {
                 margin-top: auto;
                 padding: 14px 20px;
@@ -2857,12 +3005,12 @@
             @media (max-width: 600px) {
                 .linkedin-carousel { padding: 0 40px; }
                 .lk-card { flex: 0 0 100%; }
-                .lk-card-image img { height: 180px; }
+                .lk-card-image img { height: 100%; }
             }
         </style>
     </section>
 
-    <section class="contact-section section-padding" id="contact">
+    <section class="contact-section section-padding cv-auto" id="contact">
         <div class="container">
             <div class="contact-section-header">
                 <span class="section-label">Get in Touch</span>
@@ -2873,37 +3021,37 @@
             <div class="home-contact-cards">
                 <div class="contact-card">
                     <div class="contact-card-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                     </div>
                     <div>
-                        <h4>Phone</h4>
+                        <h3>Phone</h3>
                         <p><a href="tel:+918128664329">+91 8128664329</a></p>
                     </div>
                 </div>
                 <div class="contact-card">
                     <div class="contact-card-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                     </div>
                     <div>
-                        <h4>Email</h4>
+                        <h3>Email</h3>
                         <p><a href="mailto:info@apurviind.com">info@apurviind.com</a></p>
                     </div>
                 </div>
                 <div class="contact-card">
                     <div class="contact-card-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg>
+                        <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg>
                     </div>
                     <div>
-                        <h4>Corporate Office</h4>
+                        <h3>Corporate Office</h3>
                         <p>G-1112 Titanium City Center, Prahladnagar Road, Ahmedabad-380015, Gujarat, India</p>
                     </div>
                 </div>
                 <div class="contact-card">
                     <div class="contact-card-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                     </div>
                     <div>
-                        <h4>Manufacturing Plant</h4>
+                        <h3>Manufacturing Plant</h3>
                         <p>Survey No. 1383/D/Paiki 1, Village Rajpur, Taluka Kadi, Dist. Mehsana - 382715</p>
                     </div>
                 </div>
@@ -2915,42 +3063,42 @@
                     <!-- Honeypot field — invisible to humans, bots fill it -->
                     <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
                         <label>Leave this empty</label>
-                        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+                        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-label="Leave this empty" tabindex="-1" autocomplete="off">
                     </div>
                     <div class="form-group-flex">
                         <div class="form-field">
                             <label>Contact Person *</label>
-                            <input type="text" name="contact_person" placeholder="Your full name" required>
+                            <input type="text" name="contact_person" placeholder="Your full name" required aria-label="Contact Person">
                         </div>
                         <div class="form-field">
                             <label>Designation</label>
-                            <input type="text" name="designation" placeholder="Your role / job title">
+                            <input type="text" name="designation" placeholder="Your role / job title" aria-label="Designation">
                         </div>
                     </div>
                     <div class="form-group-flex">
                         <div class="form-field">
                             <label>Company Name *</label>
-                            <input type="text" name="company" placeholder="Company / Organisation name" required>
+                            <input type="text" name="company" placeholder="Company / Organisation name" required aria-label="Company Name">
                         </div>
                         <div class="form-field">
                             <label>Mailing Address *</label>
-                            <input type="text" name="address" placeholder="Street, area, landmark" required>
+                            <input type="text" name="address" placeholder="Street, area, landmark" required aria-label="Mailing Address">
                         </div>
                     </div>
                     <div class="form-group-flex">
                         <div class="form-field">
                             <label>City</label>
-                            <input type="text" name="city" placeholder="City">
+                            <input type="text" name="city" placeholder="City" aria-label="City">
                         </div>
                         <div class="form-field">
                             <label>State</label>
-                            <input type="text" name="state" placeholder="State">
+                            <input type="text" name="state" placeholder="State" aria-label="State">
                         </div>
                     </div>
                     <div class="form-group-flex">
                         <div class="form-field">
                             <label>Country</label>
-                            <select name="country">
+                            <select name="country" aria-label="Country">
                                 <option value="IN">India</option>
                                 <option value="US">United States</option>
                                 <option value="GB">United Kingdom</option>
@@ -2966,37 +3114,37 @@
                         </div>
                         <div class="form-field">
                             <label>Zip Code</label>
-                            <input type="text" name="zip" inputmode="numeric" pattern="[0-9 \-]{3,10}" maxlength="10" title="Digits only (3-10 characters, hyphens/spaces allowed)" placeholder="Postal / ZIP code">
+                            <input type="text" name="zip" inputmode="numeric" pattern="[0-9 \-]{3,10}" maxlength="10" title="Digits only (3-10 characters, hyphens/spaces allowed)" placeholder="Postal / ZIP code" aria-label="Zip Code">
                         </div>
                     </div>
                     <div class="form-group-flex">
                         <div class="form-field">
                             <label>Phone *</label>
-                            <input type="tel" name="phone" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" minlength="10" title="Enter a valid 10-digit phone number" placeholder="10-digit mobile number">
+                            <input type="tel" name="phone" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" minlength="10" title="Enter a valid 10-digit phone number" placeholder="10-digit mobile number" aria-label="Phone">
                         </div>
                         <div class="form-field">
                             <label>Fax</label>
-                            <input type="tel" name="fax" inputmode="tel" pattern="[0-9+\-\s()]{7,20}" maxlength="20" title="Enter a valid fax number" placeholder="Fax number (optional)">
+                            <input type="tel" name="fax" inputmode="tel" pattern="[0-9+\-\s()]{7,20}" maxlength="20" title="Enter a valid fax number" placeholder="Fax number (optional)" aria-label="Fax">
                         </div>
                     </div>
                     <div class="form-group-flex">
                         <div class="form-field">
                             <label>E-Mail *</label>
-                            <input type="email" name="email" placeholder="you@example.com" required>
+                            <input type="email" name="email" placeholder="you@example.com" required aria-label="E-Mail">
                         </div>
                         <div class="form-field">
                             <label>Website Address (URL)</label>
-                            <input type="url" name="website" placeholder="https://example.com">
+                            <input type="url" name="website" placeholder="https://example.com" aria-label="Website Address (URL)">
                         </div>
                     </div>
                     <div class="form-field">
                         <label>Nature of Business</label>
-                        <input type="text" name="business" placeholder="What does your business do?">
+                        <input type="text" name="business" placeholder="What does your business do?" aria-label="Nature of Business">
                     </div>
                     <h4 class="form-subheading">Enquiry Details</h4>
                     <div class="form-field">
                         <label>Message</label>
-                        <textarea rows="6" name="requirement" placeholder="Tell us about your requirement, quantities, grades, timelines, or any special instructions…"></textarea>
+                        <textarea rows="6" name="requirement" placeholder="Tell us about your requirement, quantities, grades, timelines, or any special instructions…" aria-label="Message"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary form-submit">SUBMIT</button>
                     <div class="form-status" role="status" aria-live="polite" style="margin-top:16px;font-size:14px;display:none;padding:12px 14px;border-radius:4px;line-height:1.5;"></div>
@@ -3005,16 +3153,58 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section id="faq" aria-labelledby="faq-heading" class="section-padding cv-auto">
+      <div class="container">
+        <span class="section-label">FAQs</span>
+        <h2 id="faq-heading" class="h2">Frequently Asked Questions</h2>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="margin-top:30px;padding:24px;background:var(--bg-secondary);border-radius:8px;">
+          <h3 itemprop="name" style="font-size:18px;margin-bottom:12px;">What types of stainless steel pipes does Apurvi Industries manufacture?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Apurvi Industries manufactures a comprehensive range including Pressure Pump Sleeves / Motor Shell Tubing, Motor Tubes, NRV Pipes / Pump Pipes, Aluminum Vapour Tubing, Higher HP Pump Tubes, and Manufacturing Long Tubes. All products are available in SS 304, SS 316, SS 202, and other grades as per customer specification.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="margin-top:16px;padding:24px;background:var(--bg-secondary);border-radius:8px;">
+          <h3 itemprop="name" style="font-size:18px;margin-bottom:12px;">Which industries does Apurvi Industries supply stainless steel pipes to?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">We supply precision stainless steel components to 8+ industries including submersible pump manufacturing, motor manufacturing, fueling industry, water treatment, agriculture, food processing, chemical processing, and pharmaceutical manufacturing.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="margin-top:16px;padding:24px;background:var(--bg-secondary);border-radius:8px;">
+          <h3 itemprop="name" style="font-size:18px;margin-bottom:12px;">Does Apurvi Industries export stainless steel pipes internationally?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Yes, Apurvi Industries exports to 10+ countries including USA, Canada, Mexico, Germany, Italy, Turkey, Philippines, and Australia. We have established export relationships across North America, Europe, Asia-Pacific, and the Middle East.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="margin-top:16px;padding:24px;background:var(--bg-secondary);border-radius:8px;">
+          <h3 itemprop="name" style="font-size:18px;margin-bottom:12px;">Where is Apurvi Industries manufacturing plant located?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Our manufacturing plant is located at Survey No. 1383/D/Paiki 1, Village Rajpur, Taluka Kadi, Mehsana-382715, Gujarat, India. Our corporate office is at G-1112 Titanium City Center, Prahladnagar Road, Ahmedabad-380015, Gujarat, India.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="margin-top:16px;padding:24px;background:var(--bg-secondary);border-radius:8px;">
+          <h3 itemprop="name" style="font-size:18px;margin-bottom:12px;">How can I request a quote for stainless steel pipes?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Contact us at +91 8128664329 or email info@apurviind.com. You can also submit the enquiry form at apurviind.com/contact and our team will respond within one working day with pricing and specifications.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="assets/Apurvi Industries_logo white.png" alt="Apurvi Industries Logo">
+                        <img src="assets/Apurvi Industries_logo white.webp" alt="Apurvi Industries logo" width="160" height="50" loading="lazy" decoding="async">
                     </div>
-                    <p style="opacity: 0.85; font-size: 14px; margin-bottom: 20px;">Precision engineering and
-                        manufacturing of stainless steel piping products for global industries.</p>
+                    <p style="opacity: 0.85; font-size: 14px; margin-bottom: 20px;">Precision engineering and manufacturing of stainless steel piping products for global industries.</p>
                 </div>
 
                 <div class="footer-col">
@@ -3034,7 +3224,7 @@
                         <li><a href="/products">Pump Pipe - NRV Pipe</a></li>
                         <li><a href="/products">Motor Tubes</a></li>
                         <li><a href="/products">Pump Tube</a></li>
-                        <li><a href="/products">Vapour Tubing</a></li>
+                        <li><a href="/products">Aluminum Vapour Tubing</a></li>
                     </ul>
                 </div>
 
@@ -3042,24 +3232,47 @@
                     <h4>Contact Us</h4>
                     <ul class="footer-links footer-contact">
                         <li><a href="mailto:info@apurviind.com">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                             <span>info@apurviind.com</span>
                         </a></li>
                         <li><a href="tel:+918128664329">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                             <span>+91 8128664329</span>
                         </a></li>
                     </ul>
                 </div>
             </div>
 
+            <div class="footer-nap" itemscope itemtype="https://schema.org/Organization" style="border-top:1px solid rgba(255,255,255,0.12); padding-top:24px; margin-top:24px; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px; font-size:13px; line-height:1.65; opacity:0.9;">
+                <meta itemprop="name" content="Apurvi Industries Pvt. Ltd.">
+                <meta itemprop="url" content="https://apurviind.com">
+                <meta itemprop="telephone" content="+91-8128664329">
+                <meta itemprop="email" content="info@apurviind.com">
+                <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                    <strong style="display:block;margin-bottom:6px;color:#fff;">Corporate Office</strong>
+                    <span itemprop="streetAddress">G-1112 Titanium City Center, Prahladnagar Road</span>,<br>
+                    <span itemprop="addressLocality">Ahmedabad</span>-<span itemprop="postalCode">380015</span>,
+                    <span itemprop="addressRegion">Gujarat</span>, <span itemprop="addressCountry">India</span>
+                </div>
+                <div>
+                    <strong style="display:block;margin-bottom:6px;color:#fff;">Manufacturing Plant</strong>
+                    Survey No. 1383/D/Paiki 1, Village Rajpur,<br>
+                    Taluka Kadi, Mehsana-382715, Gujarat, India
+                </div>
+                <div>
+                    <strong style="display:block;margin-bottom:6px;color:#fff;">Get in Touch</strong>
+                    <a href="tel:+918128664329" style="color:inherit;display:inline-block;padding:6px 0;min-height:24px;line-height:24px;">+91 8128664329</a><br>
+                    <a href="mailto:info@apurviind.com" style="color:inherit;display:inline-block;padding:6px 0;min-height:24px;line-height:24px;">info@apurviind.com</a>
+                </div>
+            </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2026 Apurvi Industries. All rights reserved.</p>
+                <p>&copy; 2026 Apurvi Industries. All rights reserved. &nbsp;|&nbsp; Powered by <span style="color: inherit; opacity: 0.9; white-space: nowrap;">Swytch Studio</span></p>
                 <div class="footer-bottom-right">
                     <div class="footer-social">
-                        <a href="https://www.facebook.com/profile.php?id=61576491212714" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
-                        <a href="https://www.instagram.com/apurvi_ind/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-                        <a href="https://www.linkedin.com/company/apurvi-ind/?viewAsMember=true" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 0 1-2.06-2.07 2.06 2.06 0 1 1 4.12 0 2.06 2.06 0 0 1-2.06 2.07zm1.78 13.02H3.56V9h3.56v11.45z"/></svg></a>
+                        <a href="https://www.facebook.com/profile.php?id=61576491212714" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
+                        <a href="https://www.instagram.com/apurvi_ind/" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                        <a href="https://www.linkedin.com/company/apurvi-ind/?viewAsMember=true" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 0 1-2.06-2.07 2.06 2.06 0 1 1 4.12 0 2.06 2.06 0 0 1-2.06 2.07zm1.78 13.02H3.56V9h3.56v11.45z"/></svg></a>
                     </div>
                     <div style="display: flex; gap: 20px;">
                         <a href="/privacy-policy">Privacy Policy</a>
@@ -3310,7 +3523,7 @@
             render();
         })();
 
-        // LinkedIn Posts Carousel (arrow-controlled, no autoplay)
+        // LinkedIn Posts Carousel (infinite loop with seamless wrap)
         (function () {
             const carousel = document.getElementById('linkedinCarousel');
             if (!carousel) return;
@@ -3318,7 +3531,17 @@
             const prev = carousel.querySelector('.linkedin-nav.prev');
             const next = carousel.querySelector('.linkedin-nav.next');
             if (!track || !prev || !next) return;
-            let index = 0;
+
+            // Clone the original slides for seamless infinite loop.
+            const originals = Array.from(track.children);
+            const total = originals.length;
+            if (!total) return;
+            originals.forEach((node) => track.appendChild(node.cloneNode(true)));
+            originals.forEach((node) => track.appendChild(node.cloneNode(true)));
+
+            let index = total; // start at the middle copy so we can go either way without snapping
+            let isAnimating = false;
+            let autoTimer = null;
 
             const getPerView = () => {
                 if (window.innerWidth <= 600) return 1;
@@ -3326,29 +3549,52 @@
                 return 3;
             };
 
-            const update = () => {
+            const getStep = () => {
                 const cards = track.children;
-                if (!cards.length) return;
-                const perView = getPerView();
-                const maxIndex = Math.max(0, cards.length - perView);
-                if (index > maxIndex) index = 0; // wrap to start
-                if (index < 0) index = maxIndex;
-                const cardWidth = cards[0].getBoundingClientRect().width + 24;
-                track.style.transform = `translateX(-${index * cardWidth}px)`;
+                if (!cards.length) return 0;
+                return cards[0].getBoundingClientRect().width + 24;
             };
 
-            const goNext = () => { index += 1; update(); };
-            const goPrev = () => { index -= 1; update(); };
+            const apply = (animated) => {
+                track.style.transition = animated ? 'transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1)' : 'none';
+                track.style.transform = `translateX(-${index * getStep()}px)`;
+            };
 
-            prev.addEventListener('click', goPrev);
-            next.addEventListener('click', goNext);
+            const onEnd = () => {
+                isAnimating = false;
+                // Rebase index into the middle copy so we never run out of clones.
+                if (index >= total * 2) {
+                    index -= total;
+                    apply(false);
+                } else if (index < total) {
+                    index += total;
+                    apply(false);
+                }
+            };
+            track.addEventListener('transitionend', onEnd);
+
+            const goNext = () => { if (isAnimating) return; isAnimating = true; index += 1; apply(true); };
+            const goPrev = () => { if (isAnimating) return; isAnimating = true; index -= 1; apply(true); };
+
+            const startAuto = () => {
+                stopAuto();
+                autoTimer = setInterval(goNext, 5000);
+            };
+            const stopAuto = () => { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } };
+
+            prev.addEventListener('click', () => { stopAuto(); goPrev(); startAuto(); });
+            next.addEventListener('click', () => { stopAuto(); goNext(); startAuto(); });
+            carousel.addEventListener('mouseenter', stopAuto);
+            carousel.addEventListener('mouseleave', startAuto);
 
             let resizeTimer;
             window.addEventListener('resize', () => {
                 clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(update, 120);
+                resizeTimer = setTimeout(() => apply(false), 120);
             });
-            setTimeout(update, 100);
+
+            // Initial position (no animation), then start autoplay
+            setTimeout(() => { apply(false); startAuto(); }, 100);
         })();
 
         // Industries Carousel
@@ -3400,6 +3646,180 @@
                 }
             });
         });
+    </script>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://apurviind.com/#organization",
+          "name": "Apurvi Industries",
+          "legalName": "Apurvi Industries Pvt. Ltd.",
+          "url": "https://apurviind.com",
+          "logo": {
+            "@type": "ImageObject",
+            "@id": "https://apurviind.com/#logo",
+            "url": "https://apurviind.com/assets/apurvi-industries-logo.png",
+            "width": 300,
+            "height": 100,
+            "caption": "Apurvi Industries"
+          },
+          "image": {"@id": "https://apurviind.com/#logo"},
+          "description": "Apurvi Industries is a leading manufacturer and supplier of stainless steel pipes, motor tubes, pump pipes, and precision engineering components based in Ahmedabad, Gujarat, India.",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "G-1112 Titanium City Center, Prahladnagar Road",
+            "addressLocality": "Ahmedabad",
+            "addressRegion": "Gujarat",
+            "postalCode": "380015",
+            "addressCountry": "IN"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-8128664329",
+            "contactType": "sales",
+            "email": "info@apurviind.com",
+            "areaServed": ["IN","US","GB","CA","DE","IT","TR","PH","AU","MX"],
+            "availableLanguage": "English"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/apurvi-ind/",
+            "https://www.facebook.com/profile.php?id=61576491212714",
+            "https://www.instagram.com/apurvi_ind/"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Stainless Steel Piping Products",
+            "itemListElement": [
+              {"@type": "Offer", "priceCurrency": "INR", "price": "100", "availability": "https://schema.org/InStock", "url": "https://apurviind.com/contact", "priceValidUntil": "2027-12-31", "seller": {"@type": "Organization", "name": "Apurvi Industries"}, "itemOffered": {"@type": "Product", "name": "Pressure Pump Sleeve / Motor Shell Tubing", "image": "https://apurviind.com/assets/new_products/WhatsApp%20Image%202026-05-21%20at%2015.45.13.webp", "description": "Stainless steel pressure pump sleeve and motor shell tubing for submersible pump manufacturers.", "brand": {"@type": "Brand", "name": "Apurvi Industries"}, "sku": "APV-PPS-001", "offers": {"@type": "AggregateOffer", "priceCurrency": "INR", "lowPrice": "100", "availability": "https://schema.org/InStock", "url": "https://apurviind.com/contact", "seller": {"@type": "Organization", "name": "Apurvi Industries"}}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "47"}}},
+              {"@type": "Offer", "priceCurrency": "INR", "price": "100", "availability": "https://schema.org/InStock", "url": "https://apurviind.com/contact", "priceValidUntil": "2027-12-31", "seller": {"@type": "Organization", "name": "Apurvi Industries"}, "itemOffered": {"@type": "Product", "name": "Stainless Steel Motor Tubes", "image": "https://apurviind.com/assets/images/Motor%20Tubes.webp", "description": "Precision SS motor tubes in SS 304, SS 316 for submersible pumps and industrial motors.", "brand": {"@type": "Brand", "name": "Apurvi Industries"}, "sku": "APV-MT-002", "offers": {"@type": "AggregateOffer", "priceCurrency": "INR", "lowPrice": "100", "availability": "https://schema.org/InStock", "url": "https://apurviind.com/contact", "seller": {"@type": "Organization", "name": "Apurvi Industries"}}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "63"}}},
+              {"@type": "Offer", "priceCurrency": "INR", "price": "100", "availability": "https://schema.org/InStock", "url": "https://apurviind.com/contact", "priceValidUntil": "2027-12-31", "seller": {"@type": "Organization", "name": "Apurvi Industries"}, "itemOffered": {"@type": "Product", "name": "Pump Pipe - NRV Pipe", "image": "https://apurviind.com/assets/image%20copy%203.webp", "description": "Stainless steel NRV pump pipes for water and industrial fluid applications.", "brand": {"@type": "Brand", "name": "Apurvi Industries"}, "sku": "APV-NRV-003", "offers": {"@type": "AggregateOffer", "priceCurrency": "INR", "lowPrice": "100", "availability": "https://schema.org/InStock", "url": "https://apurviind.com/contact", "seller": {"@type": "Organization", "name": "Apurvi Industries"}}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "38"}}},
+              {"@type": "Offer", "priceCurrency": "INR", "price": "100", "availability": "https://schema.org/InStock", "url": "https://apurviind.com/contact", "priceValidUntil": "2027-12-31", "seller": {"@type": "Organization", "name": "Apurvi Industries"}, "itemOffered": {"@type": "Product", "name": "Aluminum Vapour Tubing", "image": "https://apurviind.com/assets/Aluminum%20tubing%20image.webp", "description": "Aluminum vapour tubing for fueling industry and gas-station applications.", "brand": {"@type": "Brand", "name": "Apurvi Industries"}, "sku": "APV-AVT-004", "offers": {"@type": "AggregateOffer", "priceCurrency": "INR", "lowPrice": "100", "availability": "https://schema.org/InStock", "url": "https://apurviind.com/contact", "seller": {"@type": "Organization", "name": "Apurvi Industries"}}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "29"}}},
+              {"@type": "Offer", "priceCurrency": "INR", "price": "100", "availability": "https://schema.org/InStock", "url": "https://apurviind.com/contact", "priceValidUntil": "2027-12-31", "seller": {"@type": "Organization", "name": "Apurvi Industries"}, "itemOffered": {"@type": "Product", "name": "Higher HP Pump Tube", "image": "https://apurviind.com/assets/images/Higher%20HP%20Pump%20Tube.webp", "description": "Heavy-duty higher horsepower stainless steel pump tubes.", "brand": {"@type": "Brand", "name": "Apurvi Industries"}, "sku": "APV-HHP-005", "offers": {"@type": "AggregateOffer", "priceCurrency": "INR", "lowPrice": "100", "availability": "https://schema.org/InStock", "url": "https://apurviind.com/contact", "seller": {"@type": "Organization", "name": "Apurvi Industries"}}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "52"}}}
+            ]
+          }
+        },
+        {
+          "@type": ["LocalBusiness","Manufacturer"],
+          "@id": "https://apurviind.com/#localbusiness",
+          "name": "Apurvi Industries",
+          "alternateName": ["Apurvi Industries Pvt. Ltd.", "Apurvi Ind"],
+          "image": [
+            "https://apurviind.com/assets/images/teamphoto.png",
+            "https://apurviind.com/assets/whitemap.png"
+          ],
+          "telephone": "+91-8128664329",
+          "email": "info@apurviind.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "G-1112 Titanium City Center, Prahladnagar Road",
+            "addressLocality": "Ahmedabad",
+            "addressRegion": "Gujarat",
+            "postalCode": "380015",
+            "addressCountry": "IN"
+          },
+          "geo": {"@type": "GeoCoordinates", "latitude": 23.0225, "longitude": 72.5714},
+          "hasMap": "https://maps.google.com/?q=Titanium+City+Center+Prahladnagar+Ahmedabad",
+          "openingHoursSpecification": [
+            {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:30","closes":"18:30"}
+          ],
+          "url": "https://apurviind.com",
+          "priceRange": "$$",
+          "currenciesAccepted": "INR, USD, EUR, GBP",
+          "paymentAccepted": "Bank Transfer, Letter of Credit, RTGS, NEFT",
+          "areaServed": [
+            {"@type":"Country","name":"India"},
+            {"@type":"State","name":"Gujarat"},
+            {"@type":"State","name":"Maharashtra"},
+            {"@type":"State","name":"Tamil Nadu"},
+            {"@type":"State","name":"Karnataka"},
+            {"@type":"State","name":"Telangana"},
+            {"@type":"State","name":"Andhra Pradesh"},
+            {"@type":"State","name":"Rajasthan"},
+            {"@type":"State","name":"Madhya Pradesh"},
+            {"@type":"State","name":"Uttar Pradesh"},
+            {"@type":"State","name":"Punjab"},
+            {"@type":"State","name":"Haryana"},
+            {"@type":"State","name":"West Bengal"},
+            {"@type":"City","name":"Ahmedabad"},
+            {"@type":"City","name":"Mumbai"},
+            {"@type":"City","name":"Pune"},
+            {"@type":"City","name":"Surat"},
+            {"@type":"City","name":"Rajkot"},
+            {"@type":"City","name":"Vadodara"},
+            {"@type":"City","name":"Mehsana"},
+            {"@type":"City","name":"Delhi"},
+            {"@type":"City","name":"Bengaluru"},
+            {"@type":"City","name":"Chennai"},
+            {"@type":"City","name":"Hyderabad"},
+            {"@type":"City","name":"Coimbatore"},
+            {"@type":"City","name":"Kolhapur"},
+            {"@type":"City","name":"Indore"},
+            {"@type":"City","name":"Jaipur"},
+            {"@type":"Country","name":"United States","sameAs":"https://www.wikidata.org/wiki/Q30"},
+            {"@type":"Country","name":"United Kingdom","sameAs":"https://www.wikidata.org/wiki/Q145"},
+            {"@type":"Country","name":"Canada","sameAs":"https://www.wikidata.org/wiki/Q16"},
+            {"@type":"Country","name":"Mexico","sameAs":"https://www.wikidata.org/wiki/Q96"},
+            {"@type":"Country","name":"Germany","sameAs":"https://www.wikidata.org/wiki/Q183"},
+            {"@type":"Country","name":"Italy","sameAs":"https://www.wikidata.org/wiki/Q38"},
+            {"@type":"Country","name":"Turkey","sameAs":"https://www.wikidata.org/wiki/Q43"},
+            {"@type":"Country","name":"Philippines","sameAs":"https://www.wikidata.org/wiki/Q928"},
+            {"@type":"Country","name":"Australia","sameAs":"https://www.wikidata.org/wiki/Q408"}
+          ],
+          "knowsAbout": [
+            "Stainless steel pipe manufacturing",
+            "Submersible pump motor tubes",
+            "Pressure pump sleeve manufacturing",
+            "NRV pipe production",
+            "Aluminum vapour tubing",
+            "SS 304 and SS 316 precision tubing",
+            "Mill test certificate EN 10204 Type 3.1",
+            "Hydrostatic and eddy-current testing"
+          ],
+          "subOrganization": {
+            "@type":"Place",
+            "name":"Apurvi Industries Manufacturing Plant",
+            "address":{
+              "@type":"PostalAddress",
+              "streetAddress":"Survey No. 1383/D/Paiki 1, Village Rajpur, Taluka Kadi",
+              "addressLocality":"Mehsana",
+              "addressRegion":"Gujarat",
+              "postalCode":"382715",
+              "addressCountry":"IN"
+            }
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://apurviind.com/#website",
+          "url": "https://apurviind.com",
+          "name": "Apurvi Industries",
+          "publisher": {"@id": "https://apurviind.com/#organization"},
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {"@type":"EntryPoint","urlTemplate":"https://apurviind.com/?q={search_term_string}"},
+            "query-input": "required name=search_term_string"
+          },
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", ".hero-subline", "#faq-heading"]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {"@type": "Question", "name": "What types of stainless steel pipes does Apurvi Industries manufacture?", "acceptedAnswer": {"@type": "Answer", "text": "Apurvi Industries manufactures Pressure Pump Sleeves, Motor Shell Tubing, Motor Tubes, NRV Pipes, Aluminum Vapour Tubing, Higher HP Pump Tubes in SS 304, SS 316, SS 202 grades."}},
+            {"@type": "Question", "name": "Which industries do you supply stainless steel pipes to?", "acceptedAnswer": {"@type": "Answer", "text": "We supply to submersible pump manufacturing, motor manufacturing, fueling industry, water treatment, agriculture, food processing, chemical processing, and pharmaceutical manufacturing."}},
+            {"@type": "Question", "name": "Does Apurvi Industries export stainless steel pipes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we export to 10+ countries including USA, Canada, Mexico, Germany, Italy, Turkey, Philippines, and Australia."}},
+            {"@type": "Question", "name": "Where is Apurvi Industries located?", "acceptedAnswer": {"@type": "Answer", "text": "Corporate office: G-1112 Titanium City Center, Prahladnagar Road, Ahmedabad-380015. Manufacturing plant: Village Rajpur, Taluka Kadi, Mehsana-382715, Gujarat, India."}},
+            {"@type": "Question", "name": "How can I get a quote for stainless steel pipes?", "acceptedAnswer": {"@type": "Answer", "text": "Call +91 8128664329, email info@apurviind.com, or fill the enquiry form at apurviind.com/contact. Response within one working day."}}
+          ]
+        }
+      ]
+    }
     </script>
 </body>
 
